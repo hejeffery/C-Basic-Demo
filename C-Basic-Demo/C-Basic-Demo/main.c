@@ -7,6 +7,10 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <math.h>
 
 // 递归实现斐波拉契数列
 int fibonacciRecursion(int number) {
