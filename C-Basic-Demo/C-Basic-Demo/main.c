@@ -185,6 +185,27 @@ int lagrangeSearch(int *array, int count, int searchNumber) {
     return -1;// 没有找到返回-1
 }
 
+// 使一个有序的数组乱序
+void outOfOrderArray(int *array, int count) {
+    // 获取随机数种子
+    // 思想：1.第1个元素和第1个元素后面的9个元素中的其中一个交换
+    //      2.第2个元素和第2个元素后面的8个元素中的其中一个交换
+    //      3.第3个元素和第3个元素后面的7个元素中的其中一个交换......
+    time_t t;
+    srand((unsigned int)time(&t));
+    
+    for (int i = 0; i < count - 1; i++) {
+        int randomIndex = i + (rand() % (count - 1 - i));
+        int temp = array[i];
+        array[i] = array[randomIndex];
+        array[randomIndex] = temp;
+    }
+    
+    for (int i = 0; i < count; i++) {
+        printf("%d  \n", array[i]);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -235,6 +256,10 @@ int main(int argc, const char * argv[]) {
 //    } else {
 //        printf("找到了，位置是 index = %d\n", index);
 //    }
+    
+    // 使一个有序的数组乱序
+    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    outOfOrderArray(array, 10);
     
     return 0;
 }
