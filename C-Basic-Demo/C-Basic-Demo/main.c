@@ -87,7 +87,7 @@ void nineMultNine() {
 
 // 选择排序
 void selectionSort(int *array, int count) {
-    // 选择排序法的核心思想：每一趟都是找出最值(和找出一个数组中的最值算法类似)，然后交换
+    // 选择排序法的思想：每一趟都是找出最值(和找出一个数组中的最值算法类似)，然后交换
     for (int i = 0; i < count; i++) {
         for (int j = i + 1; j < count; j++) {
             if (array[i] < array[j]) {
@@ -105,7 +105,7 @@ void selectionSort(int *array, int count) {
 
 // 冒泡排序
 void bubbleSort(int *array, int count) {
-    // 冒泡排序的核心思想：数字上浮或者下沉
+    // 冒泡排序的思想：数字上浮或者下沉
     int loopNumber = count - 1;
     for (int i = 0; i < loopNumber; i++) {// 每循环一次就有一个数上浮或者下沉
         for (int j = 0; j < loopNumber - i; j++) {
@@ -123,9 +123,12 @@ void bubbleSort(int *array, int count) {
 
 // 插入排序
 void insertSort(int *array, int count) {
+    // 插入排序的思想：把数组分为n-1个数组序列。每次从数组的最后一个值往前插值
     // 从第二个元素开始
     for (int i = 1; i < count; i++) {
+        // 用来记录数组序列的最后一个元素的位置
         int index = i;
+        // 用来记录数组序列的最后一个元素
         int element = array[i];
         
         while (index > 0 && element < array[index - 1]) {
