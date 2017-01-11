@@ -13,6 +13,7 @@
 #include <math.h>
 
 #include "ArrayStack.h"
+#include "ArrayQueue.h"
 
 // 递归实现斐波拉契数列
 int fibonacciRecursion(int number) {
@@ -251,6 +252,51 @@ void stackArrayImpl() {
     }
 }
 
+// 队列，数组实现
+void queueArrayImpl() {
+    Queue queue;
+    createQueue(&queue);
+    
+    bool isEmpty = isEmptyQueue(&queue);
+    if (isEmpty) {
+        printf("是空队列\n");
+    }
+    
+    // 判断是否是满栈
+    bool isFull = isFullQueue(&queue);
+    if (isFull) {
+        printf("是满队列\n");
+    } else {
+        printf("不是满队列\n");
+    }
+    
+    // 入队
+    int array[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i < 5; i++) {
+        enqueue(&queue, array[i]);
+    }
+    
+    int headData = headElement(&queue);
+    int tailData = tailElement(&queue);
+    
+    printf("headData = %d, tailData = %d\n", headData, tailData);
+    
+    // 显示队列的数据
+    showQueueData(&queue);
+    
+    // 出队
+    while (!isEmptyQueue(&queue)) {
+        int value = 0;
+        dequeue(&queue, &value);
+        printf("出队列的值 value = %d\n", value);
+        
+        // 显示队列的数据
+        showQueueData(&queue);
+    }
+    
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -306,8 +352,11 @@ int main(int argc, const char * argv[]) {
 //    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 //    outOfOrderArray(array, 10);
     
-    // 栈，数组实现
-    stackArrayImpl();
+//    // 栈，数组实现
+//    stackArrayImpl();
+    
+    // 队列，数组实现
+    queueArrayImpl();
     
     return 0;
 }

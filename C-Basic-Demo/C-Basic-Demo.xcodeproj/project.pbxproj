@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4758AED81E23D37C00FA7884 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AED71E23D37C00FA7884 /* main.c */; };
 		4758AEE51E25C68C00FA7884 /* ArrayStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AEE31E25C68C00FA7884 /* ArrayStack.c */; };
+		4758AEE91E25FC4600FA7884 /* ArrayQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AEE71E25FC4600FA7884 /* ArrayQueue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		4758AED71E23D37C00FA7884 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4758AEE31E25C68C00FA7884 /* ArrayStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayStack.c; sourceTree = "<group>"; };
 		4758AEE41E25C68C00FA7884 /* ArrayStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayStack.h; sourceTree = "<group>"; };
+		4758AEE71E25FC4600FA7884 /* ArrayQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayQueue.c; sourceTree = "<group>"; };
+		4758AEE81E25FC4600FA7884 /* ArrayQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				4758AED71E23D37C00FA7884 /* main.c */,
+				4758AEE61E25FB9C00FA7884 /* ArrayQueue */,
 				4758AEE21E25C64E00FA7884 /* ArrayStack */,
 			);
 			path = "C-Basic-Demo";
@@ -73,6 +77,15 @@
 				4758AEE31E25C68C00FA7884 /* ArrayStack.c */,
 			);
 			path = ArrayStack;
+			sourceTree = "<group>";
+		};
+		4758AEE61E25FB9C00FA7884 /* ArrayQueue */ = {
+			isa = PBXGroup;
+			children = (
+				4758AEE81E25FC4600FA7884 /* ArrayQueue.h */,
+				4758AEE71E25FC4600FA7884 /* ArrayQueue.c */,
+			);
+			path = ArrayQueue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4758AEE91E25FC4600FA7884 /* ArrayQueue.c in Sources */,
 				4758AEE51E25C68C00FA7884 /* ArrayStack.c in Sources */,
 				4758AED81E23D37C00FA7884 /* main.c in Sources */,
 			);
