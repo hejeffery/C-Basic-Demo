@@ -12,6 +12,8 @@
 #include <time.h>
 #include <math.h>
 
+#include "ArrayStack.h"
+
 // 递归实现斐波拉契数列
 int fibonacciRecursion(int number) {
     if (number == 1 || number == 2) {
@@ -87,7 +89,8 @@ void nineMultNine() {
 
 // 选择排序
 void selectionSort(int *array, int count) {
-    // 选择排序法的思想：每一趟都是找出最值(和找出一个数组中的最值算法类似)，然后交换
+    // 选择排序法的思想：每一趟都是找出最值(和找出一个数组中的最值算法类似)，然后交换。
+    // 也就是第一个数和后面的数逐个扫描，第二个数和后面的数逐个扫描....
     for (int i = 0; i < count; i++) {
         for (int j = i + 1; j < count; j++) {
             if (array[i] < array[j]) {
@@ -206,6 +209,48 @@ void outOfOrderArray(int *array, int count) {
     }
 }
 
+// 栈，数组实现
+void stackArrayImpl() {
+    Stack stack;
+    createStack(&stack);
+    
+    // 判断是否是空栈
+    bool isEmpty = isEmptyStack(&stack);
+    if (isEmpty) {
+        printf("是空栈\n");
+    }
+    
+    // 判断是否是满栈
+    bool isFull = isFullStack(&stack);
+    if (isFull) {
+        printf("是满栈\n");
+    } else {
+        printf("不是满栈\n");
+    }
+    
+    // 压栈
+    int array[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i < 5; i++) {
+        push(&stack, array[i]);
+    }
+    
+    // 显示栈的数据
+    showStackData(&stack);
+    
+    // 出栈
+    while (!isEmptyStack(&stack)) {
+        int popNumber = 0;
+        int popIndex = 0;
+        bool popSuccess = pop(&stack, &popNumber, &popIndex);
+        if (popSuccess) {
+            printf("出栈：popNumber = %d, popIndex = %d\n", popNumber, popIndex);
+        }
+        
+        // 显示栈的数据
+        showStackData(&stack);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -257,9 +302,12 @@ int main(int argc, const char * argv[]) {
 //        printf("找到了，位置是 index = %d\n", index);
 //    }
     
-    // 使一个有序的数组乱序
-    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    outOfOrderArray(array, 10);
+//    // 使一个有序的数组乱序
+//    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//    outOfOrderArray(array, 10);
+    
+    // 栈，数组实现
+    stackArrayImpl();
     
     return 0;
 }
