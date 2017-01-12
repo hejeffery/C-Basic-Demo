@@ -378,6 +378,20 @@ void yangHuisTriangle() {
     }
 }
 
+// 判断数组是不是一个递增数组，递归实现
+bool isIncreasingArrayByRecursion(int *array, int count) {
+    if (count == 1) {// 只有一个元素，递增
+        return 1;
+
+    } else if (count == 2) {
+        // 只有两个元素，判断0和1
+        return array[1] >= array[0];
+
+    } else {
+        return isIncreasingArrayByRecursion(array, count - 1) && array[count - 1] >= array[count - 2];
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -455,8 +469,17 @@ int main(int argc, const char * argv[]) {
 //    int result = numberToAddByRecursion(123456);
 //    printf("result = %d\n", result);
     
-    // 打印杨辉三角
-    yangHuisTriangle();
+//    // 打印杨辉三角
+//    yangHuisTriangle();
+    
+//    // 判断数组是不是一个递增数组，递归实现
+//    int array[5] = {1, 2, 3, 3, 5};
+//    bool isIncreasing = isIncreasingArrayByRecursion(array, 5);
+//    if (isIncreasing) {
+//        printf("递增\n");
+//    } else {
+//        printf("不是递增\n");
+//    }
     
     return 0;
 }
