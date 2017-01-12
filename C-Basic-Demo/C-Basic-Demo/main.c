@@ -353,6 +353,31 @@ int numberToAddByRecursion(int number) {
     }
 }
 
+// 打印杨辉三角
+void yangHuisTriangle() {
+    int array[10][10] = {0};
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            // 第一列或者i == j时，都为1
+            if (i == j || j == 0) {
+                array[i][j] = 1;
+
+            } else {
+                array[i][j] = array[i - 1][j - 1] + array[i - 1][j];
+            }
+        }
+    }
+    
+    int blankNum = 20;
+    for (int i = 0; i < 10; i++) {
+        printf("%*d", blankNum - 2 * i, array[i][0]);
+        for (int j = 1; j <= i; j++) {
+            printf("%4d", array[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -429,6 +454,9 @@ int main(int argc, const char * argv[]) {
 //    // 计算数字的各个位数相加(递归实现)
 //    int result = numberToAddByRecursion(123456);
 //    printf("result = %d\n", result);
+    
+    // 打印杨辉三角
+    yangHuisTriangle();
     
     return 0;
 }
