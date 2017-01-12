@@ -332,6 +332,17 @@ int reverseNumber(int number) {
     return result;
 }
 
+// 反转数字的递归实现
+int reverseNumberByRecursion(int number, int *result) {
+    if (number == 0) {
+        return 1;
+
+    } else {
+        *result = *result * 10 + number % 10;
+        return reverseNumberByRecursion(number / 10, result);
+    }
+}
+
 // 计算数字的各个位数相加(递归实现)，比如12345，就是1 + 2 + 3 + 4 + 5 = 15
 int numberToAddByRecursion(int number) {
     if (number == 0) {
@@ -408,6 +419,11 @@ int main(int argc, const char * argv[]) {
     
 //    // 反转数字，如12345转为54321
 //    int result = reverseNumber(12345);
+//    printf("result = %d\n", result);
+    
+//    // 反转数字的递归实现
+//    int result = 0;
+//    reverseNumberByRecursion(12345, &result);
 //    printf("result = %d\n", result);
     
 //    // 计算数字的各个位数相加(递归实现)
