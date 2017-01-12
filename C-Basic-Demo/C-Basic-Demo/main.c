@@ -297,6 +297,51 @@ void queueArrayImpl() {
     printf("\n");
 }
 
+// 十进制转二进制
+void decimalToBinary(int number) {
+    if (number == 0) {
+        return;
+
+    } else {
+        
+        decimalToBinary(number / 2);
+        printf("%d", number % 2);
+    }
+}
+
+// 反转数字，如12345转为54321
+int reverseNumber(int number) {
+    int result = 0;
+    
+    // while实现
+    if (number != 0) {
+        while (number) {
+            int temp = number % 10;
+            result = result * 10 + temp;
+            number /= 10;
+        }
+    }
+    
+//    // for实现
+//    if (number != 0) {
+//        for (; number > 0; number /= 10) {
+//            int temp = number % 10;
+//            result = result * 10 + temp;
+//        }
+//    }
+    return result;
+}
+
+// 计算数字的各个位数相加(递归实现)，比如12345，就是1 + 2 + 3 + 4 + 5 = 15
+int numberToAddByRecursion(int number) {
+    if (number == 0) {
+        return 0;
+        
+    } else {
+        return number % 10 + numberToAddByRecursion(number / 10);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -355,8 +400,19 @@ int main(int argc, const char * argv[]) {
 //    // 栈，数组实现
 //    stackArrayImpl();
     
-    // 队列，数组实现
-    queueArrayImpl();
+//    // 队列，数组实现
+//    queueArrayImpl();
+    
+//    // 十进制转二进制
+//    decimalToBinary(10);
+    
+//    // 反转数字，如12345转为54321
+//    int result = reverseNumber(12345);
+//    printf("result = %d\n", result);
+    
+//    // 计算数字的各个位数相加(递归实现)
+//    int result = numberToAddByRecursion(123456);
+//    printf("result = %d\n", result);
     
     return 0;
 }
