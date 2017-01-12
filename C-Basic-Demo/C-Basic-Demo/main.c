@@ -392,6 +392,57 @@ bool isIncreasingArrayByRecursion(int *array, int count) {
     }
 }
 
+// 打印环形的数组，类似下面的
+//     1   2   3   4   5   6   7
+//    24  25  26  27  28  29   8
+//    23  40  41  42  43  30   9
+//    22  39  48  49  44  31  10
+//    21  38  47  46  45  32  11
+//    20  37  36  35  34  33  12
+//    19  18  17  16  15  14  13
+#define NUM 7
+void circleArray() {
+
+    int array[NUM][NUM] = {0};
+    
+    int num = 1;
+    for (int i = 0, j = 0, k = 0; k < ((NUM + 1)) / 2; k++, i = k, j = k) {
+        
+        while (i < NUM - j) {
+            array[i][j] = num++;
+            j++;
+        }
+        
+        j--;
+        i++;
+        while (i < NUM - k) {
+            array[i][j] = num++;
+            i++;
+        }
+
+        i--;
+        j--;
+        while (j >= k) {
+            array[i][j] = num++;
+            j--;
+        }
+
+        j++;
+        i--;
+        while (i > k) {
+            array[i][j] = num++;
+            i--;
+        }
+    }
+    
+    for (int i = 0; i < NUM; i++) {
+        for (int j = 0; j < NUM; j++) {
+            printf("%4d", array[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -480,6 +531,9 @@ int main(int argc, const char * argv[]) {
 //    } else {
 //        printf("不是递增\n");
 //    }
+    
+//    // 打印环形的数组
+//    circleArray();
     
     return 0;
 }
