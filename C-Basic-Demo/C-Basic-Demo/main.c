@@ -551,6 +551,27 @@ void arrayUnion() {
     }
 }
 
+// 数组去重
+void duplicateArray(int *array, int count) {
+    int resultArray[15] = {0};
+    int index = 0;
+    // 用指针遍历
+    for (int *p = array; p < array + count; p++) {
+        if (*(p) != *(p + 1)) {
+            resultArray[index] = *p;
+            index++;
+        }
+    }
+    
+    for (int i = 0; i < count; i++) {
+        if (resultArray[i] != 0) {
+            printf("%d  ", resultArray[i]);
+        }
+    }
+    
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -666,6 +687,10 @@ int main(int argc, const char * argv[]) {
     
 //    // 求数组的并集
 //    arrayUnion();
+    
+//    // 数组去重
+//    int array[15] = {1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8};
+//    duplicateArray(array, 15);
     
     return 0;
 }
