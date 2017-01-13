@@ -519,6 +519,8 @@ void arrayIntersection() {
 
 // 求数组的并集
 void arrayUnion() {
+    // 交集的数组的最大长度是两个相交数组长度的总和
+    // 把最小数组长度的值赋值给并集的数组
     int array1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int array2[5] = {5, 6, 8, 9 ,10};
     int unionArray[15] = {0};
