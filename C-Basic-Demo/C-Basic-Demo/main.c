@@ -572,6 +572,41 @@ void duplicateArray(int *array, int count) {
     printf("\n");
 }
 
+// 计算数组中数字出现的次数
+void repeatNumberCountInArray(int *array, int count) {
+    
+    struct Repeat {
+        int number;
+        int count;
+    };
+    
+    struct Repeat repeats[15] = {0};
+
+    int index = 0;
+    for (int i = 0; i < count; i++) {
+        repeats[index].number = array[i];
+        int numberCount = 1;
+        for (int j = i; j < count; j++) {
+            if (array[j] == array[j + 1]) {// 相等
+                numberCount++;
+
+            } else {// 不相等
+                i = j;
+                break;
+            }
+        }
+        
+        repeats[index].count = numberCount;
+        index++;
+    }
+    
+    for (int i = 0; i < count; i++) {
+        if (repeats[i].count) {
+            printf("number = %d, count = %d\n", repeats[i].number, repeats[i].count);
+        }
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -691,6 +726,10 @@ int main(int argc, const char * argv[]) {
 //    // 数组去重
 //    int array[15] = {1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8};
 //    duplicateArray(array, 15);
+    
+    // 计算数组中数字出现的次数
+    int array[15] = {1, 1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8};
+    repeatNumberCountInArray(array, 15);
     
     return 0;
 }
