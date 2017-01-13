@@ -489,6 +489,66 @@ int stepProblemByRecursion(int stepNumber) {
     }
 }
 
+// 求数组的交集
+void arrayIntersection() {
+    // 思想：取长度最小的作为外层循环，用外层循环的数逐个和内层循环的数对比，两个数相等就放入新的数组
+    // 交集的数组的最大长度是两个相交数组长度的最小值
+    int array1[10] = {5, 6, 2, 3, 7, 8, 1, 12, 34, 9};
+    int array2[5] = {2, 3, 1, 4, 6};
+    
+    int intersectionArray[5] = {0};
+    
+    int index = 0;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (array2[i] == array1[j]) {
+                intersectionArray[index] = array2[i];
+                index++;
+                break;
+            }
+        }
+    }
+    
+    for (int i = 0; i < 5; i++) {
+        if (intersectionArray[i] != 0) {
+            printf("%d  ", intersectionArray[i]);
+        }
+    }
+    printf("\n");
+}
+
+// 求数组的并集
+void arrayUnion() {
+    int array1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int array2[5] = {5, 6, 8, 9 ,10};
+    int unionArray[15] = {0};
+    
+    for (int i = 0; i < 5; i++) {
+        unionArray[i] = array2[i];
+    }
+    
+    int index = 5;
+    for (int i = 0; i < 10; i++) {
+        bool isEqual = false;
+        for (int j = 0; j < 5; j++) {
+            if (array1[i] == array2[j]) {
+                isEqual = true;
+                break;
+
+            }
+        }
+        if (!isEqual) {
+            unionArray[index++] = array1[i];
+        }
+    }
+    
+    for (int i = 0; i < 15; i++) {
+        if (unionArray[i] != 0) {
+            printf("%d  ", unionArray[i]);
+        }
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -595,9 +655,15 @@ int main(int argc, const char * argv[]) {
 //    cstrcpy(dest, source);
 //    printf("%s\n", dest);
     
-    // 递归解决台阶问题
-    int result = stepProblemByRecursion(20);
-    printf("result = %d\n", result);
+//    // 递归解决台阶问题
+//    int result = stepProblemByRecursion(20);
+//    printf("result = %d\n", result);
+    
+//    // 求数组的交集
+//    arrayIntersection();
+    
+//    // 求数组的并集
+//    arrayUnion();
     
     return 0;
 }
