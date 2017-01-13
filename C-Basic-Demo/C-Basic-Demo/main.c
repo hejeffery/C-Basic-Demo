@@ -402,35 +402,33 @@ bool isIncreasingArrayByRecursion(int *array, int count) {
 //    19  18  17  16  15  14  13
 #define NUM 7
 void circleArray() {
-
     int array[NUM][NUM] = {0};
-    
-    int num = 1;
+    int number = 1;
     for (int i = 0, j = 0, k = 0; k < ((NUM + 1)) / 2; k++, i = k, j = k) {
         
         while (i < NUM - j) {
-            array[i][j] = num++;
+            array[i][j] = number++;
             j++;
         }
         
         j--;
         i++;
         while (i < NUM - k) {
-            array[i][j] = num++;
+            array[i][j] = number++;
             i++;
         }
 
         i--;
         j--;
         while (j >= k) {
-            array[i][j] = num++;
+            array[i][j] = number++;
             j--;
         }
 
         j++;
         i--;
         while (i > k) {
-            array[i][j] = num++;
+            array[i][j] = number++;
             i--;
         }
     }
