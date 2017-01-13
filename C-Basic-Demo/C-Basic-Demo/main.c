@@ -441,6 +441,54 @@ void circleArray() {
     }
 }
 
+// 数组的反转
+void reverseArray(int *array, int count) {
+    int *head = array;
+    int *tail = array + count - 1;
+    while (head < tail) {
+        *head = *head ^ *tail;
+        *tail = *head ^ *tail;
+        *head = *head ^ *tail;
+        head++;
+        tail--;
+    }
+}
+
+// 自己实现strcpy
+char * cstrcpy(char *dest, char *source) {
+    char *result = NULL;
+    if (dest == NULL || source == NULL) {
+        return result;
+    }
+    
+    while ((*dest++ = *source++) != '\0') {
+    }
+    result = dest;
+    return result;
+}
+
+// 递归解决台阶问题
+// 台阶问题的描述：楼梯有20阶台阶，上楼可以一步上1阶、2阶或3阶三种走法，计算共有多少种不同的走法
+// 思路：stepNumber = 1，有1中走法；stepNumber = 2，有2中走法(11和2)；stepNumber = 3，有4种走法(111, 12, 12, 3)...
+int stepProblemByRecursion(int stepNumber) {
+    if (stepNumber < 1) {
+        return 0;
+    }
+    
+    if (stepNumber == 1) {
+        return 1;
+
+    } else if (stepNumber == 2) {
+        return 2;
+
+    } else if (stepNumber == 3) {
+        return 4;
+
+    }else {
+        return stepProblemByRecursion(stepNumber - 1) + stepProblemByRecursion(stepNumber - 2) + stepProblemByRecursion(stepNumber - 3);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -532,6 +580,24 @@ int main(int argc, const char * argv[]) {
     
 //    // 打印环形的数组
 //    circleArray();
+    
+////    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//    int array[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//    int count = sizeof(array) / sizeof(array[0]);
+//    reverseArray(array, count);
+//    for (int i = 0; i < count; i++) {
+//        printf("%d   ", array[i]);
+//    }
+    
+//    // 自己实现strcpy
+//    char dest[10] = {0};
+//    char source[10] = "hello c";
+//    cstrcpy(dest, source);
+//    printf("%s\n", dest);
+    
+    // 递归解决台阶问题
+    int result = stepProblemByRecursion(20);
+    printf("result = %d\n", result);
     
     return 0;
 }
