@@ -727,9 +727,9 @@ int main(int argc, const char * argv[]) {
 //    int array[15] = {1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8};
 //    duplicateArray(array, 15);
     
-    // 计算数组中数字出现的次数
-    int array[15] = {1, 1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8};
-    repeatNumberCountInArray(array, 15);
+//    // 计算数组中数字出现的次数
+//    int array[15] = {1, 1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8};
+//    repeatNumberCountInArray(array, 15);
     
     return 0;
 }
