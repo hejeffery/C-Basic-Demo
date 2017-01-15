@@ -607,6 +607,46 @@ void repeatNumberCountInArray(int *array, int count) {
     }
 }
 
+// 位运算的部分操作
+void bitOperation() {
+    // 100的二进制：0110 0100
+    // 取出100的第k位
+    // 思路：先右移k位，再按位与1。1和任何位相与，不变
+    int a = 100;
+    int aIndex = (a >> 6) & 1;
+    printf("aIndex = %d\n", aIndex);
+    
+    // 100的二进制：0110 0100
+    // 将第k位清零，类似“关灯”
+    // 思路：1移动到第k位，取反，再和数相与。0和任何位相与，为0
+    int b = 100;
+    b = b & ~(1 << 2);
+    printf("b的第2位清零后的值是: %d\n", b);
+    
+    // 100的二进制：0110 0100
+    // 将第k位置1，类似“开灯”
+    // 思路：1移动到第k位，数相或。1和任何位相或，为1
+    int c = 100;
+    c = c | (1 << 3);
+    printf("b的第3位置为1后的值是: %d\n", c);
+    
+    // 100的二进制：0110 0100
+    // 相反数
+    // 思路：取反再加1
+    int d = 100;
+    printf("d的相反数是：%d\n", ~d + 1);
+    
+    // 100的二进制：0110 0100
+    // 判断一个数是基数还是偶数
+    // 思路：看第0位是1还是0，如果是1，是奇数；是0，就是偶数
+    int e = 100;
+    if ((e & 1) == 1) {
+        printf("e = %d, 是基数\n", e);
+    } else {
+        printf("e = %d, 是偶数\n", e);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -730,6 +770,9 @@ int main(int argc, const char * argv[]) {
 //    // 计算数组中数字出现的次数
 //    int array[15] = {1, 1, 2, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8};
 //    repeatNumberCountInArray(array, 15);
+    
+    // 位运算的部分操作
+    bitOperation();
     
     return 0;
 }
