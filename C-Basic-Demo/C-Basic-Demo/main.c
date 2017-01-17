@@ -659,6 +659,7 @@ void someArrayConfusion() {
     // 它们的本质就是指针的类型不一样
     // 下面的+1就是加上一个类型的大小
     printf("a + 1 = %p, &a + 1 = %p\n", a + 1, &a + 1);
+    printf("sizeof(a) = %lu, sizeof(*(&a)) = %lu, sizeof(&a) = %lu\n", sizeof(a), sizeof(*(&a)), sizeof(&a));
     
     printf("\n*********二维数组*********\n");
     // 二维数组
@@ -669,6 +670,7 @@ void someArrayConfusion() {
     // 2.&b是数组的地址，指向一个二维数组。此时可以把数组当成一个类型，改类型的大小是4(int是4个字节) * 3 * 4，所以&b + 1代表移动该数组类型的1个长度，在此也就是移动48字节
     // 3.*b是首行首列的地址，相当于列指针，*b + 1往后移动一个元素，就是首行第1列的地址
     printf("b + 1= %p, &b + 1 = %p, *b + 1 = %p\n", b + 1, &b + 1, *b + 1);
+    printf("sizeof(b) = %lu, sizeof(*b) = %lu, sizeof(&b) = %lu\n", sizeof(b), sizeof(*b), sizeof(&b));
     
     // 数组指针
     printf("\n*********数组指针*********\n");
