@@ -704,7 +704,7 @@ void twoDimensionalArray() {
     // array是行指针，类型是int (*p)[4]；*(array + i) + j是列指针，类型是 int *p
     // array + i === &array[i]，表示第i行
     // *(array + i) === array[i] 表示第i行第0列的地址
-    // *(array + i) + j === array[i] + j 表示第i行第j列的地址
+    // *(array + i) + j === array[i] + j === &array[i][j] 表示第i行第j列的地址
     // *(*(array + i) + j) === *(array[i] + j) === array[i][j] 表示第i行第j列
 }
 
