@@ -677,7 +677,7 @@ void someArrayConfusion() {
     printf("p = %p, p + 1 = %p", p, p + 1);
 }
 
-// 二维数组和指针
+// 二维数组和指针的总结
 void twoDimensionalArray() {
     int array[4][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
     for (int i = 0; i < 4; i++) {
@@ -700,8 +700,8 @@ void twoDimensionalArray() {
     }
     printf("\n");
     
-    // 二维数组总结：
-    // array是行指针；*(array + i) + j是列指针
+    // 二维数组总结：类型的转换是关键
+    // array是行指针，类型是int (*p)[4]；*(array + i) + j是列指针，类型是 int *p
     // array + i === &array[i]，表示第i行
     // *(array + i) === array[i] 表示第i行第0列的地址
     // *(array + i) + j === array[i] + j 表示第i行第j列的地址
@@ -838,8 +838,8 @@ int main(int argc, const char * argv[]) {
 //    // 一些数组容易混淆的知识点
 //    someArrayConfusion();
     
-    // 二维数组和指针
-    twoDimensionalArray();
+//    // 二维数组和指针
+//    twoDimensionalArray();
     
     return 0;
 }
