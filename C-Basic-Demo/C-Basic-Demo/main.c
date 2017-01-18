@@ -710,6 +710,26 @@ void twoDimensionalArray() {
     // *(*(array + i) + j) === *(array[i] + j) === array[i][j] 表示第i行第j列
 }
 
+// 函数指针的接口功能
+int add(int a, int b) {
+    return a + b;
+}
+
+int sub(int a, int b) {
+    return a - b;
+}
+
+// 计算函数，参数是函数指针
+int calculation(int (*p)(int, int), int a, int b) {
+    // 函数的类型要一致：返回值，参数要一一对应
+    return p(a, b);
+}
+
+// 返回值是函数指针的函数
+int (*returnFuncPoint())(int, int) {
+    return sub;
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -842,6 +862,15 @@ int main(int argc, const char * argv[]) {
     
 //    // 二维数组和指针
 //    twoDimensionalArray();
+    
+//    // 函数指针的接口功能
+//    int resultAdd = calculation(add, 2, 2);
+//    int resultSub = calculation(sub, 9, 1);
+//    printf("resultAdd = %d, resultSub = %d\n", resultAdd, resultSub);
+//    
+//    // 返回值是函数指针的函数
+//    int funcPointResult = returnFuncPoint()(9, 2);
+//    printf("funcPointResult = %d\n", funcPointResult);
     
     return 0;
 }
