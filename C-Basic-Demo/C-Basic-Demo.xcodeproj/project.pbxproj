@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472380DA1E306AA400F6F2BC /* LinkedArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380D81E306AA400F6F2BC /* LinkedArrayList.c */; };
+		472380DD1E306AB300F6F2BC /* SequenceArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380DB1E306AB300F6F2BC /* SequenceArrayList.c */; };
+		472380E21E306C4C00F6F2BC /* DynamicQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380E01E306C4C00F6F2BC /* DynamicQueue.c */; };
+		472380E51E306C5C00F6F2BC /* DynamicStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380E31E306C5C00F6F2BC /* DynamicStack.c */; };
 		4758AED81E23D37C00FA7884 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AED71E23D37C00FA7884 /* main.c */; };
 		4758AEE51E25C68C00FA7884 /* ArrayStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AEE31E25C68C00FA7884 /* ArrayStack.c */; };
 		4758AEE91E25FC4600FA7884 /* ArrayQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AEE71E25FC4600FA7884 /* ArrayQueue.c */; };
@@ -25,6 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		472380D81E306AA400F6F2BC /* LinkedArrayList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedArrayList.c; sourceTree = "<group>"; };
+		472380D91E306AA400F6F2BC /* LinkedArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedArrayList.h; sourceTree = "<group>"; };
+		472380DB1E306AB300F6F2BC /* SequenceArrayList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SequenceArrayList.c; sourceTree = "<group>"; };
+		472380DC1E306AB300F6F2BC /* SequenceArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceArrayList.h; sourceTree = "<group>"; };
+		472380E01E306C4C00F6F2BC /* DynamicQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DynamicQueue.c; sourceTree = "<group>"; };
+		472380E11E306C4C00F6F2BC /* DynamicQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicQueue.h; sourceTree = "<group>"; };
+		472380E31E306C5C00F6F2BC /* DynamicStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DynamicStack.c; sourceTree = "<group>"; };
+		472380E41E306C5C00F6F2BC /* DynamicStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicStack.h; sourceTree = "<group>"; };
 		4758AED41E23D37C00FA7884 /* C-Basic-Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C-Basic-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4758AED71E23D37C00FA7884 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4758AEE31E25C68C00FA7884 /* ArrayStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayStack.c; sourceTree = "<group>"; };
@@ -44,6 +56,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472380D61E306A7B00F6F2BC /* LinkedArrayList */ = {
+			isa = PBXGroup;
+			children = (
+				472380D91E306AA400F6F2BC /* LinkedArrayList.h */,
+				472380D81E306AA400F6F2BC /* LinkedArrayList.c */,
+			);
+			path = LinkedArrayList;
+			sourceTree = "<group>";
+		};
+		472380D71E306A7B00F6F2BC /* SequenceArrayList */ = {
+			isa = PBXGroup;
+			children = (
+				472380DC1E306AB300F6F2BC /* SequenceArrayList.h */,
+				472380DB1E306AB300F6F2BC /* SequenceArrayList.c */,
+			);
+			path = SequenceArrayList;
+			sourceTree = "<group>";
+		};
+		472380DE1E306C3300F6F2BC /* DynamicQueue */ = {
+			isa = PBXGroup;
+			children = (
+				472380E11E306C4C00F6F2BC /* DynamicQueue.h */,
+				472380E01E306C4C00F6F2BC /* DynamicQueue.c */,
+			);
+			path = DynamicQueue;
+			sourceTree = "<group>";
+		};
+		472380DF1E306C3300F6F2BC /* DynamicStack */ = {
+			isa = PBXGroup;
+			children = (
+				472380E41E306C5C00F6F2BC /* DynamicStack.h */,
+				472380E31E306C5C00F6F2BC /* DynamicStack.c */,
+			);
+			path = DynamicStack;
+			sourceTree = "<group>";
+		};
 		4758AECB1E23D37C00FA7884 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +114,10 @@
 				4758AED71E23D37C00FA7884 /* main.c */,
 				4758AEE61E25FB9C00FA7884 /* ArrayQueue */,
 				4758AEE21E25C64E00FA7884 /* ArrayStack */,
+				472380DE1E306C3300F6F2BC /* DynamicQueue */,
+				472380DF1E306C3300F6F2BC /* DynamicStack */,
+				472380D61E306A7B00F6F2BC /* LinkedArrayList */,
+				472380D71E306A7B00F6F2BC /* SequenceArrayList */,
 			);
 			path = "C-Basic-Demo";
 			sourceTree = "<group>";
@@ -146,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472380DA1E306AA400F6F2BC /* LinkedArrayList.c in Sources */,
 				4758AEE91E25FC4600FA7884 /* ArrayQueue.c in Sources */,
 				4758AEE51E25C68C00FA7884 /* ArrayStack.c in Sources */,
+				472380E21E306C4C00F6F2BC /* DynamicQueue.c in Sources */,
 				4758AED81E23D37C00FA7884 /* main.c in Sources */,
+				472380DD1E306AB300F6F2BC /* SequenceArrayList.c in Sources */,
+				472380E51E306C5C00F6F2BC /* DynamicStack.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +333,7 @@
 				4758AEDD1E23D37C00FA7884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
