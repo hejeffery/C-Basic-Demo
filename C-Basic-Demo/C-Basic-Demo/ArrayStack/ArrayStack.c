@@ -9,33 +9,27 @@
 #include "ArrayStack.h"
 #include <memory.h>
 
-// 创建Stack
 void createStack(Stack *stack) {
     stack->topIndex = -1;
     memset(stack->data, 0, sizeof(int) * StackLength);
 }
 
-// 是否是空栈
 bool isEmptyStack(Stack *stack) {
     return stack->topIndex == -1 ? true : false;
 }
 
-// 是否是满栈
 bool isFullStack(Stack *stack) {
     return stack->topIndex == (StackLength - 1) ? true : false;
 }
 
-// 获取栈顶的Index
 int topIndex(Stack *stack) {
     return stack->topIndex;
 }
 
-// 获取栈顶的值
 int topValue(Stack *stack) {
     return stack->data[stack->topIndex];
 }
 
-// 压栈
 bool push(Stack *stack, int value) {
     // 不是满栈，就push
     if (!isFullStack(stack)) {
@@ -47,7 +41,6 @@ bool push(Stack *stack, int value) {
     return false;
 }
 
-// 出栈
 bool pop(Stack *stack, int *value, int *index) {
     // 不是空栈就pop
     if (!isEmptyStack(stack)) {
@@ -59,7 +52,6 @@ bool pop(Stack *stack, int *value, int *index) {
     return false;
 }
 
-// 显示栈的数据
 void showStackData(Stack *stack) {
     
     // 空栈就不做处理
