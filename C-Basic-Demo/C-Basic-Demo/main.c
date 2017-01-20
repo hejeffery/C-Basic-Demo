@@ -14,6 +14,7 @@
 
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
+#include "SequenceArrayList.h"
 
 // 递归实现斐波拉契数列
 int fibonacciRecursion(int number) {
@@ -730,6 +731,38 @@ int (*returnFuncPoint())(int, int) {
     return sub;
 }
 
+// 数组的顺序存储
+void sequenceArrayListImpl() {
+    ArrayList arrayList;
+    createArrayList(&arrayList, 10);
+    
+    append(&arrayList, 1);
+    append(&arrayList, 2);
+    append(&arrayList, 3);
+    insert(&arrayList, 3, 4);
+    insert(&arrayList, 4, 5);
+    append(&arrayList, 6);
+    append(&arrayList, 7);
+    append(&arrayList, 8);
+    append(&arrayList, 9);
+    append(&arrayList, 10);
+    showArrayList(&arrayList);
+    
+    // 删除数据
+    int deletedValue = 0;
+    deleteValue(&arrayList, 2, &deletedValue);
+    
+    showArrayList(&arrayList);
+    
+    // 获取数据
+    int item = 0;
+    indexOfItem(&arrayList, 3, &item);
+    printf("item = %d\n", item);
+    
+    // 清除数据
+    clearAll(&arrayList);
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -871,6 +904,9 @@ int main(int argc, const char * argv[]) {
 //    // 返回值是函数指针的函数
 //    int funcPointResult = returnFuncPoint()(9, 2);
 //    printf("funcPointResult = %d\n", funcPointResult);
+    
+//    // 数组的顺序存储
+//    sequenceArrayListImpl();
     
     return 0;
 }
