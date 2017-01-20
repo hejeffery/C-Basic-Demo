@@ -80,12 +80,12 @@ int headDynamicElement(DynamicQueue *queue);
 int tailDynamicElement(DynamicQueue *queue);
 
 /**
- *  获取当前队列尾的size
+ *  获取当前队列的size
  *
  *  @param queue DynamicQueue的地址
  *  @return 返回队列当前的size
  */
-int currentSize(DynamicQueue *queue);
+int currentQueueSize(DynamicQueue *queue);
 
 /**
  *  打印队列的数据

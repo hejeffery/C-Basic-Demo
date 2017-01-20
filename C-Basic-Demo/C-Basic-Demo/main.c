@@ -16,6 +16,7 @@
 #include "ArrayQueue.h"
 #include "SequenceArrayList.h"
 #include "DynamicQueue.h"
+#include "DynamicStack.h"
 
 // 递归实现斐波拉契数列
 int fibonacciRecursion(int number) {
@@ -802,6 +803,42 @@ void dynamicQueueImpl() {
     }
 }
 
+// 动态数组栈
+void dynamicStackImpl() {
+    DynamicStack stack;
+    createDynamicStack(&stack, 3);
+    
+    bool isEmpty = isEmptyDynamicStack(&stack);
+    if (isEmpty) {
+        printf("是空栈\n");
+    }
+    
+    pushDynamicStack(&stack, 1);
+    showDynamicStackData(&stack);
+    
+    pushDynamicStack(&stack, 2);
+    showDynamicStackData(&stack);
+    
+    pushDynamicStack(&stack, 3);
+    showDynamicStackData(&stack);
+    
+    pushDynamicStack(&stack, 4);
+    showDynamicStackData(&stack);
+    
+    pushDynamicStack(&stack, 5);
+    showDynamicStackData(&stack);
+    
+    // 出栈
+    while (!isEmptyDynamicStack(&stack)) {
+        int value = 0;
+        int index = 0;
+        popDynamicStack(&stack, &value, &index);
+        printf("出栈的值 value = %d， index = %d\n", value, index);
+        // 显示队列的数据
+        showDynamicStackData(&stack);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -947,8 +984,11 @@ int main(int argc, const char * argv[]) {
 //    // 数组的顺序存储
 //    sequenceArrayListImpl();
     
-    // 动态数组队列
-    dynamicQueueImpl();
+//    // 动态数组队列
+//    dynamicQueueImpl();
+    
+//    // 动态数组栈
+//    dynamicStackImpl();
     
     return 0;
 }

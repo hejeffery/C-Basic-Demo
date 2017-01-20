@@ -74,7 +74,7 @@ int tailDynamicElement(DynamicQueue *queue) {
     return queue->data[queue->tail - 1];
 }
 
-int currentSize(DynamicQueue *queue) {
+int currentQueueSize(DynamicQueue *queue) {
     return queue->currentSize;
 }
 
@@ -87,6 +87,6 @@ void showDynamicQueueData(DynamicQueue *queue) {
     for (int i = 0; i < queue->tail; i++) {
         printf("%d  \n", queue->data[i]);
     }
-    printf("队列当前的size = %d\n", currentSize(queue));
+    printf("队列当前的size = %d\n", currentQueueSize(queue));
     printf("=================队列数据遍历结束==================\n\n");
 }
