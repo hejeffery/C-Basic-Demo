@@ -458,7 +458,7 @@ void reverseArray(int *array, int count) {
 }
 
 // 自己实现strcpy
-char * cstrcpy(char *dest, char *source) {
+char * cstrcpy(char *dest, const char *source) {
     char *result = NULL;
     if (dest == NULL || source == NULL) {
         return result;
