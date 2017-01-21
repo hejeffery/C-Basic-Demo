@@ -24,12 +24,12 @@ bool createDynamicQueue(DynamicQueue *queue, int length) {
 }
 
 bool isEmptyDynamicQueue(DynamicQueue *queue) {
-    return queue->tail == 0 ? true : false;
+    return queue->head == 0 ? true : false;
 }
 
 bool enqueueDynamic(DynamicQueue *queue, int value) {
     // 已经满了，再分配空间
-    if (queue->tail == queue->currentSize - 1) {
+    if (queue->head == queue->currentSize - 1) {
         queue->data = realloc(queue->data, sizeof(int) * queue->baseLength);
         if (queue->data == NULL) {
             printf("入队失败，分配空间失败\n");
@@ -40,11 +40,11 @@ bool enqueueDynamic(DynamicQueue *queue, int value) {
         }
     }
     
-    for (int i = queue->tail; i > 0; i--) {
+    for (int i = queue->head; i > 0; i--) {
         queue->data[i] = queue->data[i - 1];
     }
-    queue->tail++;
-    queue->data[queue->head] = value;
+    queue->head++;
+    queue->data[queue->tail] = value;
     return true;
 }
 
@@ -61,17 +61,17 @@ bool dequeueDynamic(DynamicQueue *queue, int *value) {
         return false;
     }
     
-    *value = queue->data[queue->tail - 1];
-    queue->tail--;
+    *value = queue->data[queue->head - 1];
+    queue->head--;
     return true;
 }
 
 int headDynamicElement(DynamicQueue *queue) {
-    return queue->data[queue->head];
+    return queue->data[queue->head - 1];
 }
 
 int tailDynamicElement(DynamicQueue *queue) {
-    return queue->data[queue->tail - 1];
+    return queue->data[queue->tail];
 }
 
 int currentQueueSize(DynamicQueue *queue) {
@@ -84,7 +84,7 @@ void showDynamicQueueData(DynamicQueue *queue) {
     }
     
     printf("=================队列数据遍历开始==================\n");
-    for (int i = 0; i < queue->tail; i++) {
+    for (int i = 0; i < queue->head; i++) {
         printf("%d  \n", queue->data[i]);
     }
     printf("队列当前的size = %d\n", currentQueueSize(queue));

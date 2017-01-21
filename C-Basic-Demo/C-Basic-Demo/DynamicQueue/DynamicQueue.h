@@ -21,11 +21,18 @@ typedef struct DynamicQueue DynamicQueue;
 ////////////////////////////////////////////////////////////////////////////////////
 
 struct DynamicQueue {
-    int *data;
-    int head;
-    int tail;
-    int currentSize;
-    int baseLength;
+    int *data;// 数组
+    int head;// 队列头
+    int tail;// 队列尾
+    int currentSize;// 当前队列的大小
+    int baseLength;// 每次分配内存的大小
+    //     队列尾 |-----------------------------------------------------| 队列头
+    //       --->|  8  |  7  |  6  |  5  |  4  |  3  |  2  |  1  |     |--->
+    //           |-----------------------------------------------------|
+    //              |                                               |
+    //              |                                               |
+    //            队列尾                                          队列头
+    // 思路：队尾不动，队头移动
 };
 
 /**
