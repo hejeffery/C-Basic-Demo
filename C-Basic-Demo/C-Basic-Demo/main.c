@@ -775,19 +775,20 @@ void dynamicQueueImpl() {
         printf("是空队列\n");
     }
 
-    enqueueDynamic(&queue, 1);
+    DynamicQueue *pQueue = &queue;
+    enqueueDynamic(&pQueue, 1);
     showDynamicQueueData(&queue);
     
-    enqueueDynamic(&queue, 2);
+    enqueueDynamic(&pQueue, 2);
     showDynamicQueueData(&queue);
     
-    enqueueDynamic(&queue, 3);
+    enqueueDynamic(&pQueue, 3);
     showDynamicQueueData(&queue);
     
-    enqueueDynamic(&queue, 4);
+    enqueueDynamic(&pQueue, 4);
     showDynamicQueueData(&queue);
     
-    enqueueDynamic(&queue, 5);
+    enqueueDynamic(&pQueue, 5);
     showDynamicQueueData(&queue);
 
     printf("队头的数据是 = %d\n", headDynamicElement(&queue));
@@ -813,19 +814,20 @@ void dynamicStackImpl() {
         printf("是空栈\n");
     }
     
-    pushDynamicStack(&stack, 1);
+    DynamicStack *pStack = &stack;
+    pushDynamicStack(&pStack, 1);
     showDynamicStackData(&stack);
     
-    pushDynamicStack(&stack, 2);
+    pushDynamicStack(&pStack, 2);
     showDynamicStackData(&stack);
     
-    pushDynamicStack(&stack, 3);
+    pushDynamicStack(&pStack, 3);
     showDynamicStackData(&stack);
     
-    pushDynamicStack(&stack, 4);
+    pushDynamicStack(&pStack, 4);
     showDynamicStackData(&stack);
     
-    pushDynamicStack(&stack, 5);
+    pushDynamicStack(&pStack, 5);
     showDynamicStackData(&stack);
     
     // 出栈
@@ -1006,8 +1008,8 @@ int main(int argc, const char * argv[]) {
 //    // 动态数组队列
 //    dynamicQueueImpl();
     
-//    // 动态数组栈
-//    dynamicStackImpl();
+    // 动态数组栈
+    dynamicStackImpl();
     
 //    // 用动态分配内存打印
 //    dynamicPrintArray();

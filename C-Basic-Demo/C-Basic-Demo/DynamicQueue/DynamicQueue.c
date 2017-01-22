@@ -27,24 +27,24 @@ bool isEmptyDynamicQueue(DynamicQueue *queue) {
     return queue->head == 0 ? true : false;
 }
 
-bool enqueueDynamic(DynamicQueue *queue, int value) {
+bool enqueueDynamic(DynamicQueue **queue, int value) {
     // 已经满了，再分配空间
-    if (queue->head == queue->currentSize - 1) {
-        queue->data = realloc(queue->data, sizeof(int) * queue->baseLength);
-        if (queue->data == NULL) {
+    if ((*queue)->head == (*queue)->currentSize - 1) {
+        (*queue)->data = realloc((*queue)->data, sizeof(int) * (*queue)->baseLength);
+        if ((*queue)->data == NULL) {
             printf("入队失败，分配空间失败\n");
             return false;
 
         } else {
-            queue->currentSize += queue->baseLength;
+            (*queue)->currentSize += (*queue)->baseLength;
         }
     }
     
-    for (int i = queue->head; i > 0; i--) {
-        queue->data[i] = queue->data[i - 1];
+    for (int i = (*queue)->head; i > 0; i--) {
+        (*queue)->data[i] = (*queue)->data[i - 1];
     }
-    queue->head++;
-    queue->data[queue->tail] = value;
+    (*queue)->head++;
+    (*queue)->data[(*queue)->tail] = value;
     return true;
 }
 

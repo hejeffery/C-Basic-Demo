@@ -55,11 +55,11 @@ int currentStackSize(DynamicStack *stack);
 /**
  *  压栈
  *
- *  @param stack DynamicStack的地址
+ *  @param stack DynamicStack地址的地址
  *  @param value DynamicStack的地址
  *  @return 压栈成功返回true，反之返回false
  */
-bool pushDynamicStack(DynamicStack *stack, int value);
+bool pushDynamicStack(DynamicStack **stack, int value);
 
 /**
  *  出栈

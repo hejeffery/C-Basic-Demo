@@ -30,21 +30,21 @@ int currentStackSize(DynamicStack *stack) {
     return stack->currentSize;
 }
 
-bool pushDynamicStack(DynamicStack *stack, int value) {
+bool pushDynamicStack(DynamicStack **stack, int value) {
     // 已经满了，再分配空间
-    if (stack->topIndex == stack->currentSize) {
-        stack->data = (int *)realloc(stack->data, sizeof(int) * stack->baseLength);
-        if (stack->data == NULL) {
+    if ((*stack)->topIndex == (*stack)->currentSize) {
+        (*stack)->data = (int *)realloc((*stack)->data, sizeof(int) * (*stack)->baseLength);
+        if ((*stack)->data == NULL) {
             printf("压栈失败，分配空间失败\n");
             return false;
 
         } else {
-            stack->currentSize += stack->baseLength;
+            (*stack)->currentSize += (*stack)->baseLength;
         }
     }
     
-    stack->topIndex++;
-    stack->data[stack->topIndex] = value;
+    (*stack)->topIndex++;
+    (*stack)->data[(*stack)->topIndex] = value;
     return true;
 }
 

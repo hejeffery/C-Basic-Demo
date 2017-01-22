@@ -55,11 +55,11 @@ bool isEmptyDynamicQueue(DynamicQueue *queue);
 /**
  *  入队
  *
- *  @param queue DynamicQueue的地址
+ *  @param queue DynamicQueue地址的地址
  *  @param value 入队的元素
  *  @return 入队成功返回true，反之返回false
  */
-bool enqueueDynamic(DynamicQueue *queue, int value);
+bool enqueueDynamic(DynamicQueue **queue, int value);
 
 /**
  *  出队
