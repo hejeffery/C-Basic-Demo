@@ -839,6 +839,25 @@ void dynamicStackImpl() {
     }
 }
 
+// 用动态分配内存打印
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
+void dynamicPrintArray() {
+    int count = 5;
+    int **array = (int **)malloc(sizeof(int *) * count);
+    for (int i = 0; i < count; i++) {
+        *(array + i) = malloc(sizeof(int) * (i + 1));
+        for (int j = 0; j <= i; j++) {
+            *(*(array + i) + j) = j + 1;
+            printf("%4d", *(*(array + i) + j));
+        }
+        printf("\n");
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -989,6 +1008,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 动态数组栈
 //    dynamicStackImpl();
+    
+//    // 用动态分配内存打印
+//    dynamicPrintArray();
     
     return 0;
 }
