@@ -87,8 +87,8 @@
 		472380FC1E359D2100F6F2BC /* ArrayQueue */ = {
 			isa = PBXGroup;
 			children = (
-				472380FD1E359D2100F6F2BC /* ArrayQueue.c */,
 				472380FE1E359D2100F6F2BC /* ArrayQueue.h */,
+				472380FD1E359D2100F6F2BC /* ArrayQueue.c */,
 			);
 			path = ArrayQueue;
 			sourceTree = "<group>";
@@ -96,8 +96,8 @@
 		472380FF1E359D2100F6F2BC /* ArrayStack */ = {
 			isa = PBXGroup;
 			children = (
-				472381001E359D2100F6F2BC /* ArrayStack.c */,
 				472381011E359D2100F6F2BC /* ArrayStack.h */,
+				472381001E359D2100F6F2BC /* ArrayStack.c */,
 			);
 			path = ArrayStack;
 			sourceTree = "<group>";
@@ -105,8 +105,8 @@
 		472381021E359D2100F6F2BC /* DynamicQueue */ = {
 			isa = PBXGroup;
 			children = (
-				472381031E359D2100F6F2BC /* DynamicQueue.c */,
 				472381041E359D2100F6F2BC /* DynamicQueue.h */,
+				472381031E359D2100F6F2BC /* DynamicQueue.c */,
 			);
 			path = DynamicQueue;
 			sourceTree = "<group>";
@@ -114,8 +114,8 @@
 		472381051E359D2100F6F2BC /* DynamicStack */ = {
 			isa = PBXGroup;
 			children = (
-				472381061E359D2100F6F2BC /* DynamicStack.c */,
 				472381071E359D2100F6F2BC /* DynamicStack.h */,
+				472381061E359D2100F6F2BC /* DynamicStack.c */,
 			);
 			path = DynamicStack;
 			sourceTree = "<group>";
@@ -123,8 +123,8 @@
 		472381081E359D2100F6F2BC /* LinkedArrayList */ = {
 			isa = PBXGroup;
 			children = (
-				472381091E359D2100F6F2BC /* LinkedArrayList.c */,
 				4723810A1E359D2100F6F2BC /* LinkedArrayList.h */,
+				472381091E359D2100F6F2BC /* LinkedArrayList.c */,
 			);
 			path = LinkedArrayList;
 			sourceTree = "<group>";
@@ -132,8 +132,8 @@
 		4723810B1E359D2100F6F2BC /* SequenceArrayList */ = {
 			isa = PBXGroup;
 			children = (
-				4723810C1E359D2100F6F2BC /* SequenceArrayList.c */,
 				4723810D1E359D2100F6F2BC /* SequenceArrayList.h */,
+				4723810C1E359D2100F6F2BC /* SequenceArrayList.c */,
 			);
 			path = SequenceArrayList;
 			sourceTree = "<group>";
