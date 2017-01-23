@@ -21,9 +21,10 @@ typedef struct ArrayStack Stack;
 //                                 栈，静态数组形式                                  //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
 struct ArrayStack {
-    int data[StackLength];
-    int topIndex;
+    int data[StackLength];// 数组的长度
+    int topIndex;// 栈顶的index，初始值为-1
 };
 
 /**

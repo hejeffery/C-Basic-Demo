@@ -21,10 +21,10 @@ typedef struct DynamicStack DynamicStack;
 ////////////////////////////////////////////////////////////////////////////////////
 
 struct DynamicStack {
-    int *data;
-    int topIndex;
-    int currentSize;
-    int baseLength;
+    int *data;// 数组
+    int topIndex;// 栈顶的index，初始值为-1
+    int currentSize;// 当前栈的大小
+    int baseLength;// 每次分配内存的大小
 };
 
 /**
