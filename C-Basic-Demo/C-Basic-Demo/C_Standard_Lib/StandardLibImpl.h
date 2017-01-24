@@ -17,4 +17,10 @@
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
 
+// strcpy的实现
+char *hjstrcpy(char *dst, const char *src);
+
+// strlen的实现
+unsigned long hjstrlen(const char *src);
+
 #endif /* StandardLibImpl_h */

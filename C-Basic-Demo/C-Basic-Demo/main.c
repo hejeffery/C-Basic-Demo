@@ -13,6 +13,7 @@
 #include <math.h>
 
 #include "Algorithm.h"
+#include "StandardLibImpl.h"
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
 #include "SequenceArrayList.h"
@@ -334,19 +335,6 @@ void reverseArray(int *array, int count) {
         head++;
         tail--;
     }
-}
-
-// 自己实现strcpy
-char * cstrcpy(char *dest, const char *source) {
-    char *result = NULL;
-    if (dest == NULL || source == NULL) {
-        return result;
-    }
-    
-    while ((*dest++ = *source++) != '\0') {
-    }
-    result = dest;
-    return result;
 }
 
 // 递归解决台阶问题
@@ -739,6 +727,19 @@ void dynamicPrintArray() {
     }
 }
 
+// 部分标准库实现测试
+void standardLibImplTest() {
+    // 标准库strcpy的实现
+    char dest[10] = {0};
+    char *sourcestr = "hello c";
+    hjstrcpy(dest, sourcestr);
+    printf("hjstrcpy：dest = %s\n", dest);
+    
+    // 标准库strlen的实现
+    unsigned long strLength = hjstrlen(sourcestr);
+    printf("hjstrlen：length = %lu\n", strLength);
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -839,12 +840,6 @@ int main(int argc, const char * argv[]) {
 //        printf("%d   ", array[i]);
 //    }
     
-//    // 自己实现strcpy
-//    char dest[10] = {0};
-//    char source[10] = "hello c";
-//    cstrcpy(dest, source);
-//    printf("%s\n", dest);
-    
 //    // 递归解决台阶问题
 //    int result = stepProblemByRecursion(20);
 //    printf("result = %d\n", result);
@@ -892,6 +887,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 用动态分配内存打印
 //    dynamicPrintArray();
+    
+//    // 部分标准库实现测试
+//    standardLibImplTest();
     
     return 0;
 }
