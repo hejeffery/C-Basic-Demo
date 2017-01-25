@@ -13,14 +13,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
-//                                 c语言标准库的部分实现                              //
+//           c语言标准库的部分实现，实现的方式全部用指针，不用任何库函数                     //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+// strlen的实现
+unsigned long hjstrlen(const char *src);
 
 // strcpy的实现
 char *hjstrcpy(char *dst, const char *src);
 
-// strlen的实现
-unsigned long hjstrlen(const char *src);
+// strcat的实现
+char *hjstrcat(char *dst, const char *src);
+
+// strncat的实现
+char *hjstrncat(char *dst, const char *src, size_t n);
 
 #endif /* StandardLibImpl_h */

@@ -738,6 +738,19 @@ void standardLibImplTest() {
     // 标准库strlen的实现
     unsigned long strLength = hjstrlen(sourcestr);
     printf("hjstrlen：length = %lu\n", strLength);
+    
+    // 标准库strcat的实现
+    char strcatstr1[20] = "hello";
+    char strcatstr2[10] = " world";
+    char *strcatresult = hjstrcat(strcatstr1, strcatstr2);
+    printf("hjstrcat：strcatresult = %s\n", strcatresult);
+    
+    // 标准库strncat的实现
+    char strncatstr1[20] = "hello";
+    char strncatstr2[10] = " shanghai";
+    char *strncatresult = hjstrncat(strncatstr1, strncatstr2, 10);
+    printf("hjstrncat：strncatresult = %s\n", strncatresult);
+    
 }
 
 int main(int argc, const char * argv[]) {
@@ -888,8 +901,8 @@ int main(int argc, const char * argv[]) {
 //    // 用动态分配内存打印
 //    dynamicPrintArray();
     
-//    // 部分标准库实现测试
-//    standardLibImplTest();
+      // 部分标准库实现测试
+      standardLibImplTest();
     
     return 0;
 }
