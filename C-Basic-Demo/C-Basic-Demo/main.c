@@ -767,6 +767,34 @@ void standardLibImplTest() {
     } else {
         printf("找到了，s = %s\n", strchrresult);
     }
+    
+    // 标准库strcmp的实现
+    char strcmpstr1[10] = "hello2";
+    char strcmpstr2[10] = "hello1123";
+    int isequalcmp = hjstrcmp(strcmpstr1, strcmpstr2);
+    if (isequalcmp == 0) {
+        printf("相等\n");
+
+    } else if (isequalcmp > 0) {
+        printf("不相等：strcmpstr1 > strcmpstr2\n");
+
+    } else {
+        printf("不相等：strcmpstr1 < strcmpstr2\n");
+    }
+    
+    // 标准库strncmp的实现
+    char strncmpstr1[10] = "hello2";
+    char strncmpstr2[10] = "hello1123";
+    int isequalncmp = hjstrncmp(strncmpstr1, strncmpstr2, 5);
+    if (isequalncmp == 0) {
+        printf("相等\n");
+        
+    } else if (isequalncmp > 0) {
+        printf("不相等：strncmpstr1 > strncmpstr2\n");
+        
+    } else {
+        printf("不相等：strncmpstr1 < strncmpstr2\n");
+    }
 }
 
 int main(int argc, const char * argv[]) {

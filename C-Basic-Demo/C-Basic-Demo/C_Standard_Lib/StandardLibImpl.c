@@ -29,6 +29,8 @@ char *hjstrcpy(char *dst, const char *src) {
     }
     while ((*dst++ = *src++) != '\0');
 
+    // 添加'\0'
+    *dst = '\0';
     return dst;
 }
 
@@ -46,14 +48,15 @@ char *hjstrncpy(char *dst, const char *src, size_t n) {
     }
     
     unsigned long num = n > srcLength ? srcLength : n;
-    // 添加'\0'
-    *(dst + num) = '\0';
     while (num > 0) {
         *dst = *src;
         dst++;
         src++;
         num--;
     }
+
+    // 添加'\0'
+    *dst = '\0';
     return dst;
 }
 
@@ -73,6 +76,9 @@ char *hjstrcat(char *dst, const char *src) {
         dst++;
         src++;
     }
+
+    // 添加'\0'
+    *dst = '\0';
     return result;
 }
 
@@ -102,6 +108,9 @@ char *hjstrncat(char *dst, const char *src, size_t n) {
         *dst = *(srcTemp + i);
         dst++;
     }
+
+    // 添加'\0'
+    *dst = '\0';
     return result;
 }
 
@@ -122,6 +131,58 @@ char *hjstrchr(const char *src, int chr) {
     return result;
 }
 
+int hjstrcmp(const char *src1, const char *src2) {
+    
+    if (src1 == NULL || src2 == NULL) {
+        return 1;
+    }
+    
+    unsigned long srcLength1 = hjstrlen(src1);
+    unsigned long srcLength2 = hjstrlen(src2);
+    
+    // 长度取最大
+    unsigned long length = srcLength1 >= srcLength2 ? srcLength1 : srcLength2;
 
+    for (int i = 0; i < length; i++) {
+        if (*(src1 + i) != *(src2 + i)) {
+            if (*(src1 + i) > *(src2 + i)) {
+                return 1;
+
+            } else if (*(src1 + i) < *(src2 + i)) {
+                return -1;
+            }
+        }
+    }
+
+    return 0;
+}
+
+int hjstrncmp(const char *src1, const char *src2, size_t n) {
+    
+    if (src1 == NULL || src2 == NULL) {
+        return 1;
+    }
+    
+    unsigned long srcLength1 = hjstrlen(src1);
+    unsigned long srcLength2 = hjstrlen(src2);
+    
+    // 取最大值
+    unsigned long length = srcLength1 >= srcLength2 ? srcLength1 : srcLength2;
+    // 取最小值
+    unsigned long count = length > n ? n : length;
+    
+    for (int i = 0; i < count; i++) {
+        if (*(src1 + i) != *(src2 + i)) {
+            if (*(src1 + i) > *(src2 + i)) {
+                return 1;
+                
+            } else if (*(src1 + i) < *(src2 + i)) {
+                return -1;
+            }
+        }
+    }
+
+    return 0;
+}
 
 

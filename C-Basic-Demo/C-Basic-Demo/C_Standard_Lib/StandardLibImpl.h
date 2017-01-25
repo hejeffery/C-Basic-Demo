@@ -35,4 +35,10 @@ char *hjstrncat(char *dst, const char *src, size_t n);
 // strchr的实现
 char *hjstrchr(const char *src, int chr);
 
+// strcmp的实现
+int hjstrcmp(const char *src1, const char *src2);
+
+// strncmp的实现
+int hjstrncmp(const char *src1, const char *src2, size_t n);
+
 #endif /* StandardLibImpl_h */
