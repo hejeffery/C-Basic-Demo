@@ -29,4 +29,7 @@ char *hjstrcat(char *dst, const char *src);
 // strncat的实现
 char *hjstrncat(char *dst, const char *src, size_t n);
 
+// strchr的实现
+char *hjstrchr(const char *src, int chr);
+
 #endif /* StandardLibImpl_h */

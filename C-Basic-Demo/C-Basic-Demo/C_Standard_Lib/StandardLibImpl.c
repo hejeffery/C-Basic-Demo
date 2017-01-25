@@ -77,3 +77,23 @@ char *hjstrncat(char *dst, const char *src, size_t n) {
     }
     return result;
 }
+
+char *hjstrchr(const char *src, int chr) {
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    char *result = NULL;
+    while (*src != '\0') {
+        if (*src == chr) {
+            result = src;
+            return result;
+        }
+        src++;
+    }
+    return result;
+}
+
+
+
+

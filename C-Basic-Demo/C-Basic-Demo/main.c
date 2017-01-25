@@ -751,6 +751,15 @@ void standardLibImplTest() {
     char *strncatresult = hjstrncat(strncatstr1, strncatstr2, 10);
     printf("hjstrncat：strncatresult = %s\n", strncatresult);
     
+    // 标准库strchr的实现
+    char strchrstr[10] = "hello";
+    char *strchrresult = hjstrchr(strchrstr, 'e');
+    if (strchrresult == NULL) {
+        printf("没有找到\n");
+
+    } else {
+        printf("找到了，s = %s\n", strchrresult);
+    }
 }
 
 int main(int argc, const char * argv[]) {
