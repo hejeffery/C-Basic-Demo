@@ -32,7 +32,33 @@ char *hjstrcpy(char *dst, const char *src) {
     return dst;
 }
 
+char *hjstrncpy(char *dst, const char *src, size_t n) {
+
+    if (dst == NULL || src == NULL) {
+        return NULL;
+    }
+    
+    char *tempSrc = (char *)src;
+    unsigned long srcLength = 0;
+    while (*tempSrc != '\0') {
+        srcLength++;
+        tempSrc++;
+    }
+    
+    unsigned long num = n > srcLength ? srcLength : n;
+    // 添加'\0'
+    *(dst + num) = '\0';
+    while (num > 0) {
+        *dst = *src;
+        dst++;
+        src++;
+        num--;
+    }
+    return dst;
+}
+
 char *hjstrcat(char *dst, const char *src) {
+
     if (dst == NULL || src == NULL) {
         return NULL;
     }
@@ -51,6 +77,7 @@ char *hjstrcat(char *dst, const char *src) {
 }
 
 char *hjstrncat(char *dst, const char *src, size_t n) {
+
     if (dst == NULL || src == NULL) {
         return NULL;
     }
@@ -79,6 +106,7 @@ char *hjstrncat(char *dst, const char *src, size_t n) {
 }
 
 char *hjstrchr(const char *src, int chr) {
+
     if (src == NULL) {
         return NULL;
     }

@@ -23,6 +23,9 @@ unsigned long hjstrlen(const char *src);
 // strcpy的实现
 char *hjstrcpy(char *dst, const char *src);
 
+// strncpy的实现
+char *hjstrncpy(char *dst, const char *src, size_t n);
+
 // strcat的实现
 char *hjstrcat(char *dst, const char *src);
 

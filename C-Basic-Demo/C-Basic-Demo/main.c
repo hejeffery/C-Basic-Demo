@@ -729,15 +729,22 @@ void dynamicPrintArray() {
 
 // 部分标准库实现测试
 void standardLibImplTest() {
-    // 标准库strcpy的实现
-    char dest[10] = {0};
-    char *sourcestr = "hello c";
-    hjstrcpy(dest, sourcestr);
-    printf("hjstrcpy：dest = %s\n", dest);
-    
     // 标准库strlen的实现
+    char *sourcestr = "hello c";
     unsigned long strLength = hjstrlen(sourcestr);
     printf("hjstrlen：length = %lu\n", strLength);
+
+    // 标准库strcpy的实现
+    char strcpystr1[10] = {0};
+    char *strcpystr2 = "hello c";
+    hjstrcpy(strcpystr1, strcpystr2);
+    printf("hjstrcpy：strcpystr1 = %s\n", strcpystr1);
+
+    // 标准库strncpy的实现
+    char strncpystr1[10] = {0};
+    char *strncpystr2 = "hello c";
+    hjstrncpy(strncpystr1, strncpystr2, 5);
+    printf("hjstrncpy：strncpystr1 = %s\n", strncpystr1);
     
     // 标准库strcat的实现
     char strcatstr1[20] = "hello";
