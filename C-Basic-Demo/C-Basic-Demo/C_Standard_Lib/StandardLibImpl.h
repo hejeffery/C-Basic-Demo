@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
-//           c语言标准库的部分实现，实现的方式全部用指针，不用任何库函数                     //
+//           c语言标准库的部分实现，实现的方式全部用指针，不用任何现有库函数                  //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,5 +40,8 @@ int hjstrcmp(const char *src1, const char *src2);
 
 // strncmp的实现
 int hjstrncmp(const char *src1, const char *src2, size_t n);
+
+// strstr的实现
+char *hjstrstr(const char *bigstr, const char *littlestr);
 
 #endif /* StandardLibImpl_h */

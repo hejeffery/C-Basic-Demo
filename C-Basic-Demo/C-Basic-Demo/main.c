@@ -795,6 +795,16 @@ void standardLibImplTest() {
     } else {
         printf("不相等：strncmpstr1 < strncmpstr2\n");
     }
+    
+    // 标准库strstr的实现
+    char strstrStr1[20] = "hello world";
+    char strstrStr2[20] = "ld";
+    char *strstrResult = hjstrstr(strstrStr1, strstrStr2);
+    if (strstrResult == NULL) {
+        printf("没有搜索到\n");
+    } else {
+        printf("搜索到了，%s\n", strstrResult);
+    }
 }
 
 int main(int argc, const char * argv[]) {

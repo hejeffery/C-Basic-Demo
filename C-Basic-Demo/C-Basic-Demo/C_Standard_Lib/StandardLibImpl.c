@@ -185,4 +185,36 @@ int hjstrncmp(const char *src1, const char *src2, size_t n) {
     return 0;
 }
 
+char *hjstrstr(const char *bigstr, const char *littlestr) {
+    
+    if (bigstr == NULL || littlestr == NULL) {
+        return NULL;
+    }
+    
+    long bigStrLength = (long)hjstrlen(bigstr);
+    long littleStrLength = (long)hjstrlen(littlestr);
+    
+    long deltaLength = bigStrLength - littleStrLength;
+    if (deltaLength > 0) {
+        for (int i = 0; i <= deltaLength; i++) {
+            // 默认相等
+            int isequal = 1;
+            for (int j = 0; j < littleStrLength; j++) {
+                if (*(bigstr + i + j) != *(littlestr + j)) {
+                    isequal = 0;
+                    break;
+                }
+            }
+            
+            if (isequal) {
+                return (char *)littlestr;
+            }
+        }
+    }
+    return NULL;
+}
+
+
+
+
 
