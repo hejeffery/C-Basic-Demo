@@ -14,6 +14,7 @@
 
 #include "Algorithm.h"
 #include "StandardLibImpl.h"
+#include "StringTool.h"
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
 #include "SequenceArrayList.h"
@@ -807,6 +808,22 @@ void standardLibImplTest() {
     }
 }
 
+// StringTool的处理
+void stringToolTest() {
+    
+    // 删除字符串中的某个字符
+    char deleteStringChr[40] = "abccdefgchicjklmnopqrstuvwxyz";
+    printf("deleteStringChr before = %s\n", deleteStringChr);
+    deleteCharInString(deleteStringChr, 'c');
+    printf("deleteStringChr after  = %s\n", deleteStringChr);
+    
+    // 删除字符串中的某个字符串
+    char deleteString[40] = "abcdefghijklmnopqrstuvwxyz";
+    printf("deleteString before = %s\n", deleteString);
+    deleteStrInString(deleteString, "fgh");
+    printf("deleteString after  = %s\n", deleteString);
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -955,8 +972,11 @@ int main(int argc, const char * argv[]) {
 //    // 用动态分配内存打印
 //    dynamicPrintArray();
     
-      // 部分标准库实现测试
-      standardLibImplTest();
+//      // 部分标准库实现测试
+//      standardLibImplTest();
+    
+    // StringTool的处理
+    stringToolTest();
     
     return 0;
 }

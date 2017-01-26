@@ -16,6 +16,7 @@
 		472381171E359DBE00F6F2BC /* Algorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381151E359DBE00F6F2BC /* Algorithm.c */; };
 		4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381181E359E0B00F6F2BC /* StandardLibImpl.c */; };
 		4758AED81E23D37C00FA7884 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AED71E23D37C00FA7884 /* main.c */; };
+		47AD646B1E399378008726BB /* StringTool.c in Sources */ = {isa = PBXBuildFile; fileRef = 47AD64691E399378008726BB /* StringTool.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		472381191E359E0B00F6F2BC /* StandardLibImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardLibImpl.h; sourceTree = "<group>"; };
 		4758AED41E23D37C00FA7884 /* C-Basic-Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C-Basic-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4758AED71E23D37C00FA7884 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		47AD64691E399378008726BB /* StringTool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StringTool.c; sourceTree = "<group>"; };
+		47AD646A1E399378008726BB /* StringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +173,18 @@
 				472380FA1E359D2100F6F2BC /* C_Algorithm */,
 				472380FB1E359D2100F6F2BC /* C_DataStructure */,
 				4723810E1E359D2100F6F2BC /* C_Standard_Lib */,
+				47AD64681E399364008726BB /* C_String_Tool */,
 			);
 			path = "C-Basic-Demo";
+			sourceTree = "<group>";
+		};
+		47AD64681E399364008726BB /* C_String_Tool */ = {
+			isa = PBXGroup;
+			children = (
+				47AD646A1E399378008726BB /* StringTool.h */,
+				47AD64691E399378008726BB /* StringTool.c */,
+			);
+			path = C_String_Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AD646B1E399378008726BB /* StringTool.c in Sources */,
 				472381131E359D2100F6F2BC /* LinkedArrayList.c in Sources */,
 				472381121E359D2100F6F2BC /* DynamicStack.c in Sources */,
 				4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */,
