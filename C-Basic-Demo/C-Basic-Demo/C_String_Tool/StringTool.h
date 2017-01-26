@@ -33,4 +33,12 @@ void deleteCharInString(char *str, char chr);
  */
 void deleteStrInString(char *str, const char *delStr);
 
+/**
+ *  删除字符串中的所有delStr
+ *
+ *  @param str 需要处理的字符串
+ *  @param delStr 需要删除的字符串
+ */
+void deleteAllStrInString(char *str, const char *delStr);
+
 #endif /* StringTool_h */

@@ -822,6 +822,12 @@ void stringToolTest() {
     printf("deleteString before = %s\n", deleteString);
     deleteStrInString(deleteString, "fgh");
     printf("deleteString after  = %s\n", deleteString);
+    
+    // 删除字符串中的所有delStr
+    char deleteAllString[40] = "hj hj hejeffery jeffery hj";
+    printf("deleteAllString before = %s\n", deleteAllString);
+    deleteAllStrInString(deleteAllString, "hj");
+    printf("deleteAllString after  = %s\n", deleteAllString);
 }
 
 int main(int argc, const char * argv[]) {
