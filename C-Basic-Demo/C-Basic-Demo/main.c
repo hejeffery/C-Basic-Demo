@@ -730,6 +730,8 @@ void dynamicPrintArray() {
 
 // 部分标准库实现测试
 void standardLibImplTest() {
+    
+    // string的部分实现
     // 标准库strlen的实现
     char *sourcestr = "hello c";
     unsigned long strLength = hjstrlen(sourcestr);
@@ -805,6 +807,14 @@ void standardLibImplTest() {
         printf("没有搜索到\n");
     } else {
         printf("搜索到了，%s\n", strstrResult);
+    }
+    
+    // mem的部分实现
+    // 标准库memset的实现
+    char memsets[10];
+    hjmemset(memsets, 0, 10);
+    for (int i = 0; i < 10; i++) {
+        printf("memsets[%d] = %c\n", i, memsets[i]);
     }
 }
 
@@ -978,11 +988,11 @@ int main(int argc, const char * argv[]) {
 //    // 用动态分配内存打印
 //    dynamicPrintArray();
     
-//      // 部分标准库实现测试
-//      standardLibImplTest();
+//    // 部分标准库实现测试
+//    standardLibImplTest();
     
-    // StringTool的处理
-    stringToolTest();
+//    // StringTool的处理
+//    stringToolTest();
     
     return 0;
 }

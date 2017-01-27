@@ -214,6 +214,22 @@ char *hjstrstr(const char *bigstr, const char *littlestr) {
     return NULL;
 }
 
+void *hjmemset(void *p, int chr, size_t len) {
+    
+    if (p == NULL) {
+        return NULL;
+    }
+    
+    char *pchr = (char *)p;
+    int i = 0;
+    while (i < len) {
+        *pchr = (char)chr;
+        pchr++;
+        i++;
+    }
+    return p;
+}
+
 
 
 
