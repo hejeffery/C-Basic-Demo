@@ -217,6 +217,7 @@ char *hjstrstr(const char *bigstr, const char *littlestr) {
 }
 
 char *hjstrdup(const char *src) {
+
     if (src == NULL) {
         return NULL;
     }
@@ -227,6 +228,42 @@ char *hjstrdup(const char *src) {
     *pstr = '\0';
 
     return presult;
+}
+
+char *hjstrpbrk(const char *src, const char *charset) {
+    
+    if (src == NULL || charset == NULL) {
+        return NULL;
+    }
+
+    while (*src != '\0') {
+        
+        char *presult = (char *)charset;
+        while (*presult != '\0') {
+            if (*src == *presult) {
+                return presult;
+            }
+            presult++;
+        }
+        src++;
+    }
+    
+    return NULL;
+}
+
+char *hjstrrchr(const char *src, int chr) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    int srcLength = (int)hjstrlen(src);
+    for (int i = srcLength - 1; i >=0 ; i--) {
+        if (*(src + i) == chr) {
+            return (char *)(src + i);
+        }
+    }
+    return NULL;
 }
 
 void *hjmemset(void *p, int chr, size_t len) {

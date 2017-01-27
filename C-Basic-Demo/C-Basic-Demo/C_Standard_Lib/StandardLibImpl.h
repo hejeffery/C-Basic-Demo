@@ -52,6 +52,12 @@ char *hjstrstr(const char *bigstr, const char *littlestr);
 // strdup的实现
 char *hjstrdup(const char *src);
 
+// strpbrk的实现
+char *hjstrpbrk(const char *src, const char *charset);
+
+// strrchr的实现
+char *hjstrrchr(const char *src, int chr);
+
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                   mem的部分实现                                  //

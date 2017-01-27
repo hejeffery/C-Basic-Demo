@@ -406,6 +406,17 @@ void standardLibImplTest() {
     // 要释放strdupResult的内存
     free(strdupResult);
     
+    // 标准库strpbrk的实现
+    char *strpbrkStr1 = "hello chongqing";
+    char *strpbrkStr2 = "chong";
+    char *strpbrkResult = hjstrpbrk(strpbrkStr1, strpbrkStr2);
+    printf("hjstrpbrk：strpbrkResult = %c\n", *strpbrkResult);
+    
+    // 标准库strrchr的实现
+    char *strrchrStr1 = "hello shanghai";
+    char *strrchrResult = hjstrrchr(strrchrStr1, 'h');
+    printf("hjstrrchr：strrchrResultChar = %c, strrchrResult = %s\n", *strrchrResult, strrchrResult);
+
     // mem的部分实现
     // 标准库memset的实现
     char memsets[10];
