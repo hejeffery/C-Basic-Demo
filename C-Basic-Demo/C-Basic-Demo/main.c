@@ -416,6 +416,11 @@ void standardLibImplTest() {
     char *strrchrStr1 = "hello shanghai";
     char *strrchrResult = hjstrrchr(strrchrStr1, 'h');
     printf("hjstrrchr：strrchrResultChar = %c, strrchrResult = %s\n", *strrchrResult, strrchrResult);
+    
+    // 标准库strrev的实现
+    char strrevStr1[20] = "hello shanghai";
+    char *strrevResult = hjstrrev(strrevStr1);
+    printf("hjstrrev：strrevResult = %s\n", strrevResult);
 
     // mem的部分实现
     // 标准库memset的实现

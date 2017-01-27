@@ -266,6 +266,25 @@ char *hjstrrchr(const char *src, int chr) {
     return NULL;
 }
 
+char *hjstrrev(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    char *head = src;
+    char *tail = src + hjstrlen(src) - 1;
+
+    while (head < tail) {
+        *head = *head ^ *tail;
+        *tail = *head ^ *tail;
+        *head = *head ^ *tail;
+        head++;
+        tail--;
+    }
+    return src;
+}
+
 void *hjmemset(void *p, int chr, size_t len) {
     
     if (p == NULL) {
