@@ -8,6 +8,8 @@
 
 #include "StandardLibImpl.h"
 
+#include <stdlib.h>
+
 unsigned long hjstrlen(const char *src) {
     
     if (src == NULL) {
@@ -212,6 +214,19 @@ char *hjstrstr(const char *bigstr, const char *littlestr) {
         }
     }
     return NULL;
+}
+
+char *hjstrdup(const char *src) {
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    char *pstr = (char *)malloc(sizeof(char) * hjstrlen(src) + 1);
+    char *presult = pstr;
+    while ((*pstr++ = *src++) != '\0');
+    *pstr = '\0';
+
+    return presult;
 }
 
 void *hjmemset(void *p, int chr, size_t len) {

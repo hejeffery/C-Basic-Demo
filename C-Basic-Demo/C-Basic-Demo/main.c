@@ -399,6 +399,13 @@ void standardLibImplTest() {
         printf("搜索到了，%s\n", strstrResult);
     }
     
+    // 标准库strdup的实现
+    char *strdupStr = "hello shanghai";
+    char *strdupResult = hjstrdup(strdupStr);
+    printf("hjstrdup：strdupResult = %s\n", strdupResult);
+    // 要释放strdupResult的内存
+    free(strdupResult);
+    
     // mem的部分实现
     // 标准库memset的实现
     char memsets[10];
@@ -578,8 +585,8 @@ int main(int argc, const char * argv[]) {
 //    // 用动态分配内存打印
 //    dynamicPrintArray();
     
-//    // 部分标准库实现测试
-//    standardLibImplTest();
+    // 部分标准库实现测试
+    standardLibImplTest();
     
 //    // StringTool的处理
 //    stringToolTest();

@@ -49,6 +49,9 @@ int hjstrncmp(const char *src1, const char *src2, size_t n);
 // strstr的实现
 char *hjstrstr(const char *bigstr, const char *littlestr);
 
+// strdup的实现
+char *hjstrdup(const char *src);
+
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                   mem的部分实现                                  //
