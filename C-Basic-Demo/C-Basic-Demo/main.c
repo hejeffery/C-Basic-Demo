@@ -21,79 +21,6 @@
 #include "DynamicQueue.h"
 #include "DynamicStack.h"
 
-// 递归实现斐波拉契数列
-int fibonacciRecursion(int number) {
-    if (number == 1 || number == 2) {
-        return 1;
-        
-    } else {
-        // 推理出递归的公式：f(n) = f(n - 1) + f(n - 2) (n >= 2)
-        return fibonacciRecursion(number - 1) + fibonacciRecursion(number - 2);
-    }
-}
-
-// 数组for循环实现斐波拉契数列
-int fibonacciArrayFor(int number) {
-    // 小于等于0就返回0
-    if (number <= 0) {
-        return 0;
-    }
-    
-    int array[number];
-    
-    // for实现
-    for (int i = 0; i < number; i++) {
-        if (i == 0 || i == 1) {
-            array[i] = 1;
-            
-        } else {
-            array[i] = array[i - 1] + array[i - 2];
-        }
-    }
-    return array[number - 1];
-}
-
-// 数组while循环实现斐波拉契数列
-int fibonacciArrayWhile(int number) {
-    // 小于等于0就返回0
-    if (number <= 0) {
-        return 0;
-    }
-    
-    int array[number];
-    
-    // while实现
-    int index = 0;
-    while (index != number) {
-        if (index == 0 || number == 1) {
-            array[index] = 1;
-            
-        } else {
-            array[index] = array[index - 1] + array[index - 2];
-        }
-        index++;
-    }
-    return array[index - 1];
-}
-
-// 递归实现1至100的加法
-int recursionPlus(int number) {
-    if (number < 0) {
-        return 0;
-    }
-    return recursionPlus(number - 1) + number;
-}
-
-// 打印九九乘法表
-void nineMultNine() {
-    for (int i = 1; i < 10; i++) {
-        for (int j = 1; j <= i; j++) {
-            printf("%d*%d = %2d   ", i, j, i * j);
-        }
-        printf("\n");
-    }
-}
-
 // 栈，数组实现
 void stackArrayImpl() {
     Stack stack;
@@ -179,343 +106,6 @@ void queueArrayImpl() {
     }
     
     printf("\n");
-}
-
-// 十进制转二进制
-void decimalToBinary(int number) {
-    if (number == 0) {
-        return;
-
-    } else {
-        
-        decimalToBinary(number / 2);
-        printf("%d", number % 2);
-    }
-}
-
-// 反转数字，如12345转为54321
-int reverseNumber(int number) {
-    int result = 0;
-    
-    // while实现
-    if (number != 0) {
-        while (number) {
-            int temp = number % 10;
-            result = result * 10 + temp;
-            number /= 10;
-        }
-    }
-    
-//    // for实现
-//    if (number != 0) {
-//        for (; number > 0; number /= 10) {
-//            int temp = number % 10;
-//            result = result * 10 + temp;
-//        }
-//    }
-    return result;
-}
-
-// 反转数字的递归实现
-int reverseNumberByRecursion(int number, int *result) {
-    if (number == 0) {
-        return 1;
-
-    } else {
-        *result = *result * 10 + number % 10;
-        return reverseNumberByRecursion(number / 10, result);
-    }
-}
-
-// 计算数字的各个位数相加(递归实现)，比如12345，就是1 + 2 + 3 + 4 + 5 = 15
-int numberToAddByRecursion(int number) {
-    if (number == 0) {
-        return 0;
-        
-    } else {
-        return number % 10 + numberToAddByRecursion(number / 10);
-    }
-}
-
-// 打印杨辉三角
-void yangHuisTriangle() {
-    int array[10][10] = {0};
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            // 第一列或者i == j时，都为1
-            if (i == j || j == 0) {
-                array[i][j] = 1;
-
-            } else {
-                array[i][j] = array[i - 1][j - 1] + array[i - 1][j];
-            }
-        }
-    }
-    
-    int blankNum = 20;
-    for (int i = 0; i < 10; i++) {
-        printf("%*d", blankNum - 2 * i, array[i][0]);
-        for (int j = 1; j <= i; j++) {
-            printf("%4d", array[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-// 判断数组是不是一个递增数组，递归实现
-bool isIncreasingArrayByRecursion(int *array, int count) {
-    if (count == 1) {// 只有一个元素，递增
-        return 1;
-
-    } else if (count == 2) {
-        // 只有两个元素，判断0和1
-        return array[1] >= array[0];
-
-    } else {
-        return isIncreasingArrayByRecursion(array, count - 1) && array[count - 1] >= array[count - 2];
-    }
-}
-
-// 打印环形的数组，类似下面的
-//     1   2   3   4   5   6   7
-//    24  25  26  27  28  29   8
-//    23  40  41  42  43  30   9
-//    22  39  48  49  44  31  10
-//    21  38  47  46  45  32  11
-//    20  37  36  35  34  33  12
-//    19  18  17  16  15  14  13
-#define NUM 7
-void circleArray() {
-    int array[NUM][NUM] = {0};
-    int number = 1;
-    for (int i = 0, j = 0, k = 0; k < ((NUM + 1)) / 2; k++, i = k, j = k) {
-        
-        while (i < NUM - j) {
-            array[i][j] = number++;
-            j++;
-        }
-        
-        j--;
-        i++;
-        while (i < NUM - k) {
-            array[i][j] = number++;
-            i++;
-        }
-
-        i--;
-        j--;
-        while (j >= k) {
-            array[i][j] = number++;
-            j--;
-        }
-
-        j++;
-        i--;
-        while (i > k) {
-            array[i][j] = number++;
-            i--;
-        }
-    }
-    
-    for (int i = 0; i < NUM; i++) {
-        for (int j = 0; j < NUM; j++) {
-            printf("%4d", array[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-// 数组的反转
-void reverseArray(int *array, int count) {
-    int *head = array;
-    int *tail = array + count - 1;
-    while (head < tail) {
-        *head = *head ^ *tail;
-        *tail = *head ^ *tail;
-        *head = *head ^ *tail;
-        head++;
-        tail--;
-    }
-}
-
-// 递归解决台阶问题
-// 台阶问题的描述：楼梯有20阶台阶，上楼可以一步上1阶、2阶或3阶三种走法，计算共有多少种不同的走法
-// 思路：stepNumber = 1，有1中走法；stepNumber = 2，有2中走法(11和2)；stepNumber = 3，有4种走法(111, 12, 12, 3)...
-int stepProblemByRecursion(int stepNumber) {
-    if (stepNumber < 1) {
-        return 0;
-    }
-    
-    if (stepNumber == 1) {
-        return 1;
-
-    } else if (stepNumber == 2) {
-        return 2;
-
-    } else if (stepNumber == 3) {
-        return 4;
-
-    }else {
-        return stepProblemByRecursion(stepNumber - 1) + stepProblemByRecursion(stepNumber - 2) + stepProblemByRecursion(stepNumber - 3);
-    }
-}
-
-// 求数组的交集
-void arrayIntersection() {
-    // 思想：取长度最小的作为外层循环，用外层循环的数逐个和内层循环的数对比，两个数相等就放入新的数组
-    // 交集的数组的最大长度是两个相交数组长度的最小值
-    int array1[10] = {5, 6, 2, 3, 7, 8, 1, 12, 34, 9};
-    int array2[5] = {2, 3, 1, 4, 6};
-    
-    int intersectionArray[5] = {0};
-    
-    int index = 0;
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (array2[i] == array1[j]) {
-                intersectionArray[index] = array2[i];
-                index++;
-                break;
-            }
-        }
-    }
-    
-    for (int i = 0; i < 5; i++) {
-        if (intersectionArray[i] != 0) {
-            printf("%d  ", intersectionArray[i]);
-        }
-    }
-    printf("\n");
-}
-
-// 求数组的并集
-void arrayUnion() {
-    // 交集的数组的最大长度是两个相交数组长度的总和
-    // 把最小数组长度的值赋值给并集的数组
-    int array1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int array2[5] = {5, 6, 8, 9 ,10};
-    int unionArray[15] = {0};
-    
-    for (int i = 0; i < 5; i++) {
-        unionArray[i] = array2[i];
-    }
-    
-    int index = 5;
-    for (int i = 0; i < 10; i++) {
-        bool isEqual = false;
-        for (int j = 0; j < 5; j++) {
-            if (array1[i] == array2[j]) {
-                isEqual = true;
-                break;
-
-            }
-        }
-        if (!isEqual) {
-            unionArray[index++] = array1[i];
-        }
-    }
-    
-    for (int i = 0; i < 15; i++) {
-        if (unionArray[i] != 0) {
-            printf("%d  ", unionArray[i]);
-        }
-    }
-}
-
-// 数组去重
-void duplicateArray(int *array, int count) {
-    int resultArray[15] = {0};
-    int index = 0;
-    // 用指针遍历
-    for (int *p = array; p < array + count; p++) {
-        if (*(p) != *(p + 1)) {
-            resultArray[index] = *p;
-            index++;
-        }
-    }
-    
-    for (int i = 0; i < count; i++) {
-        if (resultArray[i] != 0) {
-            printf("%d  ", resultArray[i]);
-        }
-    }
-    
-    printf("\n");
-}
-
-// 计算数组中数字出现的次数
-void repeatNumberCountInArray(int *array, int count) {
-    
-    struct Repeat {
-        int number;
-        int count;
-    };
-    
-    struct Repeat repeats[15] = {0};
-
-    int index = 0;
-    for (int i = 0; i < count; i++) {
-        repeats[index].number = array[i];
-        int numberCount = 1;
-        for (int j = i; j < count; j++) {
-            if (array[j] == array[j + 1]) {// 相等
-                numberCount++;
-
-            } else {// 不相等
-                i = j;
-                break;
-            }
-        }
-        
-        repeats[index].count = numberCount;
-        index++;
-    }
-    
-    for (int i = 0; i < count; i++) {
-        if (repeats[i].count) {
-            printf("number = %d, count = %d\n", repeats[i].number, repeats[i].count);
-        }
-    }
-}
-
-// 位运算的部分操作
-void bitOperation() {
-    // 100的二进制：0110 0100
-    // 取出100的第k位
-    // 思路：先右移k位，再按位与1。1和任何位相与，不变
-    int a = 100;
-    int aIndex = (a >> 6) & 1;
-    printf("aIndex = %d\n", aIndex);
-    
-    // 100的二进制：0110 0100
-    // 将第k位清零，类似“关灯”
-    // 思路：1移动到第k位，取反，再和数相与。0和任何位相与，为0
-    int b = 100;
-    b = b & ~(1 << 2);
-    printf("b的第2位清零后的值是: %d\n", b);
-    
-    // 100的二进制：0110 0100
-    // 将第k位置1，类似“开灯”
-    // 思路：1移动到第k位，数相或。1和任何位相或，为1
-    int c = 100;
-    c = c | (1 << 3);
-    printf("b的第3位置为1后的值是: %d\n", c);
-    
-    // 100的二进制：0110 0100
-    // 相反数
-    // 思路：取反再加1
-    int d = 100;
-    printf("d的相反数是：%d\n", ~d + 1);
-    
-    // 100的二进制：0110 0100
-    // 判断一个数是基数还是偶数
-    // 思路：看第0位是1还是0，如果是1，是奇数；是0，就是偶数
-    int e = 100;
-    if ((e & 1) == 1) {
-        printf("e = %d, 是基数\n", e);
-    } else {
-        printf("e = %d, 是偶数\n", e);
-    }
 }
 
 // 一些数组容易混淆的知识点
@@ -845,34 +435,34 @@ int main(int argc, const char * argv[]) {
 //    // 递归实现斐波拉契数列
 //    int fibonacciRecursionNum = fibonacciRecursion(7);
 //    printf("fibonacciRecursionNum = %d\n", fibonacciRecursionNum);
-//
+
 //    // 数组for循环实现斐波拉契数列
 //    int fibonacciArrayForNum = fibonacciArrayFor(7);
 //    printf("fibonacciArrayForNum = %d\n", fibonacciArrayForNum);
-//
+
 //    // 数组while循环实现斐波拉契数列
 //    int fibonacciArrayWhileNum = fibonacciArrayFor(7);
 //    printf("fibonacciArrayWhileNum = %d\n", fibonacciArrayWhileNum);
-//
+
 //    // 递归实现1至100的加法
 //    int recursionPlusResult = recursionPlus(100);
 //    printf("recursionPlusResult = %d\n", recursionPlusResult);
-//
+
 //    // 打印九九乘法表
 //    nineMultNine();
-//
+
 //    // 选择排序
 //    int array[10] = {4, 5, 88, 3, 1, 7, 45, 78, 9, 23};
 //    selectionSort(array, 10);
-//
+
 //    // 冒泡排序
 //    int array[10] = {4, 5, 88, 3, 1, 7, 45, 78, 9, 23};
 //    bubbleSort(array, 10);
-//
+
 //    // 插入排序
 //    int array[10] = {4, 5, 88, 3, 1, 7, 45, 78, 9, 23};
 //    insertSort(array, 10);
-//
+
 //    // 二分查找
 //    int array[10] = {1, 3, 4, 6, 7, 9, 13, 15, 33, 64};
 //    int index = binarySearch(array, 10, 13);
@@ -881,7 +471,7 @@ int main(int argc, const char * argv[]) {
 //    } else {
 //        printf("找到了，位置是 index = %d\n", index);
 //    }
-//
+
 //    // 拉格朗日查找(二分查找的通用模式)
 //    int array[10] = {1, 3, 4, 6, 7, 9, 13, 15, 33, 64};
 //    int index = lagrangeSearch(array, 10, 13);
