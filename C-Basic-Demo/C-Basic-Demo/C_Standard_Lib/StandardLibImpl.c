@@ -256,11 +256,11 @@ char *hjstrrchr(const char *src, int chr) {
     if (src == NULL) {
         return NULL;
     }
-    
-    int srcLength = (int)hjstrlen(src);
-    for (int i = srcLength - 1; i >=0 ; i--) {
-        if (*(src + i) == chr) {
-            return (char *)(src + i);
+
+    for (const char *p = src + hjstrlen(src); p >= src; p--) {
+        if (*p == chr) {
+            return (char *)p;
+            break;
         }
     }
     return NULL;
