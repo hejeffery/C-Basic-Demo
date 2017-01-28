@@ -61,6 +61,12 @@ char *hjstrrchr(const char *src, int chr);
 // strrev的实现
 char *hjstrrev(char *src);
 
+// strlwr的实现
+char *hjstrlwr(char *src);
+
+// strupr的实现
+char *hjstrupr(char *src);
+
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                   mem的部分实现                                  //

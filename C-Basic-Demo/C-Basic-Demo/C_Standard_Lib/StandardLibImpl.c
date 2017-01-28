@@ -285,6 +285,41 @@ char *hjstrrev(char *src) {
     return src;
 }
 
+char *hjstrlwr(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    while (*src != '\0') {
+        
+        printf("*src = %c\n", *src);
+        if (*src >= 'A' && *src <= 'Z') {
+            *src += 32;
+        }
+        src++;
+    }
+    
+    return src;
+}
+
+char *hjstrupr(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    while (*src != '\0') {
+        
+        if (*src >= 'a' && *src <= 'z') {
+            *src -= 32;
+        }
+        src++;
+    }
+    
+    return src;
+}
+
 void *hjmemset(void *p, int chr, size_t len) {
     
     if (p == NULL) {
