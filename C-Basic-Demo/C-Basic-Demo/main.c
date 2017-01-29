@@ -617,9 +617,16 @@ int main(int argc, const char * argv[]) {
 //    // StringTool的处理
 //    stringToolTest();
     
+    // 简单的压缩字符串(不考虑内存，考虑时间，不能处理超过10个的)
     char *simpleZipStr = "hjjjjjjjjjsssshhhhh";
-    char *simpleZipResult = simpleZipString(simpleZipStr);
-    printf("simpleZipString：%s\n", simpleZipResult);
+    printf("被压缩的字符串---simpleZipStr：%s\n", simpleZipStr);
+    char *simpleZipResult = simpleZipStringTime(simpleZipStr);
+    printf("压缩后的字符串---simpleZipString：%s\n", simpleZipResult);
+    // 简单的解压字符串(不考虑内存，考虑时间，不能处理超过10个的)
+    char *simpleUnzipResult = simpleUnzipStringTime(simpleZipResult);
+    printf("解压后的字符串---simpleUnzipResult：%s\n", simpleUnzipResult);
+    free(simpleZipResult);
+    free(simpleUnzipResult);
     
     return 0;
 }

@@ -511,7 +511,7 @@ void bitOperation() {
     }
 }
 
-char *simpleZipString(char *src) {
+char *simpleZipStringTime(char *src) {
     
     if (src == NULL) {
         return NULL;
@@ -552,6 +552,7 @@ char *simpleZipString(char *src) {
         }
     }
     
+    // 压缩内存
     srcLength = strlen(presult) + 1;
     presult = (char *)realloc(presult, sizeof(char) * srcLength);
 
@@ -559,6 +560,43 @@ char *simpleZipString(char *src) {
         return NULL;
     }
 
+    return presult;
+}
+
+char *simpleUnzipStringTime(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    char *presult = (char *)calloc(1024, sizeof(char));
+    char *pstr = presult;// 记录presult的首地址
+    
+    while (*src != '\0') {
+        
+        char *ptemp = src;
+        
+        if (*ptemp >= '0' && *ptemp <= '9') {
+            int length = *ptemp - '0';
+            for (int i = 0; i < length; i++) {
+                *pstr = *(ptemp + 1);
+                pstr++;
+            }
+            src += 2;
+            
+        } else {
+            *pstr = *ptemp;
+            pstr++;
+            src++;
+        }
+    }
+    
+    // 压缩内存
+    unsigned long resultStrLength = strlen(presult) + 1;
+    presult = (char *)realloc(presult, sizeof(char) * resultStrLength);
+    if (presult == NULL) {
+        return NULL;
+    }
     return presult;
 }
 

@@ -209,10 +209,17 @@ void repeatNumberCountInArray(int *array, int count);
 void bitOperation();
 
 /**
- *  简单的压缩字符串(不能处理超过10个的)。比如hhhhhjjjjjjssh-->5h6j2sh
+ *  简单的压缩字符串(不考虑内存，考虑时间，不能处理超过10个的)。比如hhhhhjjjjjjssh-->5h6j2sh
  *
  *  @param src 需要压缩的字符串
  */
-char *simpleZipString(char *src);
+char *simpleZipStringTime(char *src);
+
+/**
+ *  简单的解压字符串(不考虑内存，考虑时间，不能处理超过10个的)。比如5h6j2sh-->hhhhhjjjjjjssh
+ *
+ *  @param src 需要解压的字符串
+ */
+char *simpleUnzipStringTime(char *src);
 
 #endif /* Algorithm_h */
