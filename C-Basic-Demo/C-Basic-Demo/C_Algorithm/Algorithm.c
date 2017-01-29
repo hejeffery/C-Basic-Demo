@@ -9,6 +9,8 @@
 #include "Algorithm.h"
 
 #include <stdlib.h>
+#include <memory.h>
+#include <string.h>
 #include <time.h>
 
 void selectionSort(int *array, int count) {
@@ -508,3 +510,58 @@ void bitOperation() {
         printf("e = %d, 是偶数\n", e);
     }
 }
+
+char *simpleZipString(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+
+    unsigned long srcLength = strlen(src);
+    char *presult = (char *)calloc(srcLength + 1, sizeof(char));
+    
+    if (presult == NULL) {
+        return NULL;
+    }
+    
+    char *pstr = presult;// 记录presult的首地址
+    
+    while (*src != '\0') {
+        char *srctemp = src;
+        
+        // 先计算出字符出现的次数
+        unsigned long count = 1;
+        while (*srctemp == *(srctemp + 1)) {
+            count++;
+            srctemp++;
+        }
+        
+        // 如果字符只出现过1次
+        if (count == 1) {
+            *pstr = *srctemp;// 处理字符位
+
+            pstr++;// 往前移1位
+            src++;
+
+        } else {// 出现的次数超过1次
+            *pstr = count + '0';// 处理数字位
+            *(pstr + 1) = *src;// 处理字符位
+
+            pstr += 2;// 往前移2位
+            src += count;
+        }
+    }
+    
+    srcLength = strlen(presult) + 1;
+    presult = (char *)realloc(presult, sizeof(char) * srcLength);
+
+    if (presult == NULL) {
+        return NULL;
+    }
+
+    return presult;
+}
+
+
+
+

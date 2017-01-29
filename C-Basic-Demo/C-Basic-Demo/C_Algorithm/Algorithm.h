@@ -208,4 +208,11 @@ void repeatNumberCountInArray(int *array, int count);
  */
 void bitOperation();
 
+/**
+ *  简单的压缩字符串(不能处理超过10个的)。比如hhhhhjjjjjjssh-->5h6j2sh
+ *
+ *  @param src 需要压缩的字符串
+ */
+char *simpleZipString(char *src);
+
 #endif /* Algorithm_h */

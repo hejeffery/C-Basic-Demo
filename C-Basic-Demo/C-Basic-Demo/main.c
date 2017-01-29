@@ -617,5 +617,9 @@ int main(int argc, const char * argv[]) {
 //    // StringTool的处理
 //    stringToolTest();
     
+    char *simpleZipStr = "hjjjjjjjjjsssshhhhh";
+    char *simpleZipResult = simpleZipString(simpleZipStr);
+    printf("simpleZipString：%s\n", simpleZipResult);
+    
     return 0;
 }
