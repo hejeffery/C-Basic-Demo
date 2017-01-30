@@ -17,6 +17,7 @@ void deleteCharInString(char *str, char chr) {
         return;
     }
     
+    // 双指针删除某个字符
     char *pstr1 = str;
     char *pstr2 = str;
     

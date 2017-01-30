@@ -600,6 +600,78 @@ char *simpleUnzipStringTime(char *src) {
     return presult;
 }
 
+char *simpleZipStringSpace(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    // 使用双指针处理
+    char *psrc1 = src;
+    char *psrc2 = src;
+    
+    while ((*psrc1 = *psrc2) != '\0') {
+
+        int length = 1;
+        char *psrc3 = psrc2 + 1;// 往后移一位
+        while (*psrc2 == *psrc3) {
+            psrc3++;
+            length++;
+        }
+        
+        if (length == 1) {
+            psrc1++;
+            psrc2++;
+
+        } else {
+            *(psrc3 - 2) = length + '0';
+            psrc2 += length - 2;
+        }
+    }
+    
+    return src;
+}
+
+char *simpleUnzipStringSpace(char *src) {
+    
+    if (src == NULL) {
+        return NULL;
+    }
+    
+    // 使用双指针处理
+    char *psrc1 = src;
+    char *psrc2 = src;
+    
+    while ((*psrc1 = *psrc2) != '\0') {
+        
+        int length = 0;
+        if (*psrc2 >= '0' && *psrc2 <= '9') {
+            length = *psrc2 - '0';
+        }
+        
+        char chr = *(psrc2 + 1);
+        
+        if (length == 0) {
+            psrc1++;
+            psrc2++;
+
+        } else {
+
+            // 往后移动
+            for (char *p = psrc2 + strlen(psrc2); p >= psrc2; p--) {
+                *(p + length - 2) = *p;
+            }
+            
+            // 插入
+            for (int i = 0; i < length; i++) {
+                *(psrc2 + i) = chr;
+            }
+        }
+        
+    }
+
+    return src;
+}
 
 
 

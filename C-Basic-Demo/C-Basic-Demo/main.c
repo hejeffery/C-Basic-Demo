@@ -463,6 +463,32 @@ void stringToolTest() {
     printf("deleteAllString after  = %s\n", deleteAllString);
 }
 
+// 简单的压缩/解压字符串(不考虑内存，考虑时间，不能处理超过10个)
+void simpleZipStrTime() {
+    // 简单的压缩字符串(不考虑内存，考虑时间，不能处理超过10个)
+    char *simpleZipStr = "hjjjjjjjjjsssshhhhh";
+    printf("被压缩的字符串---simpleZipStr：%s\n", simpleZipStr);
+    char *simpleZipResult = simpleZipStringTime(simpleZipStr);
+    printf("压缩后的字符串---simpleZipString：%s\n", simpleZipResult);
+    // 简单的解压字符串(不考虑内存，考虑时间，不能处理超过10个)
+    char *simpleUnzipResult = simpleUnzipStringTime(simpleZipResult);
+    printf("解压后的字符串---simpleUnzipResult：%s\n", simpleUnzipResult);
+    free(simpleZipResult);
+    free(simpleUnzipResult);
+}
+
+// 简单的压缩/解压字符串(不考虑时间，考虑空间，不能处理超过10个)
+void simpleZipStrSpace() {
+    // 简单的压缩字符串(不考虑时间，考虑内存，不能处理超过10个)
+    char simpleZipStr[1024] = "hjjjjjjjjjsssshhhhh";
+    printf("被压缩的字符串---simpleZipStr：%s\n", simpleZipStr);
+    char *simpleZipResult = simpleZipStringSpace(simpleZipStr);
+    printf("压缩后的字符串---simpleZipString：%s\n", simpleZipResult);
+    // 简单的解压字符串(不考虑时间，考虑内存，不能处理超过10个)
+    char *simpleUnzipResult = simpleUnzipStringSpace(simpleZipResult);
+    printf("解压后的字符串---simpleUnzipResult：%s\n", simpleUnzipResult);
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -617,16 +643,11 @@ int main(int argc, const char * argv[]) {
 //    // StringTool的处理
 //    stringToolTest();
     
-    // 简单的压缩字符串(不考虑内存，考虑时间，不能处理超过10个的)
-    char *simpleZipStr = "hjjjjjjjjjsssshhhhh";
-    printf("被压缩的字符串---simpleZipStr：%s\n", simpleZipStr);
-    char *simpleZipResult = simpleZipStringTime(simpleZipStr);
-    printf("压缩后的字符串---simpleZipString：%s\n", simpleZipResult);
-    // 简单的解压字符串(不考虑内存，考虑时间，不能处理超过10个的)
-    char *simpleUnzipResult = simpleUnzipStringTime(simpleZipResult);
-    printf("解压后的字符串---simpleUnzipResult：%s\n", simpleUnzipResult);
-    free(simpleZipResult);
-    free(simpleUnzipResult);
+//    // 简单的压缩/解压字符串(不考虑内存，考虑时间，不能处理超过10个)
+//    simpleZipStrTime();
     
+    // 简单的压缩/解压字符串(不考虑时间，考虑内存，不能处理超过10个)
+    simpleZipStrSpace();
+
     return 0;
 }
