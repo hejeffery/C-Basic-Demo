@@ -17,6 +17,7 @@
 		4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381181E359E0B00F6F2BC /* StandardLibImpl.c */; };
 		4758AED81E23D37C00FA7884 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AED71E23D37C00FA7884 /* main.c */; };
 		47AD646B1E399378008726BB /* StringTool.c in Sources */ = {isa = PBXBuildFile; fileRef = 47AD64691E399378008726BB /* StringTool.c */; };
+		47C879811E404A9700C868FB /* CBasic.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C8797F1E404A9700C868FB /* CBasic.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		4758AED71E23D37C00FA7884 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		47AD64691E399378008726BB /* StringTool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StringTool.c; sourceTree = "<group>"; };
 		47AD646A1E399378008726BB /* StringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTool.h; sourceTree = "<group>"; };
+		47C8797F1E404A9700C868FB /* CBasic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CBasic.c; sourceTree = "<group>"; };
+		47C879801E404A9700C868FB /* CBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBasic.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,7 @@
 			children = (
 				4758AED71E23D37C00FA7884 /* main.c */,
 				472380FA1E359D2100F6F2BC /* C_Algorithm */,
+				47C8797E1E404A8300C868FB /* C_Basic */,
 				472380FB1E359D2100F6F2BC /* C_DataStructure */,
 				4723810E1E359D2100F6F2BC /* C_Standard_Lib */,
 				47AD64681E399364008726BB /* C_String_Tool */,
@@ -185,6 +189,15 @@
 				47AD64691E399378008726BB /* StringTool.c */,
 			);
 			path = C_String_Tool;
+			sourceTree = "<group>";
+		};
+		47C8797E1E404A8300C868FB /* C_Basic */ = {
+			isa = PBXGroup;
+			children = (
+				47C879801E404A9700C868FB /* CBasic.h */,
+				47C8797F1E404A9700C868FB /* CBasic.c */,
+			);
+			path = C_Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 				472381101E359D2100F6F2BC /* ArrayStack.c in Sources */,
 				472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */,
 				4758AED81E23D37C00FA7884 /* main.c in Sources */,
+				47C879811E404A9700C868FB /* CBasic.c in Sources */,
 				4723810F1E359D2100F6F2BC /* ArrayQueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
