@@ -342,7 +342,7 @@ void *hjmemcpy(void *dst, const void *src, size_t len) {
         return NULL;
     }
     
-    // 按照字节来进行拷贝
+    // 按照字节逐个拷贝
     int i = 0;
     char *pvoid = (char *)dst;
     char *psrc = (char *)src;
@@ -356,6 +356,20 @@ void *hjmemcpy(void *dst, const void *src, size_t len) {
     return dst;
 }
 
+void *hjmemmove(void *dst, const void *src, size_t len) {
+    
+    if (dst == NULL || src == NULL) {
+        return NULL;
+    }
+    
+    // 整体拷贝
+    void *psrc = (void *)malloc(len);
+    hjmemcpy(psrc, src, len);// 整体拷贝到临时内存
+    hjmemcpy(dst, psrc, len);// 临时内存拷贝到dst
+    free(psrc);
+    
+    return dst;
+}
 
 
 

@@ -76,7 +76,10 @@ char *hjstrupr(char *src);
 // memset的实现
 void *hjmemset(void *dst, int chr, size_t len);
 
-// memcpy的实现
+// memcpy的实现(不重合)
 void *hjmemcpy(void *dst, const void *src, size_t len);
+
+// memmove的实现(重合)
+void *hjmemmove(void *dst, const void *src, size_t len);
 
 #endif /* StandardLibImpl_h */

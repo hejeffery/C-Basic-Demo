@@ -368,6 +368,14 @@ void standardLibImplTest() {
         printf("memcpy：memcpyInts[%d] = %d\n", i, memcpyInts[i]);
     }
     
+    // 标准库memmove的实现
+    int memmoves[5] = {1, 2, 3, 4, 5};
+    int *memmoveInts = (int *)malloc(sizeof(int) * 5);
+    hjmemmove(memmoveInts, memmoves, sizeof(int) * 5);
+    for (int i = 0; i < 5; i++) {
+        printf("memmove：memmoveInts[%d] = %d\n", i, memmoveInts[i]);
+    }
+    
 }
 
 // StringTool的处理
