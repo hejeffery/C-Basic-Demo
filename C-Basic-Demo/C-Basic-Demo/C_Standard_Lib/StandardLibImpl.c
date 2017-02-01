@@ -320,20 +320,40 @@ char *hjstrupr(char *src) {
     return src;
 }
 
-void *hjmemset(void *p, int chr, size_t len) {
+void *hjmemset(void *dst, int chr, size_t len) {
     
-    if (p == NULL) {
+    if (dst == NULL) {
         return NULL;
     }
     
-    char *pchr = (char *)p;
+    char *pchr = (char *)dst;
     int i = 0;
     while (i < len) {
         *pchr = (char)chr;
         pchr++;
         i++;
     }
-    return p;
+    return dst;
+}
+
+void *hjmemcpy(void *dst, const void *src, size_t len) {
+    
+    if (dst == NULL || src == NULL) {
+        return NULL;
+    }
+    
+    // 按照字节来进行拷贝
+    int i = 0;
+    char *pvoid = (char *)dst;
+    char *psrc = (char *)src;
+    
+    while (i < len) {
+        *pvoid = *psrc;
+        pvoid++;
+        psrc++;
+        i++;
+    }
+    return dst;
 }
 
 

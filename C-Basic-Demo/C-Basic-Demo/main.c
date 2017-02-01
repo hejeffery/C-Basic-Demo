@@ -359,6 +359,15 @@ void standardLibImplTest() {
     for (int i = 0; i < 10; i++) {
         printf("memsets[%d] = %c\n", i, memsets[i]);
     }
+    
+    // 标准库memcpy的实现
+    int memcpys[5] = {1, 2, 3, 4, 5};
+    int *memcpyInts = (int *)malloc(sizeof(int) * 5);
+    hjmemcpy(memcpyInts, memcpys, sizeof(int) * 5);
+    for (int i = 0; i < 5; i++) {
+        printf("memcpy：memcpyInts[%d] = %d\n", i, memcpyInts[i]);
+    }
+    
 }
 
 // StringTool的处理
