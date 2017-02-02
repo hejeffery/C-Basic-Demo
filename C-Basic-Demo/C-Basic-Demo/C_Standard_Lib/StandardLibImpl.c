@@ -371,6 +371,35 @@ void *hjmemmove(void *dst, const void *src, size_t len) {
     return dst;
 }
 
+int hjmemcmp(const void *src1, const void *src2, size_t len) {
+    
+    if (src1 == NULL || src2 == NULL || len == 0) {
+        return 0;
+    }
+    
+    char *psrc1 = (char *)src1;
+    char *psrc2 = (char *)src2;
+    
+    int i = 0;
+    while ((*psrc1 == *psrc2) && i < len) {
+        psrc1++;
+        psrc2++;
+        i++;
+    }
+    
+    if (i == len) {
+        return 0;
+
+    } else {
+        if (*psrc1 > *psrc2) {
+            return 1;
+
+        } else {
+            return -1;
+        }
+    }
+}
+
 
 
 
