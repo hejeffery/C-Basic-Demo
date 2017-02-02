@@ -400,6 +400,28 @@ int hjmemcmp(const void *src1, const void *src2, size_t len) {
     }
 }
 
+void *hjmemchr(const void *dst, int chr, size_t len) {
+    
+    if (dst == NULL) {
+        return NULL;
+    }
+    
+    char *pdst = (char *)dst;
+    
+    int i = 0;
+    while (*pdst != chr && i < len) {
+        i++;
+        pdst++;
+    }
+    
+    if (*pdst == chr) {
+        return pdst;
+
+    } else {
+        return NULL;
+    }
+}
+
 
 
 

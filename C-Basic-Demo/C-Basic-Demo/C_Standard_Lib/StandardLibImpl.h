@@ -85,4 +85,7 @@ void *hjmemmove(void *dst, const void *src, size_t len);
 // memcmp的实现
 int hjmemcmp(const void *src1, const void *src2, size_t len);
 
+// memchr的实现
+void *hjmemchr(const void *dst, int chr, size_t len);
+
 #endif /* StandardLibImpl_h */
