@@ -29,8 +29,6 @@ void someArrayConfusion();
  */
 void twoDimensionalArray();
 
-
-
 /**
  *  用动态分配内存打印
  *  1
