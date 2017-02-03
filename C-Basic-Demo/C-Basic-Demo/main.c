@@ -367,7 +367,14 @@ void standardLibImplTest() {
     for (int i = 0; i < 5; i++) {
         printf("memcpy：memcpyInts[%d] = %d\n", i, memcpyInts[i]);
     }
+    free(memcpyInts);
     
+    // 标准库memccpy的实现
+    char memccpys1[100] = "hejeffery shanghai chongqing";
+    char memccpys2[100] = {0};
+    hjmemccpy(memccpys2, memccpys1, 'f', 30);
+    printf("memccpy：memccpys2 = %s\n", memccpys2);
+
     // 标准库memmove的实现
     int memmoves[5] = {1, 2, 3, 4, 5};
     int *memmoveInts = (int *)malloc(sizeof(int) * 5);
@@ -376,6 +383,20 @@ void standardLibImplTest() {
         printf("memmove：memmoveInts[%d] = %d\n", i, memmoveInts[i]);
     }
     
+    // 标准库memcmp的实现
+    char memcmps1[5] = "abcde";
+    char memcmps2[5] = "abcdE";
+    int memcmpResult = hjmemcmp(memcmps1, memcmps2, 5);
+    printf("memcmp：memcmpResult = %d\n", memcmpResult);
+    
+    // 标准库memchr的实现
+    char *memchrs = "abcdefg";
+    char *memchrResult = hjmemchr(memchrs, 'g', hjstrlen(memchrs) + 1);
+    if (memchrResult == NULL) {
+        printf("memchr：没有找到\n");
+    } else {
+        printf("memchr：找到了，memchrResult = %c\n", *memchrResult);
+    }
 }
 
 // StringTool的处理

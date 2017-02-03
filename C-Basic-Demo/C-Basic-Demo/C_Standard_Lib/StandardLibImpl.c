@@ -292,8 +292,6 @@ char *hjstrlwr(char *src) {
     }
     
     while (*src != '\0') {
-        
-        printf("*src = %c\n", *src);
         if (*src >= 'A' && *src <= 'Z') {
             *src += 32;
         }
@@ -344,15 +342,36 @@ void *hjmemcpy(void *dst, const void *src, size_t len) {
     
     // 按照字节逐个拷贝
     int i = 0;
-    char *pvoid = (char *)dst;
+    char *pdst = (char *)dst;
     char *psrc = (char *)src;
     
     while (i < len) {
-        *pvoid = *psrc;
-        pvoid++;
+        *pdst = *psrc;
+        pdst++;
         psrc++;
         i++;
     }
+    return dst;
+}
+
+void *hjmemccpy(void *dst, const void *src, int chr, size_t len) {
+    
+    if (dst == NULL || src == NULL || len == 0) {
+        return NULL;
+    }
+    
+    int i = 0;
+    
+    char *pdst = (char *)dst;
+    char *psrc = (char *)src;
+    
+    while (*psrc != chr && i < len) {
+        *pdst = *psrc;
+        pdst++;
+        psrc++;
+        i++;
+    }
+    
     return dst;
 }
 
