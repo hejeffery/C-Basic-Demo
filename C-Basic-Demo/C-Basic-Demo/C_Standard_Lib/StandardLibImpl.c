@@ -291,11 +291,12 @@ char *hjstrlwr(char *src) {
         return NULL;
     }
     
-    while (*src != '\0') {
-        if (*src >= 'A' && *src <= 'Z') {
-            *src += 32;
+    char *psrc = src;
+    while (*psrc != '\0') {
+        if (*psrc >= 'A' && *psrc <= 'Z') {
+            *psrc += 32;
         }
-        src++;
+        psrc++;
     }
     
     return src;
@@ -307,12 +308,13 @@ char *hjstrupr(char *src) {
         return NULL;
     }
     
-    while (*src != '\0') {
+    char *psrc = src;
+    while (*psrc != '\0') {
         
-        if (*src >= 'a' && *src <= 'z') {
-            *src -= 32;
+        if (*psrc >= 'a' && *psrc <= 'z') {
+            *psrc -= 32;
         }
-        src++;
+        psrc++;
     }
     
     return src;
