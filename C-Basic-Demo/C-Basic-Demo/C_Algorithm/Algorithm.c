@@ -673,5 +673,33 @@ char *simpleUnzipStringSpace(char *src) {
     return src;
 }
 
+void structBit(int num) {
+    
+    // 思路：一个字节一个字节的对int进行处理，结果需要逆序输出，因为低字节在低位
+    struct Byte {
+        unsigned char bit1 : 1;
+        unsigned char bit2 : 1;
+        unsigned char bit3 : 1;
+        unsigned char bit4 : 1;
+        unsigned char bit5 : 1;
+        unsigned char bit6 : 1;
+        unsigned char bit7 : 1;
+        unsigned char bit8 : 1;
+    };
+    
+    unsigned long length = sizeof(num);
+    struct Byte *byte = &num;
+    while (length--) {
+        printf("%d%d%d%d %d%d%d%d ", (byte + length)->bit8,
+                                     (byte + length)->bit7,
+                                     (byte + length)->bit6,
+                                     (byte + length)->bit5,
+                                     (byte + length)->bit4,
+                                     (byte + length)->bit3,
+                                     (byte + length)->bit2,
+                                     (byte + length)->bit1);
+    }
+    printf("\n");
+}
 
 

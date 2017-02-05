@@ -606,6 +606,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 简单的压缩/解压字符串(不考虑时间，考虑内存，不能处理超过10个)
 //    simpleZipStrSpace();
+    
+//    // 通过位域把数字转换为二进制
+//    structBit(1);
 
     return 0;
 }

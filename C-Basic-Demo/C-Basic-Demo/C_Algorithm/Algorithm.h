@@ -236,4 +236,11 @@ char *simpleZipStringSpace(char *src);
  */
 char *simpleUnzipStringSpace(char *src);
 
+/**
+ * 通过位域把数字转换为二进制
+ *
+ * @param num 需要转换的数字
+ */
+void structBit(int num);
+
 #endif /* Algorithm_h */
