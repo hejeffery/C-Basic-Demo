@@ -76,6 +76,8 @@ void practiceOne() {
  
         sscanf(pstrcpy, "%lld", &((qqinfos.infos + i)->qqnumber));// 把字符串扫描到qqnumber中
         sprintf((qqinfos.infos + i)->password, "%s", ptemp + 1);
+
+        free(pstrcpy);
     }
     
     // 打印
