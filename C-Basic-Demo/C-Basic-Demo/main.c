@@ -163,10 +163,17 @@ void sequenceArrayListImpl() {
     clearAll(&arrayList);
     
     // 使用createArrayListWithData创建
+    printf("\n-----使用createArrayListWithData创建-----\n");
     ArrayList arrayList1;
     createArrayListWithData(&arrayList1, 10, 10);
-    
     showArrayList(&arrayList1);
+    
+    // 使用createArrayListWithArray创建
+    printf("\n-----使用createArrayListWithArray创建-----\n");
+    ArrayList arrayList2;
+    int tempArray[5] = {1, 2, 3, 4, 5};
+    createArrayListWithArray(&arrayList2, tempArray, 5);
+    showArrayList(&arrayList2);
 }
 
 // 动态数组队列
@@ -596,7 +603,7 @@ int main(int argc, const char * argv[]) {
 //    printf("funcPointResult = %d\n", funcPointResult);
     
 //    // 数组的顺序存储
-//    sequenceArrayListImpl();
+    sequenceArrayListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();

@@ -35,6 +35,21 @@ bool createArrayListWithData(ArrayList *arrayList, int data, int length) {
     return true;
 }
 
+bool createArrayListWithArray(ArrayList *arrayList, int *array, int length) {
+    
+    arrayList->list = (int *)malloc(sizeof(int) * length);
+    if (arrayList->list == NULL) {
+        return false;
+    }
+    
+    arrayList->currentIndex = -1;
+    arrayList->length = length;
+    
+    memcpy(arrayList->list, array, sizeof(int) * length);
+
+    return true;
+}
+
 bool isFullArrayList(ArrayList *arrayList) {
     if (arrayList->currentIndex == (arrayList->length - 1)) {
         return true;

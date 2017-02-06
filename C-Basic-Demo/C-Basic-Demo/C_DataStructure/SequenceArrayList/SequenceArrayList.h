@@ -46,6 +46,16 @@ bool createArrayList(ArrayList *arrayList, int length);
 bool createArrayListWithData(ArrayList *arrayList, int data, int length);
 
 /**
+ *  创建数组
+ *
+ *  @param arrayList 需要被初始化的ArrayList的地址
+ *  @param array 数组
+ *  @param length 长度
+ *  @return 创建成功返回true，创建失败返回false
+ */
+bool createArrayListWithArray(ArrayList *arrayList, int *array, int length);
+
+/**
  *  判断是不是满数组
  *
  *  @param arrayList ArrayList的地址
