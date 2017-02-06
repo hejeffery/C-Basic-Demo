@@ -20,6 +20,21 @@ bool createArrayList(ArrayList *arrayList, int length) {
     return true;
 }
 
+bool createArrayListWithData(ArrayList *arrayList, int data, int length) {
+    arrayList->list = (int *)malloc(sizeof(int) * length);
+    if (arrayList->list == NULL) {
+        return false;
+    }
+    
+    arrayList->currentIndex = -1;
+    arrayList->length = length;
+    
+    for (int *p = arrayList->list; p < arrayList->list + length; p++) {
+        *p = data;
+    }
+    return true;
+}
+
 bool isFullArrayList(ArrayList *arrayList) {
     if (arrayList->currentIndex == (arrayList->length - 1)) {
         return true;
@@ -28,7 +43,7 @@ bool isFullArrayList(ArrayList *arrayList) {
 }
 
 bool isEmptyArrayList(ArrayList *arrayList) {
-    if (arrayList->list == NULL || arrayList->currentIndex == -1) {
+    if (arrayList->list == NULL) {
         return true;
     }
     return false;

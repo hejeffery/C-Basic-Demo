@@ -161,6 +161,12 @@ void sequenceArrayListImpl() {
     
     // 清除数据
     clearAll(&arrayList);
+    
+    // 使用createArrayListWithData创建
+    ArrayList arrayList1;
+    createArrayListWithData(&arrayList1, 10, 10);
+    
+    showArrayList(&arrayList1);
 }
 
 // 动态数组队列
@@ -616,8 +622,8 @@ int main(int argc, const char * argv[]) {
 //    // 通过位域把数字转换为二进制
 //    structBit(1);
     
-    // C Practice
-    cpractice();
+//    // C Practice
+//    cpractice();
 
     return 0;
 }
