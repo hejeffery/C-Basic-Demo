@@ -19,6 +19,7 @@
 		47AD646B1E399378008726BB /* StringTool.c in Sources */ = {isa = PBXBuildFile; fileRef = 47AD64691E399378008726BB /* StringTool.c */; };
 		47C879811E404A9700C868FB /* CBasic.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C8797F1E404A9700C868FB /* CBasic.c */; };
 		47C879851E483D3B00C868FB /* CPractice.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879831E483D3B00C868FB /* CPractice.c */; };
+		47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879871E487C4300C868FB /* DynamicSequenceArrayList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		47C879801E404A9700C868FB /* CBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBasic.h; sourceTree = "<group>"; };
 		47C879831E483D3B00C868FB /* CPractice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CPractice.c; sourceTree = "<group>"; };
 		47C879841E483D3B00C868FB /* CPractice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPractice.h; sourceTree = "<group>"; };
+		47C879871E487C4300C868FB /* DynamicSequenceArrayList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DynamicSequenceArrayList.c; sourceTree = "<group>"; };
+		47C879881E487C4300C868FB /* DynamicSequenceArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicSequenceArrayList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 				472381051E359D2100F6F2BC /* DynamicStack */,
 				472381081E359D2100F6F2BC /* LinkedArrayList */,
 				4723810B1E359D2100F6F2BC /* SequenceArrayList */,
+				47C879861E487C3500C868FB /* DynamicSequenceArrayList */,
 			);
 			path = C_DataStructure;
 			sourceTree = "<group>";
@@ -213,6 +217,15 @@
 			path = C_Practice;
 			sourceTree = "<group>";
 		};
+		47C879861E487C3500C868FB /* DynamicSequenceArrayList */ = {
+			isa = PBXGroup;
+			children = (
+				47C879881E487C4300C868FB /* DynamicSequenceArrayList.h */,
+				47C879871E487C4300C868FB /* DynamicSequenceArrayList.c */,
+			);
+			path = DynamicSequenceArrayList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +287,7 @@
 				47AD646B1E399378008726BB /* StringTool.c in Sources */,
 				472381131E359D2100F6F2BC /* LinkedArrayList.c in Sources */,
 				47C879851E483D3B00C868FB /* CPractice.c in Sources */,
+				47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */,
 				472381121E359D2100F6F2BC /* DynamicStack.c in Sources */,
 				4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */,
 				472381141E359D2100F6F2BC /* SequenceArrayList.c in Sources */,
