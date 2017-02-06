@@ -13,6 +13,7 @@
 #include <math.h>
 
 #include "CBasic.h"
+#include "CPractice.h"
 #include "Algorithm.h"
 #include "StandardLibImpl.h"
 #include "StringTool.h"
@@ -447,6 +448,11 @@ void simpleZipStrSpace() {
     printf("解压后的字符串---simpleUnzipResult：%s\n", simpleUnzipResult);
 }
 
+// C Practice
+void cpractice() {
+    practiceOne();
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -609,6 +615,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 通过位域把数字转换为二进制
 //    structBit(1);
+    
+    // C Practice
+    cpractice();
 
     return 0;
 }
