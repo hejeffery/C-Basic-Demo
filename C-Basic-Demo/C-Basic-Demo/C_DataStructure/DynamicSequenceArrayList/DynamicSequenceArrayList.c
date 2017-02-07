@@ -150,17 +150,21 @@ bool insertValues(DynamicArrayList *arrayList, int index, int *array, int length
         tempIndex--;
     }
 
-    // 赋值
-    for (int *p = arrayList->list + index, i = 0; p < arrayList->list + index + length; p++, i++) {
-        *p = array[i];
-    }
+    // 方法一：使用循环赋值
+//    for (int *p = arrayList->list + index, i = 0; p < arrayList->list + index + length; p++, i++) {
+//        *p = array[i];
+//    }
+    
+    // 方法二：memcpy
+    memcpy(arrayList->list + index, array, sizeof(int) * length);
+    
     arrayList->length += length;
     arrayList->tailIndex += length;
     
     return true;
 }
 
-bool deleteListValue(DynamicArrayList *arrayList, int index, int *value) {
+bool deleteListWithIndex(DynamicArrayList *arrayList, int index, int *value) {
     
     if (isEmptyDynamicArrayList(arrayList)) {
         return false;
@@ -194,6 +198,41 @@ bool deleteListValue(DynamicArrayList *arrayList, int index, int *value) {
     return true;
 }
 
+bool deleteListWithValue(DynamicArrayList *arrayList, int value, int *index) {
+    
+    if (isEmptyDynamicArrayList(arrayList)) {
+        return false;
+    }
+    
+    int itemIndex = 0;
+    
+    
+    if (itemOfList(arrayList, value, &itemIndex)) {
+        
+        *index = itemIndex;
+        
+        // 保存最后一个值
+        int lastValue = arrayList->list[arrayList->tailIndex];
+        // 压缩内存
+        arrayList->list = (int *)realloc(arrayList->list, sizeof(int) *(arrayList->length - 1));
+        if (arrayList->list == NULL) {
+            return false;
+        }
+        
+        int tempIndex = itemIndex;
+        while (tempIndex <= arrayList->tailIndex) {
+            arrayList->list[tempIndex] = arrayList->list[tempIndex + 1];
+            tempIndex++;
+        }
+        
+        arrayList->length--;
+        arrayList->tailIndex--;
+        arrayList->list[arrayList->tailIndex] = lastValue;
+    }
+    
+    return false;
+}
+
 bool indexOfListItem(DynamicArrayList *arrayList, int index, int *item) {
     
     if (isEmptyDynamicArrayList(arrayList)) {
@@ -206,6 +245,22 @@ bool indexOfListItem(DynamicArrayList *arrayList, int index, int *item) {
     
     *item = arrayList->list[index];
     return true;
+}
+
+bool itemOfList(DynamicArrayList *arrayList, int item, int *index) {
+    
+    if (isEmptyDynamicArrayList(arrayList)) {
+        return false;
+    }
+    
+    for (int *p = arrayList->list, i = 0; p < arrayList->list + arrayList->length; p++, i++) {
+        if (*p == item) {
+            *index = i;
+            return true;
+        }
+    }
+    
+    return false;
 }
 
 void clearAllList(DynamicArrayList *arrayList) {

@@ -278,8 +278,8 @@ void dynamicSequenceArrayListImpl() {
     
     printf("\n");
     int deleteValue = 0;
-    deleteListValue(&arrayList, 4, &deleteValue);
-    printf("deleteValue = %d\n", deleteValue);
+    deleteListWithIndex(&arrayList, 4, &deleteValue);
+    printf("deleteValue = 删除的值是：%d\n", deleteValue);
     showDynamicArrayList(&arrayList);
     
     printf("\n");
@@ -287,6 +287,13 @@ void dynamicSequenceArrayListImpl() {
     indexOfListItem(&arrayList, 2, &itemValue);
     printf("itemValue = %d\n", itemValue);
     
+    printf("\n");
+    int deleteIndex = 0;
+    deleteListWithValue(&arrayList, 2, &deleteIndex);
+    printf("deleteIndex = 删除的是第%d个\n", deleteIndex);
+    showDynamicArrayList(&arrayList);
+    
+    printf("\n");
     printf("clear before arrayList->list = %p\n", (&arrayList)->list);
     clearAllList(&arrayList);
     printf("clear after  arrayList->list = %p\n", (&arrayList)->list);

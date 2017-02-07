@@ -102,14 +102,24 @@ bool insertValue(DynamicArrayList *arrayList, int index, int value);
 bool insertValues(DynamicArrayList *arrayList, int index, int *array, int length);
 
 /**
- *  删除元素
+ *  根据index删除元素
  *
  *  @param arrayList DynamicArrayList的地址
  *  @param index 删除的元素的位置
  *  @param value 删除的元素值
  *  @return 删除成功返回true，反之返回false
  */
-bool deleteListValue(DynamicArrayList *arrayList, int index, int *value);
+bool deleteListWithIndex(DynamicArrayList *arrayList, int index, int *value);
+
+/**
+ *  根据值删除元素
+ *
+ *  @param arrayList DynamicArrayList的地址
+ *  @param value 删除的元素值
+ *  @param index 删除的元素的位置
+ *  @return 删除成功返回true，反之返回false
+ */
+bool deleteListWithValue(DynamicArrayList *arrayList, int value, int *index);
 
 /**
  *  查询index位置的元素
@@ -120,6 +130,16 @@ bool deleteListValue(DynamicArrayList *arrayList, int index, int *value);
  *  @return 查询成功返回true，反之返回false
  */
 bool indexOfListItem(DynamicArrayList *arrayList, int index, int *item);
+
+/**
+ *  查找元素
+ *
+ *  @param arrayList DynamicArrayList的地址
+ *  @param item 需要查找的元素
+ *  @param index 查找到元素的位置
+ *  @return 查询成功返回true，反之返回false
+ */
+bool itemOfList(DynamicArrayList *arrayList, int item, int *index);
 
 /**
  *  清空数组
