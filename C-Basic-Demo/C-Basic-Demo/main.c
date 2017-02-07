@@ -20,6 +20,7 @@
 #include "ArrayStack.h"
 #include "ArrayQueue.h"
 #include "SequenceArrayList.h"
+#include "DynamicSequenceArrayList.h"
 #include "DynamicQueue.h"
 #include "DynamicStack.h"
 
@@ -250,6 +251,46 @@ void dynamicStackImpl() {
         // 显示队列的数据
         showDynamicStackData(&stack);
     }
+}
+
+// 数组的顺序存储，动态数组
+void dynamicSequenceArrayListImpl() {
+    
+    DynamicArrayList arrayList;
+    createDynamicArrayList(&arrayList);
+    addValue(&arrayList, 1);
+    addValue(&arrayList, 3);
+    addValue(&arrayList, 5);
+    addValue(&arrayList, 7);
+    addValue(&arrayList, 9);
+    showDynamicArrayList(&arrayList);
+
+    int addArrays[5] = {2, 4, 6, 8, 10};
+    addValues(&arrayList, addArrays, 5);
+    showDynamicArrayList(&arrayList);
+    
+    insertValue(&arrayList, 0, 100);
+    showDynamicArrayList(&arrayList);
+    
+    int insertArrays[3] = {81, 82, 83};
+    insertValues(&arrayList, 1, insertArrays, 3);
+    showDynamicArrayList(&arrayList);
+    
+    printf("\n");
+    int deleteValue = 0;
+    deleteListValue(&arrayList, 4, &deleteValue);
+    printf("deleteValue = %d\n", deleteValue);
+    showDynamicArrayList(&arrayList);
+    
+    printf("\n");
+    int itemValue = 0;
+    indexOfListItem(&arrayList, 2, &itemValue);
+    printf("itemValue = %d\n", itemValue);
+    
+    printf("clear before arrayList->list = %p\n", (&arrayList)->list);
+    clearAllList(&arrayList);
+    printf("clear after  arrayList->list = %p\n", (&arrayList)->list);
+    showDynamicArrayList(&arrayList);
 }
 
 // 部分标准库实现测试
@@ -603,7 +644,10 @@ int main(int argc, const char * argv[]) {
 //    printf("funcPointResult = %d\n", funcPointResult);
     
 //    // 数组的顺序存储
-    sequenceArrayListImpl();
+//    sequenceArrayListImpl();
+    
+//    // 数组的顺序存储，动态数组
+//    dynamicSequenceArrayListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
