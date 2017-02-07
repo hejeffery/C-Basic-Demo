@@ -23,7 +23,7 @@ typedef struct SequenceArrayList ArrayList;
 struct SequenceArrayList {
     int *list;// 数组
     int length;// 顺序表的总长度
-    int currentIndex;// 当前顺序表的长度
+    int currentIndex;// 当前顺序表的索引
 };
 
 /**

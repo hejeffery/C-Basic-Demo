@@ -32,6 +32,7 @@ bool createArrayListWithData(ArrayList *arrayList, int data, int length) {
     for (int *p = arrayList->list; p < arrayList->list + length; p++) {
         *p = data;
     }
+    
     return true;
 }
 
@@ -58,7 +59,7 @@ bool isFullArrayList(ArrayList *arrayList) {
 }
 
 bool isEmptyArrayList(ArrayList *arrayList) {
-    if (arrayList->list == NULL) {
+    if (arrayList->currentIndex == -1) {
         return true;
     }
     return false;
