@@ -25,16 +25,18 @@ Node *createLinkedList() {
 
 bool appendList(Node *node, int value) {
     
+    // 尾插法
     if (node == NULL) {
         return false;
     }
     
-    // 尾插法
+    // 遍历寻找尾结点
     Node *ptail = node;
     while (ptail->next != NULL) {
         ptail = ptail->next;
     }
     
+    // 分配一个新的结点并赋值
     Node *pnew = (Node *)malloc(sizeof(Node));
     if (pnew == NULL) {
         return false;
@@ -42,8 +44,10 @@ bool appendList(Node *node, int value) {
     pnew->data = value;
     pnew->next = NULL;
 
+    // 尾节点的next指向新结点
     ptail->next = pnew;
     
+    // 新结点赋值给尾结点
     ptail = pnew;
     
     return true;
