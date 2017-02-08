@@ -14,13 +14,13 @@
 
 #define QueueLength 100
 
-typedef struct ArrayQueue Queue;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                 队列，静态数组形式                                 //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct ArrayQueue Queue;
 
 struct ArrayQueue {
     int data[QueueLength];// 数组的长度

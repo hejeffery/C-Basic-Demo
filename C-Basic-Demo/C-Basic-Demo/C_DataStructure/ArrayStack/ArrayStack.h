@@ -14,13 +14,13 @@
 
 #define StackLength 100
 
-typedef struct ArrayStack Stack;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                 栈，静态数组形式                                  //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct ArrayStack Stack;
 
 struct ArrayStack {
     int data[StackLength];// 数组的长度

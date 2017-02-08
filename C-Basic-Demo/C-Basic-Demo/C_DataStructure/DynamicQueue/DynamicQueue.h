@@ -12,13 +12,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct DynamicQueue DynamicQueue;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                               队列，动态数组队列                                  //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct DynamicQueue DynamicQueue;
 
 struct DynamicQueue {
     int *data;// 数组

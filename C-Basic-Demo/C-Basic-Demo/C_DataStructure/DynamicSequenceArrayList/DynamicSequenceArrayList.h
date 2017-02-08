@@ -12,13 +12,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct DynamicSequenceArrayList DynamicArrayList;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                            数组的顺序存储，动态数组                                 //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct DynamicSequenceArrayList DynamicArrayList;
 
 struct DynamicSequenceArrayList {
     int *list;// 数组

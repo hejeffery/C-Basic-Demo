@@ -12,13 +12,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct DynamicStack DynamicStack;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                 栈，动态数组栈                                    //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct DynamicStack DynamicStack;
 
 struct DynamicStack {
     int *data;// 数组

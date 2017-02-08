@@ -12,13 +12,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct SequenceArrayList ArrayList;
-
 ////////////////////////////////////////////////////////////////////////////////////
 //                                                                                //
 //                                    数组的顺序存储                                 //
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
+
+typedef struct SequenceArrayList ArrayList;
 
 struct SequenceArrayList {
     int *list;// 数组
