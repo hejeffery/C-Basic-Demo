@@ -107,7 +107,7 @@ bool insertValue(DynamicArrayList *arrayList, int index, int value) {
     }
     
     // 扩展内存
-    arrayList->list = (int *)realloc(arrayList->list, sizeof(int) *  (arrayList->length + 1));
+    arrayList->list = (int *)realloc(arrayList->list, sizeof(int) * (arrayList->length + 1));
     if (arrayList->list == NULL) {
         return false;
     }
@@ -178,7 +178,7 @@ bool deleteListWithIndex(DynamicArrayList *arrayList, int index, int *value) {
     // 保存最后一个值
     int lastValue = arrayList->list[arrayList->tailIndex];
     // 压缩内存
-    arrayList->list = (int *)realloc(arrayList->list, sizeof(int) *(arrayList->length - 1));
+    arrayList->list = (int *)realloc(arrayList->list, sizeof(int) * (arrayList->length - 1));
     if (arrayList->list == NULL) {
         return false;
     }
@@ -206,7 +206,6 @@ bool deleteListWithValue(DynamicArrayList *arrayList, int value, int *index) {
     
     int itemIndex = 0;
     
-    
     if (itemOfList(arrayList, value, &itemIndex)) {
         
         *index = itemIndex;
@@ -214,7 +213,7 @@ bool deleteListWithValue(DynamicArrayList *arrayList, int value, int *index) {
         // 保存最后一个值
         int lastValue = arrayList->list[arrayList->tailIndex];
         // 压缩内存
-        arrayList->list = (int *)realloc(arrayList->list, sizeof(int) *(arrayList->length - 1));
+        arrayList->list = (int *)realloc(arrayList->list, sizeof(int) * (arrayList->length - 1));
         if (arrayList->list == NULL) {
             return false;
         }
