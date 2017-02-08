@@ -11,9 +11,9 @@
 #include <stdlib.h>
 #include <memory.h>
 
-Node *createLinkedList() {
+LinkedList *createLinkedList() {
     
-    Node *phead = (Node *)malloc(sizeof(Node));
+    LinkedList *phead = (LinkedList *)malloc(sizeof(LinkedList));
     
     if (phead == NULL) {
         return NULL;
@@ -23,21 +23,21 @@ Node *createLinkedList() {
     return phead;
 }
 
-bool appendList(Node *node, int value) {
+bool appendList(LinkedList *list, int value) {
     
     // 尾插法
-    if (node == NULL) {
+    if (list == NULL) {
         return false;
     }
     
     // 遍历寻找尾结点
-    Node *ptail = node;
+    LinkedList *ptail = list;
     while (ptail->next != NULL) {
         ptail = ptail->next;
     }
     
     // 分配一个新的结点并赋值
-    Node *pnew = (Node *)malloc(sizeof(Node));
+    LinkedList *pnew = (LinkedList *)malloc(sizeof(LinkedList));
     if (pnew == NULL) {
         return false;
     }
@@ -47,22 +47,19 @@ bool appendList(Node *node, int value) {
     // 尾节点的next指向新结点
     ptail->next = pnew;
     
-    // 新结点赋值给尾结点
-    ptail = pnew;
-    
     return true;
 }
 
-bool isEmptyLinkedList(Node *node) {
+bool isEmptyLinkedList(LinkedList *list) {
     
-    return node->next == NULL ? true : false;
+    return list->next == NULL ? true : false;
 }
 
-int length(Node *node) {
+int length(LinkedList *list) {
     
     int length = 0;
     
-    Node *pnode = node->next;
+    LinkedList *pnode = list->next;
     while (pnode != NULL) {
         length++;
         pnode = pnode->next;
@@ -71,13 +68,14 @@ int length(Node *node) {
     return length;
 }
 
-void showLinkedList(Node *node) {
+void showLinkedList(LinkedList *list) {
     
-    Node *pnode = node->next;
+    LinkedList *pnode = list->next;
     while (pnode != NULL) {
         printf("%4d", pnode->data);
         pnode = pnode->next;
     }
+    printf("\n");
 }
 
 

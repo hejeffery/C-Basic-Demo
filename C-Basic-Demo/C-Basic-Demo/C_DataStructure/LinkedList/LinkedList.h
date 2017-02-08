@@ -18,11 +18,11 @@
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
 
-typedef struct Node Node;
+typedef struct Node LinkedList;
 
 struct Node {
     int data;
-    Node *next;
+    LinkedList *next;
 };
 
 /**
@@ -30,38 +30,38 @@ struct Node {
  *
  *  @return 返回创建成功后的链表的头结点
  */
-Node *createLinkedList();
+LinkedList *createLinkedList();
 
 /**
  *  添加元素到链表(使用的是尾插法)
  *
- *  @param node LinkedList的地址
+ *  @param list LinkedList的地址
  *  @param value 添加的元素
  *  @return 添加成功返回true，反之返回false
  */
-bool appendList(Node *node, int value);
+bool appendList(LinkedList *list, int value);
 
 /**
  *  判断是不是空链表
  *
- *  @param node LinkedList的地址
+ *  @param list LinkedList的地址
  *  @return 空链表返回true，反之返回false
  */
-bool isEmptyLinkedList(Node *node);
+bool isEmptyLinkedList(LinkedList *list);
 
 /**
  *  返回链表的长度
  *
- *  @param node LinkedList的地址
+ *  @param list list的地址
  *  @return 返回链表的长度
  */
-int length(Node *node);
+int length(LinkedList *list);
 
 /**
  *  打印链表
  *
- *  @param node LinkedList的地址
+ *  @param list LinkedList的地址
  */
-void showLinkedList(Node *node);
+void showLinkedList(LinkedList *list);
 
 #endif /* LinkedList_h */

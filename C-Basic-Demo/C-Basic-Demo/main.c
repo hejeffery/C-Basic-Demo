@@ -23,6 +23,7 @@
 #include "DynamicSequenceArrayList.h"
 #include "DynamicQueue.h"
 #include "DynamicStack.h"
+#include "LinkedList.h"
 
 
 // 函数指针的接口功能
@@ -298,6 +299,18 @@ void dynamicSequenceArrayListImpl() {
     clearAllList(&arrayList);
     printf("clear after  arrayList->list = %p\n", (&arrayList)->list);
     showDynamicArrayList(&arrayList);
+}
+
+// 链式存储
+void linkedListImpl() {
+    
+    LinkedList *list = createLinkedList();
+    
+    appendList(list, 1);
+    appendList(list, 2);
+    appendList(list, 3);
+    appendList(list, 4);
+    showLinkedList(list);
 }
 
 // 部分标准库实现测试
@@ -655,6 +668,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 数组的顺序存储，动态数组
 //    dynamicSequenceArrayListImpl();
+    
+    // 链式存储
+    linkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
