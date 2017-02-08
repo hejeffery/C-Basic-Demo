@@ -19,6 +19,7 @@ void selectionSort(int *array, int count) {
     for (int i = 0; i < count; i++) {
         for (int j = i + 1; j < count; j++) {
             if (array[i] < array[j]) {
+
                 array[i] = array[i] ^ array[j];
                 array[j] = array[i] ^ array[j];
                 array[i] = array[i] ^ array[j];
@@ -37,6 +38,7 @@ void bubbleSort(int *array, int count) {
     for (int i = 0; i < loopNumber; i++) {// 每循环一次就有一个数上浮或者下沉
         for (int j = 0; j < loopNumber - i; j++) {
             if (array[j] > array[j + 1]) {
+
                 array[j] = array[j] ^ array[j + 1];
                 array[j + 1] = array[j] ^ array[j + 1];
                 array[j] = array[j] ^ array[j + 1];
