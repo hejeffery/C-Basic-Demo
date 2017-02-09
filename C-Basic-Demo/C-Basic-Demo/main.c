@@ -311,6 +311,9 @@ void linkedListImpl() {
     appendList(list, 3);
     appendList(list, 4);
     showLinkedList(list);
+    
+    insertList(list, 1, 99);
+    showLinkedList(list);
 }
 
 // 部分标准库实现测试

@@ -42,6 +42,16 @@ LinkedList *createLinkedList();
 bool appendList(LinkedList *list, int value);
 
 /**
+ *  插入元素到链表
+ *
+ *  @param list LinkedList的地址
+*   @param position 插入的位置
+ *  @param value 添加的元素
+ *  @return 添加成功返回true，反之返回false
+ */
+bool insertList(LinkedList *list, int position, int value);
+
+/**
  *  判断是不是空链表
  *
  *  @param list LinkedList的地址

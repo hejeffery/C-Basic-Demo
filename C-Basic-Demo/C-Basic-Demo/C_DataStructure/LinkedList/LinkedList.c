@@ -50,6 +50,40 @@ bool appendList(LinkedList *list, int value) {
     return true;
 }
 
+bool insertList(LinkedList *list, int position, int value) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    // 取出position位置的前一个结点
+    int i = 0;
+    LinkedList *pnode = list->next;
+    // position - 1 说明是position的前一个位置
+    while (pnode != NULL && i < (position - 1)) {
+        pnode = pnode->next;
+        i++;
+    }
+    
+    // pnode == NULL处理了超过链表为空链表的情况或者可能大于链表长度的情况
+    // i > position处理了position可能为负的情况或者
+    if (pnode == NULL || i > (position - 1)) {
+        // 插入的位置有问题
+        return false;
+    }
+    
+    LinkedList *pnew = (LinkedList *)malloc(sizeof(LinkedList));
+    if (pnew == NULL) {
+        return false;
+    }
+
+    pnew->data = value;
+    pnew->next = pnode->next;
+    pnode->next = pnew;
+
+    return true;
+}
+
 bool isEmptyLinkedList(LinkedList *list) {
     
     return list->next == NULL ? true : false;
