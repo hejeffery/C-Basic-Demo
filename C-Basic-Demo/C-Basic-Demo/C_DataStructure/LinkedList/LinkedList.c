@@ -168,6 +168,25 @@ bool findListItem(LinkedList *list, int item, int *position) {
     return false;
 }
 
+LinkedList *findNodeWithItem(LinkedList *list, int item) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    LinkedList *pnode = list->next;
+    while (pnode != NULL) {
+        
+        if (pnode->data == item) {
+            return pnode;
+        }
+
+        pnode = pnode->next;
+    }
+    
+    return NULL;
+}
+
 bool isEmptyLinkedList(LinkedList *list) {
     
     return list->next == NULL ? true : false;

@@ -82,6 +82,15 @@ bool deleteListItem(LinkedList *list, int item, int *position);
 bool findListItem(LinkedList *list, int item, int *position);
 
 /**
+ *  根据某个元素，找出链表中的该元素的结点
+ *
+ *  @param list LinkedList的地址
+ *  @param item 需要查找的元素
+ *  @return 找到返回该元素的结点
+ */
+LinkedList *findNodeWithItem(LinkedList *list, int item);
+
+/**
  *  判断是不是空链表
  *
  *  @param list LinkedList的地址
