@@ -312,7 +312,38 @@ void linkedListImpl() {
     appendList(list, 4);
     showLinkedList(list);
     
-    insertList(list, 1, 99);
+    insertList(list, 0, 99);
+    showLinkedList(list);
+    
+    int deleteNodeValue = 0;
+    bool isDeleteSuccess = deleteList(list, 1, &deleteNodeValue);
+    if (isDeleteSuccess) {
+        printf("删除结点成功，该结点的值是 = %d\n", deleteNodeValue);
+
+    } else {
+        printf("删除结点失败\n");
+    }
+    showLinkedList(list);
+    
+    printf("\n");
+    int findPosition = -1;
+    bool isFindItem = findListItem(list, 2, &findPosition);
+    if (isFindItem) {
+        printf("找到元素，位置是 = %d\n", findPosition);
+
+    } else {
+        printf("没有找到元素\n");
+    }
+    
+    printf("\n");
+    int deletePosition = -1;
+    bool isDeleteItemSuccess = deleteListItem(list, 2, &deletePosition);
+    if (isDeleteItemSuccess) {
+        printf("删除元素成功，元素的位置是 = %d\n", deletePosition);
+
+    } else {
+        printf("删除元素失败\n");
+    }
     showLinkedList(list);
 }
 

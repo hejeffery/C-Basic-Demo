@@ -52,6 +52,36 @@ bool appendList(LinkedList *list, int value);
 bool insertList(LinkedList *list, int position, int value);
 
 /**
+ *  删除链表中某个位置的元素
+ *
+ *  @param list LinkedList的地址
+ *   @param position 删除的位置
+ *  @param value 删除的元素的值
+ *  @return 删除成功返回true，反之返回false
+ */
+bool deleteList(LinkedList *list, int position, int *value);
+
+/**
+ *  删除链表中某个位置的元素
+ *
+ *  @param list LinkedList的地址
+ *  @param item 删除的元素的值
+ *  @param position 删除的位置
+ *  @return 删除成功返回true，反之返回false
+ */
+bool deleteListItem(LinkedList *list, int item, int *position);
+
+/**
+ *  找出链表中的某个元素
+ *
+ *  @param list LinkedList的地址
+ *  @param item 需要查找的元素
+ *  @param position 找到的位置
+ *  @return 找到成功返回true，反之返回false
+ */
+bool findListItem(LinkedList *list, int item, int *position);
+
+/**
  *  判断是不是空链表
  *
  *  @param list LinkedList的地址
