@@ -34,7 +34,7 @@ bool pushDynamicStack(DynamicStack **stack, int value) {
     // 已经满了，再分配空间
     if ((*stack)->topIndex == (*stack)->currentSize) {
         // realloc如果空间不足，会重新分配一块内存，这时原来的内存会被释放。所以传递**stack
-        (*stack)->data = (int *)realloc((*stack)->data, sizeof(int) * (*stack)->baseLength);
+        (*stack)->data = (int *)realloc((*stack)->data, sizeof(int) * ((*stack)->baseLength + (*stack)->currentSize));
         if ((*stack)->data == NULL) {
             printf("压栈失败，分配空间失败\n");
             return false;

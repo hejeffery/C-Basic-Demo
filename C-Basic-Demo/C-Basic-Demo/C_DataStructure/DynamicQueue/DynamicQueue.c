@@ -31,7 +31,7 @@ bool enqueueDynamic(DynamicQueue **queue, int value) {
     // 已经满了，再分配空间
     if ((*queue)->head == (*queue)->currentSize - 1) {
         // realloc如果空间不足，会重新分配一块内存，这时原来的内存会被释放。所以传递**queue
-        (*queue)->data = realloc((*queue)->data, sizeof(int) * (*queue)->baseLength);
+        (*queue)->data = realloc((*queue)->data, sizeof(int) * ((*queue)->baseLength + (*queue)->currentSize));
         if ((*queue)->data == NULL) {
             printf("入队失败，分配空间失败\n");
             return false;
