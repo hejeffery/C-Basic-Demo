@@ -98,6 +98,13 @@ bool isEmptyLinkedList(LinkedList *list);
 int length(LinkedList *list);
 
 /**
+ *  反转链表
+ *
+ *  @param list list的地址
+ */
+void reverseList(LinkedList *list);
+
+/**
  *  清空链表
  *
  *  @param list LinkedList的地址

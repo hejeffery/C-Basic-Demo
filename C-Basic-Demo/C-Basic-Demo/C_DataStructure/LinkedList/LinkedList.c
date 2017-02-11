@@ -186,6 +186,15 @@ int length(LinkedList *list) {
     return length;
 }
 
+void reverseList(LinkedList *list) {
+    
+    if (list == NULL) {
+        return;
+    }
+    
+    // TODO
+}
+
 bool clearList(LinkedList *list) {
     
     if (list == NULL) {
