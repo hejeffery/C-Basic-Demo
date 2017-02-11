@@ -721,7 +721,7 @@ int main(int argc, const char * argv[]) {
 //    dynamicSequenceArrayListImpl();
     
     // 链式存储
-    linkedListImpl();
+//    linkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
