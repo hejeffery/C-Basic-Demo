@@ -345,6 +345,23 @@ void linkedListImpl() {
         printf("删除元素失败\n");
     }
     showLinkedList(list);
+
+    bool clearSuccess = clearList(list);
+    if (clearSuccess) {
+        printf("链表清空成功\n");
+        
+        bool isEmptyList = isEmptyLinkedList(list);
+        if (isEmptyList) {
+            printf("是空链表\n");
+
+        } else {
+            printf("不是空链表\n");
+        }
+
+    } else {
+        printf("链表清空失败\n");
+        showLinkedList(list);
+    }
 }
 
 // 部分标准库实现测试

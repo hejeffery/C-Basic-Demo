@@ -186,6 +186,22 @@ int length(LinkedList *list) {
     return length;
 }
 
+bool clearList(LinkedList *list) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    LinkedList *node = NULL;
+    while (list != NULL) {
+        node = list->next;
+        free(list);
+        list = node;
+    }
+    
+    return true;
+}
+
 void showLinkedList(LinkedList *list) {
     
     LinkedList *pnode = list->next;

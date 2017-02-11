@@ -98,6 +98,14 @@ bool isEmptyLinkedList(LinkedList *list);
 int length(LinkedList *list);
 
 /**
+ *  清空链表
+ *
+ *  @param list LinkedList的地址
+ *  @return 清空成功返回true，反之返回false
+ */
+bool clearList(LinkedList *list);
+
+/**
  *  打印链表
  *
  *  @param list LinkedList的地址
