@@ -43,6 +43,15 @@ void bubbleSort(int *array, int count);
 void insertSort(int *array, int count);
 
 /**
+ *  快速排序(双指针)
+ *
+ *  @param array 需要排序的数组
+ *  @param beginIndex 数组开始的索引
+ *  @param lastIndex 数组结束的索引
+ */
+void quickSort(int *array, int beginIndex, int lastIndex);
+
+/**
  *  二分查找(折半查找)
  *
  *  @param array 需要查找的数组

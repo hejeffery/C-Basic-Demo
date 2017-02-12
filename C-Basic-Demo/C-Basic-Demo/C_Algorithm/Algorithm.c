@@ -71,6 +71,38 @@ void insertSort(int *array, int count) {
     }
 }
 
+void quickSort(int *array, int beginIndex, int lastIndex) {
+    
+    // 双指针快速排序的思想：分治思想---使用递归处理
+    // 选数组的第一个元素为参照，比该元素小的放在该元素的左边，比该元素小的放在该元素的右边
+    if (beginIndex < lastIndex) {
+        
+        int i = beginIndex;
+        for (int j = beginIndex + 1; j <= lastIndex; j++) {
+
+            if (array[j] < array[beginIndex]) {
+
+                // i往前移动1
+                i++;
+                
+                // 交换array[i]和array[j]的值
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        // 交换array[beginIndex]和array[i]的值
+        int temp = array[i];
+        array[i] = array[beginIndex];
+        array[beginIndex] = temp;
+        
+        // 递归处理子数组
+        quickSort(array, beginIndex, i - 1);
+        quickSort(array, i + 1, lastIndex);
+    }
+}
+
 int binarySearch(int *array, int count, int searchNumber) {
     int headIndex = 0;
     int tailIndex = count - 1;

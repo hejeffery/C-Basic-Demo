@@ -619,6 +619,14 @@ int main(int argc, const char * argv[]) {
 //    int array[10] = {4, 5, 88, 3, 1, 7, 45, 78, 9, 23};
 //    insertSort(array, 10);
 
+//    // 插入排序
+//    int array[10] = {4, 5, 88, 3, 1, 7, 45, 78, 9, 23};
+//    quickSort(array, 0, 9);
+//    for (int i = 0; i < 10; i++) {
+//        printf("%d  ", array[i]);
+//    }
+//    printf("\n");
+    
 //    // 二分查找
 //    int array[10] = {1, 3, 4, 6, 7, 9, 13, 15, 33, 64};
 //    int index = binarySearch(array, 10, 13);
