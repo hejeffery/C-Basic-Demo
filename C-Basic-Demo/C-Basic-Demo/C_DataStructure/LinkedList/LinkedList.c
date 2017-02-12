@@ -50,7 +50,7 @@ bool appendList(LinkedList *list, int value) {
     return true;
 }
 
-bool insertList(LinkedList *list, int position, int value) {
+bool insertList(LinkedList *list, int position, int value) {// 也可以用双指针来实现
     
     if (list == NULL) {
         return false;
@@ -100,7 +100,8 @@ bool insertList(LinkedList *list, int position, int value) {
     return true;
 }
 
-bool deleteList(LinkedList *list, int position, int *value) {
+
+bool deleteList(LinkedList *list, int position, int *value) {// 也可以用双指针来实现
     
     if (list == NULL) {
         return false;

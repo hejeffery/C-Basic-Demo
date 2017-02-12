@@ -55,7 +55,7 @@ bool insertList(LinkedList *list, int position, int value);
  *  删除链表中某个位置的元素
  *
  *  @param list LinkedList的地址
- *   @param position 删除的位置
+ *  @param position 删除的位置
  *  @param value 删除的元素的值
  *  @return 删除成功返回true，反之返回false
  */
