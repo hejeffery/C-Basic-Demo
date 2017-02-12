@@ -81,8 +81,6 @@ bool insert(ArrayList *arrayList, int index, int value) {
         return false;
     }
     
-    printf("current = %d\n", arrayList->currentIndex);
-    
     // 插入数据的index不合法，直接返回
     if (index > (arrayList->currentIndex + 1) || index < 0) {
         return false;
