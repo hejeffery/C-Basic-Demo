@@ -345,6 +345,14 @@ void linkedListImpl() {
         printf("删除元素失败\n");
     }
     showLinkedList(list);
+    
+    LinkedList *findNode = findNodeWithItem(list, 3);
+    if (findNode != NULL) {
+        printf("找到结点了\n");
+        
+    } else {
+        printf("没有找到结点\n");
+    }
 
     bool clearSuccess = clearList(list);
     if (clearSuccess) {
