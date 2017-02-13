@@ -317,7 +317,14 @@ void linkedListImpl() {
     appendList(list, 8);
     showLinkedList(list);
     
-    insertList(list, 0, 99);
+    printf("\n插入数据\n");
+    bool insertSuccess = insertList(list, 8, 99);
+    if (insertSuccess) {
+        printf("插入成功\n");
+
+    } else {
+        printf("插入失败\n");
+    }
     showLinkedList(list);
     
     printf("\n查找链表中间位置的结点\n");
@@ -465,6 +472,7 @@ void circleLinkedListImpl() {
     }
     
     insertCircleList(list, 0, 99);
+    showCircleList(list);
     insertCircleList(list, 4, 89);
     showCircleList(list);
 

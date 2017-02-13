@@ -59,16 +59,15 @@ bool insertList(LinkedList *list, int position, int value) {// 也可以用双�
 //    // 第一种方式
 //    // 取出position位置的前一个结点
 //    int i = 0;
-//    LinkedList *pnode = list->next;
-//    // position - 1 说明是position的前一个位置
-//    while (pnode != NULL && i < (position - 1)) {
+//    LinkedList *pnode = list;
+//    while (pnode != NULL && i < position) {
 //        pnode = pnode->next;
 //        i++;
 //    }
 //    
 //    // pnode == NULL处理了超过链表为空链表的情况或者可能大于链表长度的情况
 //    // i > position处理了position可能为负的情况或者
-//    if (pnode == NULL || i > (position - 1)) {
+//    if (pnode == NULL || i > position) {
 //        // 插入的位置有问题
 //        return false;
 //    }
@@ -82,7 +81,7 @@ bool insertList(LinkedList *list, int position, int value) {// 也可以用双�
     }
 
     int i = 0;
-    LinkedList *pnode = list->next;
+    LinkedList *pnode = list;
     while (pnode != NULL && i < position) {
         pnode = pnode->next;
         i++;
