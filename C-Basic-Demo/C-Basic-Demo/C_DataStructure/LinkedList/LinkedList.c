@@ -188,6 +188,28 @@ LinkedList *findNodeWithItem(LinkedList *list, int item) {
     return NULL;
 }
 
+LinkedList *findCenterNode(LinkedList *list) {
+    
+    if (list == NULL) {
+        return NULL;
+    }
+    
+    // 前进一个，前进两个
+    LinkedList *pnode = list->next;
+    LinkedList *pnode2 = list->next;
+    
+    while (pnode2->next != NULL) {
+        pnode = pnode->next;
+        
+        pnode2 = pnode2->next;
+        if (pnode2->next != NULL) {
+            pnode2 = pnode2->next;
+        }
+        
+    }
+    return pnode;
+}
+
 bool isEmptyLinkedList(LinkedList *list) {
     
     return list->next == NULL ? true : false;
@@ -208,11 +230,25 @@ int length(LinkedList *list) {
 
 void reverseList(LinkedList *list) {
     
-    if (list == NULL) {
+    if (list == NULL || list->next == NULL) {
         return;
     }
-    
-    // TODO
+
+    LinkedList *preNode = list;
+    LinkedList *currentNode = preNode->next;
+    LinkedList *nextNode = NULL;
+
+    preNode = NULL;
+
+    while (currentNode) {
+        nextNode = currentNode->next;
+
+        currentNode->next = preNode;
+        preNode = currentNode;
+        currentNode = nextNode;
+    }
+
+    list->next = preNode;
 }
 
 bool clearList(LinkedList *list) {

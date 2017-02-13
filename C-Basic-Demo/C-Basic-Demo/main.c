@@ -310,10 +310,23 @@ void linkedListImpl() {
     appendList(list, 2);
     appendList(list, 3);
     appendList(list, 4);
+    appendList(list, 5);
+    appendList(list, 6);
+    appendList(list, 7);
+    appendList(list, 8);
     showLinkedList(list);
     
     insertList(list, 0, 99);
     showLinkedList(list);
+    
+    printf("\n查找链表中间位置的结点\n");
+    LinkedList *centerNode = findCenterNode(list);
+    if (centerNode != NULL) {
+        printf("找到了中间位置的结点，该结点的值是 = %d\n", centerNode->data);
+    } else {
+        printf("没有找到中间位置的结点\n");
+    }
+    
     
     int deleteNodeValue = 0;
     bool isDeleteSuccess = deleteList(list, 1, &deleteNodeValue);
@@ -353,6 +366,10 @@ void linkedListImpl() {
     } else {
         printf("没有找到结点\n");
     }
+    
+    printf("链表反转\n");
+    reverseList(list);
+    showLinkedList(list);
 
     bool clearSuccess = clearList(list);
     if (clearSuccess) {
@@ -736,7 +753,7 @@ int main(int argc, const char * argv[]) {
 //    // 数组的顺序存储，动态数组
 //    dynamicSequenceArrayListImpl();
     
-    // 链式存储
+//    // 链式存储
 //    linkedListImpl();
     
 //    // 动态数组队列

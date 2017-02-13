@@ -91,6 +91,14 @@ bool findListItem(LinkedList *list, int item, int *position);
 LinkedList *findNodeWithItem(LinkedList *list, int item);
 
 /**
+ *  找出链表中间位置的结点
+ *
+ *  @param list LinkedList的地址
+ *  @return 返回链表中间位置的结点
+ */
+LinkedList *findCenterNode(LinkedList *list);
+
+/**
  *  判断是不是空链表
  *
  *  @param list LinkedList的地址
