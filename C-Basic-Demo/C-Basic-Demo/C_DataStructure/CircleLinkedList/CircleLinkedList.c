@@ -48,6 +48,88 @@ bool appendCircleList(CircleLinkedList *list, int value) {
     return true;
 }
 
+bool insertCircleList(CircleLinkedList *list, int position, int value) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    int length = circleListLength(list);
+    
+    if (position < 0 || position > length) {
+        return false;
+    }
+    
+    int i = 0;
+    CircleLinkedList *pnode = list->next;
+    while (pnode != list && i < position) {
+        i++;
+        pnode = pnode->next;
+    }
+    
+    CircleLinkedList *pnew = (CircleLinkedList *)malloc(sizeof(CircleLinkedList));
+    if (pnew == NULL) {
+        return false;
+    }
+    
+    pnew->data = value;
+    pnew->next = pnode->next;
+    pnode->next = pnew;
+    
+    return true;
+}
+
+bool deleteCircleList(CircleLinkedList *list, int position, int *value) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    int length = circleListLength(list);
+    
+    if (position < 0 || position > length) {
+        return false;
+    }
+    
+    // 取出position位置的前一个结点
+    int i = 0;
+    CircleLinkedList *pnode = list->next;
+    while (pnode != list && i < (position - 1)) {
+        i++;
+        pnode = pnode->next;
+    }
+    
+    // 保存需要删除的节点
+    CircleLinkedList *deletedNode = pnode->next;
+    *value = deletedNode->data;
+    
+    // 需要删除节点的前驱结点指向需要删除节点的后继结点
+    pnode->next = pnode->next->next;
+    
+    // 释放被删除的结点
+    free(deletedNode);
+    
+    return true;
+}
+
+bool deleteCircleListItem(CircleLinkedList *list, int item, int *position) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    // 先查找item是否存在
+    bool isFindItem = findCircleListItem(list, item, position);
+    
+    // 不存在，直接返回false
+    if (!isFindItem) {
+        return false;
+    }
+    
+    // 存在就调用deleteList
+    return deleteCircleList(list, *position, &item);
+}
+
 int circleListLength(CircleLinkedList *list) {
     
     if (list == NULL || list->next == NULL) {
@@ -62,6 +144,52 @@ int circleListLength(CircleLinkedList *list) {
     }
 
     return length;
+}
+
+bool findCircleListItem(CircleLinkedList *list, int item, int *position) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    CircleLinkedList *pnode = list->next;
+    int i = 0;
+    while (pnode != list) {
+        
+        if (pnode->data == item) {
+            *position = i;
+            return true;
+        }
+
+        pnode = pnode->next;
+        i++;
+    }
+    
+    return false;
+}
+
+CircleLinkedList *findCircleNodeWithItem(CircleLinkedList *list, int item) {
+    
+    if (list == NULL) {
+        return NULL;
+    }
+    
+    CircleLinkedList *pnode = list->next;
+    while (pnode != list) {
+        
+        if (pnode->data == item) {
+            return pnode;
+        }
+        
+        pnode = pnode->next;
+    }
+    
+    return NULL;
+}
+
+bool isEmptyCircleLinkedList(CircleLinkedList *list) {
+    
+    return list == list->next ? true : false;
 }
 
 bool hasCircleLinkedList(CircleLinkedList *list) {

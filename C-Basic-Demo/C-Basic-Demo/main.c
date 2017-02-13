@@ -431,6 +431,14 @@ void circleLinkedListImpl() {
     appendCircleList(list, 5);
     showCircleList(list);
     
+    bool isEmptyList = isEmptyCircleLinkedList(list);
+    if (isEmptyList) {
+        printf("是空循环链表\n");
+
+    } else {
+        printf("不是空循环链表\n");
+    }
+    
     bool hasCircle = hasCircleLinkedList(list);
     if (hasCircle) {
         printf("链表有环\n");
@@ -441,6 +449,43 @@ void circleLinkedListImpl() {
     
     int length = circleListLength(list);
     printf("环形链表的长度 = %d\n", length);
+    
+    int findPosition = -1;
+    bool findItemSuccess = findCircleListItem(list, 3, &findPosition);
+    if (findItemSuccess) {
+        printf("找到了，位置是 = %d\n", findPosition);
+
+    } else {
+        printf("没有找到\n");
+    }
+    
+    CircleLinkedList *findNode = findCircleNodeWithItem(list, 4);
+    if (findNode) {
+        printf("找到了结点，结点的值是 = %d\n", findNode->data);
+    }
+    
+    insertCircleList(list, 0, 99);
+    insertCircleList(list, 4, 89);
+    showCircleList(list);
+
+    int deleteValue = 0;
+    bool isDeleteSuccess = deleteCircleList(list, 1, &deleteValue);
+    if (isDeleteSuccess) {
+        printf("删除成功，删除的值是 = %d\n", deleteValue);
+    } else {
+        printf("删除失败\n");
+    }
+    showCircleList(list);
+    
+    int deletePostion = -1;
+    bool isDeleteItemSuccess = deleteCircleListItem(list, 89, &deletePostion);
+    if (isDeleteItemSuccess) {
+        printf("删除成功，删除的位置是 = %d\n", deletePostion);
+
+    } else {
+        printf("删除失败\n");
+    }
+    showCircleList(list);
 }
 
 // 部分标准库实现测试
