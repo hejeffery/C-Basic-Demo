@@ -20,6 +20,7 @@
 		47C879851E483D3B00C868FB /* CPractice.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879831E483D3B00C868FB /* CPractice.c */; };
 		47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879871E487C4300C868FB /* DynamicSequenceArrayList.c */; };
 		47C879911E4B723E00C868FB /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C8798F1E4B723E00C868FB /* LinkedList.c */; };
+		47E16FFB1E517EEF00BADC86 /* CircleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47E16FF91E517EEF00BADC86 /* CircleLinkedList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,8 @@
 		47C879881E487C4300C868FB /* DynamicSequenceArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicSequenceArrayList.h; sourceTree = "<group>"; };
 		47C8798F1E4B723E00C868FB /* LinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 		47C879901E4B723E00C868FB /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		47E16FF91E517EEF00BADC86 /* CircleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CircleLinkedList.c; sourceTree = "<group>"; };
+		47E16FFA1E517EEF00BADC86 /* CircleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLinkedList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 				472381021E359D2100F6F2BC /* DynamicQueue */,
 				472381051E359D2100F6F2BC /* DynamicStack */,
 				47C8798E1E4B723000C868FB /* LinkedList */,
+				47E16FF81E517EE200BADC86 /* CircleLinkedList */,
 				4723810B1E359D2100F6F2BC /* SequenceArrayList */,
 				47C879861E487C3500C868FB /* DynamicSequenceArrayList */,
 			);
@@ -226,6 +230,15 @@
 			path = LinkedList;
 			sourceTree = "<group>";
 		};
+		47E16FF81E517EE200BADC86 /* CircleLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				47E16FFA1E517EEF00BADC86 /* CircleLinkedList.h */,
+				47E16FF91E517EEF00BADC86 /* CircleLinkedList.c */,
+			);
+			path = CircleLinkedList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +307,7 @@
 				472381171E359DBE00F6F2BC /* Algorithm.c in Sources */,
 				472381101E359D2100F6F2BC /* ArrayStack.c in Sources */,
 				472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */,
+				47E16FFB1E517EEF00BADC86 /* CircleLinkedList.c in Sources */,
 				4758AED81E23D37C00FA7884 /* main.c in Sources */,
 				47C879811E404A9700C868FB /* CBasic.c in Sources */,
 				4723810F1E359D2100F6F2BC /* ArrayQueue.c in Sources */,

@@ -24,6 +24,7 @@
 #include "DynamicQueue.h"
 #include "DynamicStack.h"
 #include "LinkedList.h"
+#include "CircleLinkedList.h"
 
 
 // 函数指针的接口功能
@@ -376,7 +377,7 @@ void linkedListImpl() {
     reverseList(list);
     showLinkedList(list);
     
-    bool hasCircle = hasCircleLinkedList(list);
+    bool hasCircle = hasCircleList(list);
     if (hasCircle) {
         printf("链表有环\n");
 
@@ -417,6 +418,29 @@ void linkedListImpl() {
     
     LinkedList *mergeResult = mergeList(list1, list2);
     showLinkedList(mergeResult);
+}
+
+// 环形链式存储
+void circleLinkedListImpl() {
+    
+    CircleLinkedList *list = createCircleLinkedList();
+    appendCircleList(list, 1);
+    appendCircleList(list, 2);
+    appendCircleList(list, 3);
+    appendCircleList(list, 4);
+    appendCircleList(list, 5);
+    showCircleList(list);
+    
+    bool hasCircle = hasCircleLinkedList(list);
+    if (hasCircle) {
+        printf("链表有环\n");
+        
+    } else {
+        printf("链表无环\n");
+    }
+    
+    int length = circleListLength(list);
+    printf("环形链表的长度 = %d\n", length);
 }
 
 // 部分标准库实现测试
@@ -785,6 +809,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 链式存储
 //    linkedListImpl();
+    
+    // 环形链式存储
+    circleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();

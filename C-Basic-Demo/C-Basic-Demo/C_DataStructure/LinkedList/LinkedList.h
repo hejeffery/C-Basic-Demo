@@ -138,10 +138,10 @@ LinkedList *mergeList(LinkedList *list1, LinkedList *list2);
 /**
  *  判断链表是否有环
  *
- *  @param list list的地址
+ *  @param list LinkedList的地址
  *  @return 有环返回true，反之返回false
  */
-bool hasCircleLinkedList(LinkedList *list);
+bool hasCircleList(LinkedList *list);
 
 /**
  *  清空链表

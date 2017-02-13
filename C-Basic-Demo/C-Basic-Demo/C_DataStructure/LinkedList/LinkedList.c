@@ -293,7 +293,7 @@ LinkedList *mergeList(LinkedList *list1, LinkedList *list2) {
     return mergeList;
 }
 
-bool hasCircleLinkedList(LinkedList *list) {
+bool hasCircleList(LinkedList *list) {
     
     if (list == NULL) {
         return false;
