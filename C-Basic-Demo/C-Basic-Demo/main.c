@@ -367,9 +367,22 @@ void linkedListImpl() {
         printf("没有找到结点\n");
     }
     
+    // 反向打印链表中的值
+    printf("反向打印链表中的值\n");
+    reversePrintList(list);
+    printf("\n");
+    
     printf("链表反转\n");
     reverseList(list);
     showLinkedList(list);
+    
+    bool hasCircle = hasCircleLinkedList(list);
+    if (hasCircle) {
+        printf("链表有环\n");
+
+    } else {
+        printf("链表无环\n");
+    }
 
     bool clearSuccess = clearList(list);
     if (clearSuccess) {
@@ -387,6 +400,23 @@ void linkedListImpl() {
         printf("链表清空失败\n");
         showLinkedList(list);
     }
+    
+    // 链表的合并
+    printf("链表的合并\n");
+    LinkedList *list1 = createLinkedList();
+    appendList(list1, 1);
+    appendList(list1, 3);
+    appendList(list1, 5);
+    appendList(list1, 7);
+    
+    LinkedList *list2 = createLinkedList();
+    appendList(list2, 2);
+    appendList(list2, 4);
+    appendList(list2, 6);
+    appendList(list2, 8);
+    
+    LinkedList *mergeResult = mergeList(list1, list2);
+    showLinkedList(mergeResult);
 }
 
 // 部分标准库实现测试

@@ -293,6 +293,34 @@ LinkedList *mergeList(LinkedList *list1, LinkedList *list2) {
     return mergeList;
 }
 
+bool hasCircleLinkedList(LinkedList *list) {
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    // 前进一个
+    LinkedList *pnode1 = list->next;
+    // 前进两个
+    LinkedList *pnode2 = list->next;
+    
+    while (pnode1 != NULL && pnode2 != NULL) {
+        
+        pnode1 = pnode1->next;
+        pnode2 = pnode2->next;
+        if (pnode2 != NULL) {
+            pnode2 = pnode2->next;
+        }
+        
+        // 如果相等，就说明有环
+        if (pnode1 == pnode2) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 bool clearList(LinkedList *list) {
     
     if (list == NULL) {

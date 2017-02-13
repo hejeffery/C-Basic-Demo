@@ -125,13 +125,23 @@ void reverseList(LinkedList *list);
  *  顺序的合并两个链表。
  *  比如链表1: 1, 3, 5, 7, 9
  *
- *  比如链表2: 2, 4, 6, 8, 9
+ *  比如链表2: 2, 4, 6, 8, 10
+ *  
+ *  链表1和链表2合并为，1，2，3，4，5，6，7，8，9，10
  *
  *  @param list1 链表1
  *  @param list2 链表2
  *
  */
 LinkedList *mergeList(LinkedList *list1, LinkedList *list2);
+
+/**
+ *  判断链表是否有环
+ *
+ *  @param list list的地址
+ *  @return 有环返回true，反之返回false
+ */
+bool hasCircleLinkedList(LinkedList *list);
 
 /**
  *  清空链表
