@@ -194,8 +194,9 @@ LinkedList *findCenterNode(LinkedList *list) {
         return NULL;
     }
     
-    // 前进一个，前进两个
+    // 前进一个
     LinkedList *pnode = list->next;
+    // 前进两个
     LinkedList *pnode2 = list->next;
     
     while (pnode2->next != NULL) {
@@ -251,6 +252,47 @@ void reverseList(LinkedList *list) {
     list->next = preNode;
 }
 
+LinkedList *mergeList(LinkedList *list1, LinkedList *list2) {
+    
+    if (list1 == NULL || list1->next == NULL || list2 == NULL || list2->next == NULL) {
+        return NULL;
+    }
+    
+    LinkedList *mergeList = createLinkedList();
+    
+    LinkedList *pnode1 = list1->next;
+    LinkedList *pnode2 = list2->next;
+    
+    while (pnode1 != NULL || pnode2 != NULL) {
+        
+        if (pnode1 != NULL && pnode2 != NULL) {
+            if (pnode1->data <= pnode2->data) {
+
+                appendList(mergeList, pnode1->data);
+                pnode1 = pnode1->next;
+                
+            } else {
+                appendList(mergeList, pnode2->data);
+                pnode2 = pnode2->next;
+            }
+
+        } else {
+            
+            while (pnode1 != NULL) {
+                appendList(mergeList, pnode1->data);
+                pnode1 = pnode1->next;
+            }
+            
+            while (pnode2 != NULL) {
+                appendList(mergeList, pnode2->data);
+                pnode2 = pnode2->next;
+            }
+        }
+    }
+
+    return mergeList;
+}
+
 bool clearList(LinkedList *list) {
     
     if (list == NULL) {
@@ -275,6 +317,18 @@ void showLinkedList(LinkedList *list) {
         pnode = pnode->next;
     }
     printf("\n");
+}
+
+void reversePrintList(LinkedList *list) {
+    
+    if (list == NULL) {
+        return;
+
+    } else {
+        
+        reversePrintList(list->next);
+        printf("%4d", list->data);
+    }
 }
 
 

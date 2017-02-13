@@ -122,6 +122,18 @@ int length(LinkedList *list);
 void reverseList(LinkedList *list);
 
 /**
+ *  顺序的合并两个链表。
+ *  比如链表1: 1, 3, 5, 7, 9
+ *
+ *  比如链表2: 2, 4, 6, 8, 9
+ *
+ *  @param list1 链表1
+ *  @param list2 链表2
+ *
+ */
+LinkedList *mergeList(LinkedList *list1, LinkedList *list2);
+
+/**
  *  清空链表
  *
  *  @param list LinkedList的地址
@@ -135,5 +147,12 @@ bool clearList(LinkedList *list);
  *  @param list LinkedList的地址
  */
 void showLinkedList(LinkedList *list);
+
+/**
+ *  反向打印链表中的值(递归实现)
+ *
+ *  @param list LinkedList的地址
+ */
+void reversePrintList(LinkedList *list);
 
 #endif /* LinkedList_h */
