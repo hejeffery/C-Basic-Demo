@@ -59,10 +59,10 @@ bool insertCircleList(CircleLinkedList *list, int position, int value) {
     if (position < 0 || position > length) {
         return false;
     }
-    
+
+    CircleLinkedList *pnode = list;
     int i = 0;
-    CircleLinkedList *pnode = list->next;
-    while (pnode != list && i < position) {
+    while (i < position) {
         i++;
         pnode = pnode->next;
     }
