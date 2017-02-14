@@ -100,7 +100,7 @@ bool insertList(LinkedList *list, int position, int value) {// 也可以用双�
 }
 
 
-bool deleteList(LinkedList *list, int position, int *value) {// 也可以用双指针来实现
+bool deleteListWithPosition(LinkedList *list, int position, int *value) {
     
     if (list == NULL) {
         return false;
@@ -114,8 +114,8 @@ bool deleteList(LinkedList *list, int position, int *value) {// 也可以用双�
     }
     
     // 取出position位置的前一个结点
-    int i = 0;
-    LinkedList *pnode = list->next;
+    int i = -1;
+    LinkedList *pnode = list;
     while (pnode != NULL && i < (position - 1)) {
         i++;
         pnode = pnode->next;
@@ -123,29 +123,59 @@ bool deleteList(LinkedList *list, int position, int *value) {// 也可以用双�
     
     // 保存需要删除的节点
     LinkedList *deletedNode = pnode->next;
-    *value = deletedNode->data;
     
-    // 需要删除节点的前驱结点指向需要删除节点的后继结点
-    pnode->next = pnode->next->next;
-    
-    // 释放被删除的结点
-    free(deletedNode);
-    
-    return true;
-}
+    if (deletedNode != NULL) {// 不为空说明结点有效
+        *value = deletedNode->data;
+        
+        // 需要删除节点的前驱结点指向需要删除节点的后继结点
+        pnode->next = pnode->next->next;
+        
+        // 释放被删除的结点
+        free(deletedNode);
+        
+        return true;
 
-bool deleteListItem(LinkedList *list, int item, int *position) {
-    
-    // 先查找item是否存在
-    bool isFindItem = findListItem(list, item, position);
-    
-    // 不存在，直接返回false
-    if (!isFindItem) {
+    } else {
         return false;
     }
     
-    // 存在就调用deleteList
-    return deleteList(list, *position, &item);
+}
+
+bool deleteListWithItem(LinkedList *list, int item, int *position) {// 双指针实现
+    
+    if (list == NULL) {
+        return false;
+    }
+    
+    // 双指针处理
+    LinkedList *pnode1 = list;
+    LinkedList *pnode2 = list;
+    
+    int i = -1;
+    while (pnode1 != NULL) {
+        
+        // 不相等，pnode2保存pnode1的值，pnode1前进1
+        if (pnode1->data != item) {
+            i++;
+            pnode2 = pnode1;
+            pnode1 = pnode1->next;
+            
+        } else {
+            break;
+        }
+    }
+    
+    if (pnode1 != NULL) {// 没有执行到最后的结点，找到了需要删除的item
+        // 被删除的item的上一个结点指向item的下一个结点
+        pnode2->next = pnode1->next;
+        free(pnode1);
+        *position = i;
+        return true;
+        
+    } else {// 没有找到需要删除的item
+        *position = -1;
+        return false;
+    }
 }
 
 bool findListItem(LinkedList *list, int item, int *position) {

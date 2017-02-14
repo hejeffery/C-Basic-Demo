@@ -59,17 +59,17 @@ bool insertList(LinkedList *list, int position, int value);
  *  @param value 删除的元素的值
  *  @return 删除成功返回true，反之返回false
  */
-bool deleteList(LinkedList *list, int position, int *value);
+bool deleteListWithPosition(LinkedList *list, int position, int *value);
 
 /**
- *  删除链表中某个位置的元素
+ *  删除链表中某个位置的元素(双指针来实现)
  *
  *  @param list LinkedList的地址
  *  @param item 删除的元素的值
  *  @param position 删除的位置
  *  @return 删除成功返回true，反之返回false
  */
-bool deleteListItem(LinkedList *list, int item, int *position);
+bool deleteListWithItem(LinkedList *list, int item, int *position);
 
 /**
  *  找出链表中的某个元素

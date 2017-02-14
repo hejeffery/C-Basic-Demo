@@ -318,7 +318,7 @@ void linkedListImpl() {
     showLinkedList(list);
     
     printf("\n插入数据\n");
-    bool insertSuccess = insertList(list, 8, 99);
+    bool insertSuccess = insertList(list, 7, 99);
     if (insertSuccess) {
         printf("插入成功\n");
 
@@ -334,18 +334,17 @@ void linkedListImpl() {
     } else {
         printf("没有找到中间位置的结点\n");
     }
-    
-    
+
     int deleteNodeValue = 0;
-    bool isDeleteSuccess = deleteList(list, 1, &deleteNodeValue);
+    bool isDeleteSuccess = deleteListWithPosition(list, 6, &deleteNodeValue);
     if (isDeleteSuccess) {
-        printf("删除结点成功，该结点的值是 = %d\n", deleteNodeValue);
+        printf("\n删除结点成功，该结点的值是 = %d\n", deleteNodeValue);
 
     } else {
         printf("删除结点失败\n");
     }
     showLinkedList(list);
-    
+
     printf("\n");
     int findPosition = -1;
     bool isFindItem = findListItem(list, 2, &findPosition);
@@ -358,7 +357,7 @@ void linkedListImpl() {
     
     printf("\n");
     int deletePosition = -1;
-    bool isDeleteItemSuccess = deleteListItem(list, 2, &deletePosition);
+    bool isDeleteItemSuccess = deleteListWithItem(list, 5, &deletePosition);
     if (isDeleteItemSuccess) {
         printf("删除元素成功，元素的位置是 = %d\n", deletePosition);
 
@@ -366,7 +365,8 @@ void linkedListImpl() {
         printf("删除元素失败\n");
     }
     showLinkedList(list);
-    
+
+    printf("\n");
     LinkedList *findNode = findNodeWithItem(list, 3);
     if (findNode != NULL) {
         printf("找到结点了\n");
@@ -376,14 +376,15 @@ void linkedListImpl() {
     }
     
     // 反向打印链表中的值
-    printf("反向打印链表中的值\n");
+    printf("\n反向打印链表中的值\n");
     reversePrintList(list);
     printf("\n");
     
-    printf("链表反转\n");
+    printf("\n链表反转\n");
     reverseList(list);
     showLinkedList(list);
     
+    printf("\n");
     bool hasCircle = hasCircleList(list);
     if (hasCircle) {
         printf("链表有环\n");
@@ -392,6 +393,7 @@ void linkedListImpl() {
         printf("链表无环\n");
     }
 
+    printf("\n");
     bool clearSuccess = clearList(list);
     if (clearSuccess) {
         printf("链表清空成功\n");
@@ -410,7 +412,7 @@ void linkedListImpl() {
     }
     
     // 链表的合并
-    printf("链表的合并\n");
+    printf("\n链表的合并\n");
     LinkedList *list1 = createLinkedList();
     appendList(list1, 1);
     appendList(list1, 3);
@@ -861,10 +863,10 @@ int main(int argc, const char * argv[]) {
 //    dynamicSequenceArrayListImpl();
     
 //    // 链式存储
-//    linkedListImpl();
+    linkedListImpl();
     
     // 环形链式存储
-    circleLinkedListImpl();
+//    circleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
