@@ -479,16 +479,16 @@ void circleLinkedListImpl() {
     showCircleList(list);
 
     int deleteValue = 0;
-    bool isDeleteSuccess = deleteCircleListWithPosition(list, 1, &deleteValue);
+    bool isDeleteSuccess = deleteCircleListWithPosition(list, 0, &deleteValue);
     if (isDeleteSuccess) {
         printf("删除成功，删除的值是 = %d\n", deleteValue);
     } else {
         printf("删除失败\n");
     }
     showCircleList(list);
-    
+
     int deletePostion = -1;
-    bool isDeleteItemSuccess = deleteCircleListWithItem(list, 89, &deletePostion);
+    bool isDeleteItemSuccess = deleteCircleListWithItem(list, 2, &deletePostion);
     if (isDeleteItemSuccess) {
         printf("删除成功，删除的位置是 = %d\n", deletePostion);
 
@@ -865,8 +865,8 @@ int main(int argc, const char * argv[]) {
 //    // 链式存储
 //    linkedListImpl();
     
-    // 环形链式存储
-    circleLinkedListImpl();
+//    // 环形链式存储
+//    circleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();

@@ -52,7 +52,7 @@ bool appendCircleList(CircleLinkedList *list, int value);
 bool insertCircleList(CircleLinkedList *list, int position, int value);
 
 /**
- *  删除环形链表中某个位置的元素
+ *  删除环形链表中某个位置的元素(双指针实现)
  *
  *  @param list CircleLinkedList的地址
  *  @param position 删除的位置
