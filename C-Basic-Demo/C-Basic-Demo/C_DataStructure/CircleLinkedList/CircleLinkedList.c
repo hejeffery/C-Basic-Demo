@@ -79,7 +79,7 @@ bool insertCircleList(CircleLinkedList *list, int position, int value) {
     return true;
 }
 
-bool deleteCircleList(CircleLinkedList *list, int position, int *value) {
+bool deleteCircleListWithPosition(CircleLinkedList *list, int position, int *value) {
     
     if (list == NULL) {
         return false;
@@ -112,7 +112,7 @@ bool deleteCircleList(CircleLinkedList *list, int position, int *value) {
     return true;
 }
 
-bool deleteCircleListItem(CircleLinkedList *list, int item, int *position) {
+bool deleteCircleListWithItem(CircleLinkedList *list, int item, int *position) {
     
     if (list == NULL) {
         return false;
@@ -127,7 +127,7 @@ bool deleteCircleListItem(CircleLinkedList *list, int item, int *position) {
     }
     
     // 存在就调用deleteList
-    return deleteCircleList(list, *position, &item);
+    return deleteCircleListWithPosition(list, *position, &item);
 }
 
 int circleListLength(CircleLinkedList *list) {

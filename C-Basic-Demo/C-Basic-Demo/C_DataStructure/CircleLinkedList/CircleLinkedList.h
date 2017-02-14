@@ -59,7 +59,7 @@ bool insertCircleList(CircleLinkedList *list, int position, int value);
  *  @param value 删除的元素的值
  *  @return 删除成功返回true，反之返回false
  */
-bool deleteCircleList(CircleLinkedList *list, int position, int *value);
+bool deleteCircleListWithPosition(CircleLinkedList *list, int position, int *value);
 
 /**
  *  删除环形链表中某个位置的元素
@@ -69,7 +69,7 @@ bool deleteCircleList(CircleLinkedList *list, int position, int *value);
  *  @param position 删除的位置
  *  @return 删除成功返回true，反之返回false
  */
-bool deleteCircleListItem(CircleLinkedList *list, int item, int *position);
+bool deleteCircleListWithItem(CircleLinkedList *list, int item, int *position);
 
 /**
  *  获取环形链表的长度
