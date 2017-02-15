@@ -364,14 +364,27 @@ bool clearList(LinkedList *list) {
 //        list = node;
 //    }
     
-    // 第二种方式：双指针
+//    // 第二种方式：双指针，头指针要变化
+//    LinkedList *pnode1 = list;
+//    LinkedList *pnode2 = list;
+//    while (pnode1 != NULL) {
+//        pnode2 = pnode1;
+//        pnode1 = pnode1->next;
+//        free(pnode2);
+//    }
+    
+    // 第三种方式：双指针，头指针不发生变化
     LinkedList *pnode1 = list;
     LinkedList *pnode2 = list;
-    while (pnode1 != NULL) {
-        pnode2 = pnode1;
-        pnode1 = pnode1->next;
+    while (pnode1->next != NULL) {
+        pnode2 = pnode1->next;
+        pnode1->next = pnode2->next;
         free(pnode2);
+        
+        showLinkedList(list);
+        printf("\n");
     }
+    free(list);
     
     return true;
 }
