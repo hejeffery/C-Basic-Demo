@@ -54,17 +54,43 @@ bool insertCircleList(CircleLinkedList *list, int position, int value) {
         return false;
     }
     
-    int length = circleListLength(list);
+//    // 第一种方法
+//    int length = circleListLength(list);
+//    
+//    if (position < 0 || position > length) {
+//        return false;
+//    }
+//
+//    CircleLinkedList *pnode = list;
+//    int i = 0;
+//    while (i < position) {
+//        i++;
+//        pnode = pnode->next;
+//    }
+//    
+//    CircleLinkedList *pnew = (CircleLinkedList *)malloc(sizeof(CircleLinkedList));
+//    if (pnew == NULL) {
+//        return false;
+//    }
+//
+//    pnew->data = value;
+//    pnew->next = pnode->next;
+//    pnode->next = pnew;
     
+    // 第二种方法：双指针
+    int length = circleListLength(list);
+
     if (position < 0 || position > length) {
         return false;
     }
 
-    CircleLinkedList *pnode = list;
+    CircleLinkedList *pnode1 = list->next;
+    CircleLinkedList *pnode2 = list;
     int i = 0;
-    while (i < position) {
+    while (pnode1 != list && i < position) {
+        pnode2 = pnode1;
+        pnode1 = pnode1->next;
         i++;
-        pnode = pnode->next;
     }
     
     CircleLinkedList *pnew = (CircleLinkedList *)malloc(sizeof(CircleLinkedList));
@@ -73,8 +99,8 @@ bool insertCircleList(CircleLinkedList *list, int position, int value) {
     }
     
     pnew->data = value;
-    pnew->next = pnode->next;
-    pnode->next = pnew;
+    pnew->next = pnode1;
+    pnode2->next = pnew;
     
     return true;
 }
