@@ -573,7 +573,6 @@ void linkedStackImpl() {
     } else {
         printf("不是是空栈\n");
     }
-    
 }
 
 // 部分标准库实现测试

@@ -60,7 +60,7 @@ bool popLinkedStack(LinkedStack *stack, int *value, int *index) {
     // 双指针
     int i = 0;
     LinkedStack *pnode1 = stack->next;
-    LinkedStack *pnode2 = stack->next;
+    LinkedStack *pnode2 = stack;
     while (pnode1->next != NULL) {
         i++;
         pnode2 = pnode1;
