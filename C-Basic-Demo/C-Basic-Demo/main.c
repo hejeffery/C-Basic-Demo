@@ -440,6 +440,7 @@ void circleLinkedListImpl() {
     appendCircleList(list, 5);
     showCircleList(list);
     
+    printf("\n");
     bool isEmptyList = isEmptyCircleLinkedList(list);
     if (isEmptyList) {
         printf("是空循环链表\n");
@@ -448,6 +449,7 @@ void circleLinkedListImpl() {
         printf("不是空循环链表\n");
     }
     
+    printf("\n");
     bool hasCircle = hasCircleLinkedList(list);
     if (hasCircle) {
         printf("链表有环\n");
@@ -456,11 +458,13 @@ void circleLinkedListImpl() {
         printf("链表无环\n");
     }
     
+    printf("\n");
     int length = circleListLength(list);
     printf("环形链表的长度 = %d\n", length);
     
+    printf("\n");
     int findPosition = -1;
-    bool findItemSuccess = findCircleListItem(list, 3, &findPosition);
+    bool findItemSuccess = findCircleListItem(list, 100, &findPosition);
     if (findItemSuccess) {
         printf("找到了，位置是 = %d\n", findPosition);
 
@@ -468,16 +472,32 @@ void circleLinkedListImpl() {
         printf("没有找到\n");
     }
     
+    printf("\n");
     CircleLinkedList *findNode = findCircleNodeWithItem(list, 4);
     if (findNode) {
         printf("找到了结点，结点的值是 = %d\n", findNode->data);
     }
     
-    insertCircleList(list, 0, 99);
+    printf("\n");
+    bool insertSuccess = insertCircleList(list, 0, 99);
+    if (insertSuccess) {
+        printf("插入数据成功\n");
+
+    } else {
+        printf("插入数据失败\n");
+    }
     showCircleList(list);
-    insertCircleList(list, 4, 89);
+    
+    bool insertSuccess1 = insertCircleList(list, 4, 89);
+    if (insertSuccess1) {
+        printf("插入数据成功\n");
+
+    } else {
+        printf("插入数据失败\n");
+    }
     showCircleList(list);
 
+    printf("\n");
     int deleteValue = 0;
     bool isDeleteSuccess = deleteCircleListWithPosition(list, 0, &deleteValue);
     if (isDeleteSuccess) {
@@ -487,8 +507,9 @@ void circleLinkedListImpl() {
     }
     showCircleList(list);
 
+    printf("\n");
     int deletePostion = -1;
-    bool isDeleteItemSuccess = deleteCircleListWithItem(list, 2, &deletePostion);
+    bool isDeleteItemSuccess = deleteCircleListWithItem(list, 5, &deletePostion);
     if (isDeleteItemSuccess) {
         printf("删除成功，删除的位置是 = %d\n", deletePostion);
 
@@ -866,7 +887,7 @@ int main(int argc, const char * argv[]) {
 //    linkedListImpl();
     
 //    // 环形链式存储
-//    circleLinkedListImpl();
+    circleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();

@@ -116,20 +116,49 @@ bool deleteCircleListWithPosition(CircleLinkedList *list, int position, int *val
 
 bool deleteCircleListWithItem(CircleLinkedList *list, int item, int *position) {
     
-    if (list == NULL) {
+    if (list == NULL || list->next == NULL) {
         return false;
     }
     
-    // 先查找item是否存在
-    bool isFindItem = findCircleListItem(list, item, position);
+//    // 第一种方法
+//    // 先查找item是否存在
+//    bool isFindItem = findCircleListItem(list, item, position);
+//    
+//    // 不存在，直接返回false
+//    if (!isFindItem) {
+//        return false;
+//    }
+//    
+//    // 存在就调用deleteList
+//    return deleteCircleListWithPosition(list, *position, &item);
     
-    // 不存在，直接返回false
-    if (!isFindItem) {
-        return false;
+    // 第二种方法：双指针
+    CircleLinkedList *pnode1 = list->next;
+    CircleLinkedList *pnode2 = list;
+    
+    int i = 0;
+    while (pnode1 != list) {
+        
+        if (pnode1->data != item) {
+            pnode2 = pnode1;
+            pnode1 = pnode1->next;
+            i++;
+
+        } else {
+            break;
+        }
     }
     
-    // 存在就调用deleteList
-    return deleteCircleListWithPosition(list, *position, &item);
+    if (pnode1 != list) {// 在链表中找到了item
+        pnode2->next = pnode1->next;
+        free(pnode1);
+        *position = i;
+        return true;
+
+    } else {// 在链表中没有找到item
+        *position = -1;
+        return false;
+    }
 }
 
 int circleListLength(CircleLinkedList *list) {
