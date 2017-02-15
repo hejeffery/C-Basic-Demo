@@ -44,7 +44,7 @@ bool appendList(LinkedList *list, int value) {
     pnew->data = value;
     pnew->next = NULL;
 
-    // 尾节点的next指向新结点
+    // 尾结点的next指向新结点
     ptail->next = pnew;
     
     return true;
@@ -121,13 +121,13 @@ bool deleteListWithPosition(LinkedList *list, int position, int *value) {
         pnode = pnode->next;
     }
     
-    // 保存需要删除的节点
+    // 保存需要删除的结点
     LinkedList *deletedNode = pnode->next;
     
     if (deletedNode != NULL) {// 不为空说明结点有效
         *value = deletedNode->data;
         
-        // 需要删除节点的前驱结点指向需要删除节点的后继结点
+        // 需要删除结点的前驱结点指向需要删除结点的后继结点
         pnode->next = pnode->next->next;
         
         // 释放被删除的结点
@@ -356,11 +356,21 @@ bool clearList(LinkedList *list) {
         return false;
     }
     
-    LinkedList *node = NULL;
-    while (list != NULL) {
-        node = list->next;
-        free(list);
-        list = node;
+//    // 第一种方法：逐个删除，需要改变头结点
+//    LinkedList *node = NULL;
+//    while (list != NULL) {
+//        node = list->next;
+//        free(list);
+//        list = node;
+//    }
+    
+    // 第二种方式：双指针
+    LinkedList *pnode1 = list;
+    LinkedList *pnode2 = list;
+    while (pnode1 != NULL) {
+        pnode2 = pnode1;
+        pnode1 = pnode1->next;
+        free(pnode2);
     }
     
     return true;

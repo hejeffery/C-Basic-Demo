@@ -405,6 +405,8 @@ void linkedListImpl() {
         } else {
             printf("不是空链表\n");
         }
+        
+        showLinkedList(list);
 
     } else {
         printf("链表清空失败\n");
@@ -887,7 +889,7 @@ int main(int argc, const char * argv[]) {
 //    linkedListImpl();
     
 //    // 环形链式存储
-    circleLinkedListImpl();
+//    circleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();

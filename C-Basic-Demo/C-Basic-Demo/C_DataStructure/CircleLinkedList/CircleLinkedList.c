@@ -127,11 +127,11 @@ bool deleteCircleListWithPosition(CircleLinkedList *list, int position, int *val
         pnode1 = pnode1->next;
     }
     
-    // 保存需要删除的节点
+    // 保存需要删除的结点
     CircleLinkedList *deletedNode = pnode1;
     *value = deletedNode->data;
     
-    // 需要删除节点的前驱结点指向需要删除节点的后继结点
+    // 需要删除结点的前驱结点指向需要删除结点的后继结点
     pnode2->next = pnode1->next;
     
     // 释放被删除的结点
