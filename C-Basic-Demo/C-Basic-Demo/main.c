@@ -25,6 +25,7 @@
 #include "DynamicStack.h"
 #include "LinkedList.h"
 #include "CircleLinkedList.h"
+#include "LinkedStack.h"
 
 
 // 函数指针的接口功能
@@ -519,6 +520,62 @@ void circleLinkedListImpl() {
     showCircleList(list);
 }
 
+// 链式栈
+void linkedStackImpl() {
+    
+    LinkedStack *stack = createLinkedStack();
+    
+    bool isEmptyStack = isEmptyLinkedStack(stack);
+    if (isEmptyStack) {
+        printf("是空栈\n");
+
+    } else {
+        printf("不是是空栈\n");
+    }
+    
+    printf("\n");
+    pushLinkedStack(stack, 1);
+    pushLinkedStack(stack, 2);
+    pushLinkedStack(stack, 4);
+    pushLinkedStack(stack, 6);
+    pushLinkedStack(stack, 8);
+    showLinkedStack(stack);
+    
+    printf("\n");
+    int popValue = -1;
+    int popIndex = -1;
+    bool popSuccess = popLinkedStack(stack, &popValue, &popIndex);
+    if (popSuccess) {
+        printf("出栈成功，出栈的值是 = %d，出栈的索引是 = %d\n", popValue, popIndex);
+
+    } else {
+        printf("出栈失败\n");
+    }
+    showLinkedStack(stack);
+    
+    printf("\n");
+    int length = lengthLinkedStack(stack);
+    printf("栈的长度是 = %d\n", length);
+    
+    printf("\n");
+    int topIndex = topLinkedStackIndex(stack);
+    printf("栈顶的索引是 = %d\n", topIndex);
+    
+    printf("\n");
+    int topValue = topLinkedStackValue(stack);
+    printf("栈顶的值是 = %d\n", topValue);
+    
+    printf("\n");
+    isEmptyStack = isEmptyLinkedStack(stack);
+    if (isEmptyStack) {
+        printf("是空栈\n");
+        
+    } else {
+        printf("不是是空栈\n");
+    }
+    
+}
+
 // 部分标准库实现测试
 void standardLibImplTest() {
     
@@ -888,6 +945,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 环形链式存储
 //    circleLinkedListImpl();
+    
+    // 链式栈
+    linkedStackImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
