@@ -380,9 +380,6 @@ bool clearList(LinkedList *list) {
         pnode2 = pnode1->next;
         pnode1->next = pnode2->next;
         free(pnode2);
-        
-        showLinkedList(list);
-        printf("\n");
     }
     free(list);
     
