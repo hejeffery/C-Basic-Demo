@@ -26,6 +26,7 @@
 #include "LinkedList.h"
 #include "CircleLinkedList.h"
 #include "LinkedStack.h"
+#include "LinkedQueue.h"
 
 
 // 函数指针的接口功能
@@ -523,35 +524,23 @@ void circleLinkedListImpl() {
 // 链式栈
 void linkedStackImpl() {
     
+    // 尾插法
     LinkedStack *stack = createLinkedStack();
-    
-    bool isEmptyStack = isEmptyLinkedStack(stack);
-    if (isEmptyStack) {
-        printf("是空栈\n");
-
-    } else {
-        printf("不是是空栈\n");
-    }
-    
-    printf("\n");
     pushLinkedStack(stack, 1);
     pushLinkedStack(stack, 2);
     pushLinkedStack(stack, 4);
     pushLinkedStack(stack, 6);
     pushLinkedStack(stack, 8);
     showLinkedStack(stack);
-    
-    printf("\n");
-    int popValue = -1;
-    int popIndex = -1;
-    bool popSuccess = popLinkedStack(stack, &popValue, &popIndex);
-    if (popSuccess) {
-        printf("出栈成功，出栈的值是 = %d，出栈的索引是 = %d\n", popValue, popIndex);
 
+    printf("\n");
+    bool isEmptyStack = isEmptyLinkedStack(stack);
+    if (isEmptyStack) {
+        printf("是空栈\n");
+        
     } else {
-        printf("出栈失败\n");
+        printf("不是是空栈\n");
     }
-    showLinkedStack(stack);
     
     printf("\n");
     int length = lengthLinkedStack(stack);
@@ -566,13 +555,85 @@ void linkedStackImpl() {
     printf("栈顶的值是 = %d\n", topValue);
     
     printf("\n");
-    isEmptyStack = isEmptyLinkedStack(stack);
-    if (isEmptyStack) {
+    while (stack->next != NULL) {
+        int popValue = -1;
+        int popIndex = -1;
+        popLinkedStack(stack, &popValue, &popIndex);
+        printf("出栈成功，出栈的值是 = %d，出栈的索引是 = %d\n", popValue, popIndex);
+        showLinkedStack(stack);
+        printf("\n\n");
+    }
+    
+    // 头插法
+    LinkedStack *stack1 = createLinkedStack();
+    pushLinkedStackHead(&stack1, 1);
+    pushLinkedStackHead(&stack1, 2);
+    pushLinkedStackHead(&stack1, 3);
+    pushLinkedStackHead(&stack1, 4);
+    showLinkedStackHead(stack1);
+    
+    bool isEmptyStackHead = isEmptyLinkedStack(stack1);
+    if (isEmptyStackHead) {
         printf("是空栈\n");
         
     } else {
         printf("不是是空栈\n");
     }
+    
+    int stackLength = lengthLinkedStackHead(stack1);
+    printf("栈的长度是 = %d\n", stackLength);
+    
+    while (stack1->next != NULL) {
+        int popValue1 = -1;
+        int popIndex1 = -1;
+        popLinkedStackHead(&stack1, &popValue1, &popIndex1);
+        printf("出栈成功，出栈的值是 = %d, index = %d\n", popValue1, popIndex1);
+        showLinkedStackHead(stack1);
+        printf("\n\n");
+    }
+    
+}
+
+// 链式队列
+void linkedQueueImpl() {
+    
+    LinkedQueue *queue = createLinkedQueue();
+    
+    bool isEmptyQueue = isEmptyLinkedQueue(queue);
+    if (isEmptyQueue) {
+        printf("空队列\n");\
+
+    } else {
+        printf("非空队列\n");
+    }
+    
+    printf("\n");
+    enqueueLinked(&queue, 1);
+    enqueueLinked(&queue, 2);
+    enqueueLinked(&queue, 3);
+    enqueueLinked(&queue, 4);
+    enqueueLinked(&queue, 5);
+    showLinkedQueueData(queue);
+    
+    int length = lengthLinkedQueue(queue);
+    printf("队列的长度是 = %d\n", length);
+
+    printf("\n");
+    int headElement = headLinkedQueueElement(queue);
+    printf("队头是 = %d\n", headElement);
+    
+    printf("\n");
+    int tailElement = tailLinkedQueueElement(queue);
+    printf("队尾是 = %d\n", tailElement);
+    
+    printf("\n");
+    while (queue->next != NULL) {
+        int dequeueValue = 0;
+        dequeueLinked(queue, &dequeueValue);
+        printf("出队成功，出队的值是 = %d\n", dequeueValue);
+        showLinkedQueueData(queue);
+    }
+    
 }
 
 // 部分标准库实现测试
@@ -945,8 +1006,11 @@ int main(int argc, const char * argv[]) {
 //    // 环形链式存储
 //    circleLinkedListImpl();
     
-    // 链式栈
-    linkedStackImpl();
+//    // 链式栈
+//    linkedStackImpl();
+    
+//    // 链式队列
+//    linkedQueueImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
