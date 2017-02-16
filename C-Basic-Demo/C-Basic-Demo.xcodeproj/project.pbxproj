@@ -23,6 +23,7 @@
 		47E16FFB1E517EEF00BADC86 /* CircleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47E16FF91E517EEF00BADC86 /* CircleLinkedList.c */; };
 		47E170221E5452D500BADC86 /* LinkedStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 47E170201E5452D500BADC86 /* LinkedStack.c */; };
 		47E170261E54B7F500BADC86 /* LinkedQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 47E170241E54B7F500BADC86 /* LinkedQueue.c */; };
+		47E1702A1E556C6600BADC86 /* PriorityLinkedQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 47E170281E556C6600BADC86 /* PriorityLinkedQueue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,8 @@
 		47E170211E5452D500BADC86 /* LinkedStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedStack.h; sourceTree = "<group>"; };
 		47E170241E54B7F500BADC86 /* LinkedQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedQueue.c; sourceTree = "<group>"; };
 		47E170251E54B7F500BADC86 /* LinkedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedQueue.h; sourceTree = "<group>"; };
+		47E170281E556C6600BADC86 /* PriorityLinkedQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PriorityLinkedQueue.c; sourceTree = "<group>"; };
+		47E170291E556C6600BADC86 /* PriorityLinkedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityLinkedQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 				47C8798E1E4B723000C868FB /* LinkedList */,
 				47E170231E54B7E800BADC86 /* LinkedQueue */,
 				47E1701F1E5452C600BADC86 /* LinkedStack */,
+				47E170271E556C5500BADC86 /* PriorityLinkedQueue */,
 				47E16FF81E517EE200BADC86 /* CircleLinkedList */,
 				4723810B1E359D2100F6F2BC /* SequenceArrayList */,
 				47C879861E487C3500C868FB /* DynamicSequenceArrayList */,
@@ -265,6 +269,15 @@
 			path = LinkedQueue;
 			sourceTree = "<group>";
 		};
+		47E170271E556C5500BADC86 /* PriorityLinkedQueue */ = {
+			isa = PBXGroup;
+			children = (
+				47E170291E556C6600BADC86 /* PriorityLinkedQueue.h */,
+				47E170281E556C6600BADC86 /* PriorityLinkedQueue.c */,
+			);
+			path = PriorityLinkedQueue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,6 +348,7 @@
 				472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */,
 				47E170261E54B7F500BADC86 /* LinkedQueue.c in Sources */,
 				47E16FFB1E517EEF00BADC86 /* CircleLinkedList.c in Sources */,
+				47E1702A1E556C6600BADC86 /* PriorityLinkedQueue.c in Sources */,
 				4758AED81E23D37C00FA7884 /* main.c in Sources */,
 				47C879811E404A9700C868FB /* CBasic.c in Sources */,
 				4723810F1E359D2100F6F2BC /* ArrayQueue.c in Sources */,

@@ -50,7 +50,7 @@ bool enqueueLinked(LinkedQueue **queue, int value) {
 
 bool dequeueLinked(LinkedQueue *queue, int *value) {
     
-    if (queue == NULL) {
+    if (isEmptyLinkedQueue(queue)) {
         return false;
     }
     

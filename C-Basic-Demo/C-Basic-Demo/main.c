@@ -27,6 +27,7 @@
 #include "CircleLinkedList.h"
 #include "LinkedStack.h"
 #include "LinkedQueue.h"
+#include "PriorityLinkedQueue.h"
 
 
 // 函数指针的接口功能
@@ -636,6 +637,34 @@ void linkedQueueImpl() {
     
 }
 
+// 链式优先队列
+void priorityLinkedQueueImpl() {
+    
+    PriorityLinkedQueue *queue = createPriorityLinkedQueue();
+    
+    if (isEmptyPriorityLinkedQueue(queue)) {
+        printf("空队列\n");
+
+    } else {
+        printf("非空队列\n");
+    }
+    
+    enqueuePriorityLinked(queue, 1, PriorityDefault);
+    enqueuePriorityLinked(queue, 2, PriorityHigh);
+    enqueuePriorityLinked(queue, 3, PriorityHigh);
+    enqueuePriorityLinked(queue, 4, PriorityLow);
+    enqueuePriorityLinked(queue, 5, PriorityDefault);
+    enqueuePriorityLinked(queue, 6, PriorityHigh);
+    showPriorityLinkedQueueData(queue);
+    
+    while (queue->next != NULL) {
+        PriorityLinkedQueue dequeueNode;
+        dequeuePriorityLinked(queue, &dequeueNode);
+        printf("出队成功，出队的值是 = %d， 优先级是 = %d\n", dequeueNode.data, dequeueNode.priority);
+        showPriorityLinkedQueueData(queue);
+    }
+}
+
 // 部分标准库实现测试
 void standardLibImplTest() {
     
@@ -1011,6 +1040,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 链式队列
 //    linkedQueueImpl();
+    
+    // 链式优先队列
+    priorityLinkedQueueImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
