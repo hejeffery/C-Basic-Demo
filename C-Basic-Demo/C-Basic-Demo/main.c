@@ -1041,8 +1041,8 @@ int main(int argc, const char * argv[]) {
 //    // 链式队列
 //    linkedQueueImpl();
     
-    // 链式优先队列
-    priorityLinkedQueueImpl();
+//    // 链式优先队列
+//    priorityLinkedQueueImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
