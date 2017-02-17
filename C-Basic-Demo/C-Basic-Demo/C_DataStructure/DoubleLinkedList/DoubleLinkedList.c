@@ -60,16 +60,13 @@ bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value) {
     if (position < 0 || position > length) {
         return false;
     }
-    
-    // 双指针
+
     int i = 0;
-    DoubleLinkedList *pnode1 = list->next;
-    DoubleLinkedList *pnode2 = list;
-    while (pnode1 != NULL && i < position) {
+    DoubleLinkedList *pnode = list->next;
+    while (pnode != NULL && i < position) {
         
         i++;
-        pnode2 = pnode1;
-        pnode1 = pnode1->next;
+        pnode = pnode->next;
     }
     
     DoubleLinkedList *pnew = (DoubleLinkedList *)malloc(sizeof(DoubleLinkedList));
@@ -78,11 +75,11 @@ bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value) {
     }
     
     pnew->data = value;
-    pnew->next = pnode1;
-    pnew->prior = pnode2;
+    pnew->next = pnode;
+    pnew->prior = pnode->prior;
 
-    pnode2->next = pnew;
-    pnode1->prior = pnew;
+    pnode->prior->next = pnew;
+    pnode->prior = pnew;
 
     return true;
 }
@@ -97,21 +94,18 @@ bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *val
     if (position < 0 || position > length) {
         return false;
     }
-    
-    // 双指针
+
     int i = 0;
-    DoubleLinkedList *pnode1 = list->next;
-    DoubleLinkedList *pnode2 = list;
-    while (pnode1 != NULL && i < position) {
+    DoubleLinkedList *pnode = list->next;
+    while (pnode != NULL && i < position) {
         i++;
-        pnode2 = pnode1;
-        pnode1 = pnode1->next;
+        pnode = pnode->next;
     }
     
-    DoubleLinkedList *deleteNode = pnode1;
+    DoubleLinkedList *deleteNode = pnode;
     *value = deleteNode->data;
-    pnode2->next = pnode1->next;
-    pnode1->next->prior = pnode2;
+    pnode->prior->next = pnode->next;
+    pnode->next->prior = pnode->prior;
     
     free(deleteNode);
     
@@ -123,18 +117,15 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
     if (list == NULL || list->next == NULL) {
         return false;
     }
-    
-    // 双指针
-    DoubleLinkedList *pnode1 = list->next;
-    DoubleLinkedList *pnode2 = list;
+
+    DoubleLinkedList *pnode = list->next;
     
     int i = 0;
-    while (pnode1 != NULL) {
+    while (pnode != NULL) {
         
-        if (pnode1->data != item) {
+        if (pnode->data != item) {
             i++;
-            pnode2 = pnode1;
-            pnode1 = pnode1->next;
+            pnode = pnode->next;
 
         } else {
             
@@ -142,12 +133,12 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
         }
     }
     
-    if (pnode1 != list) {
+    if (pnode != list) {
 
-        pnode2->next = pnode1->next;
-        pnode1->next->prior = pnode2;
+        pnode->prior->next = pnode->next;
+        pnode->next->prior = pnode->prior;
         *position = i;
-        free(pnode1);
+        free(pnode);
         return true;
         
     } else {
