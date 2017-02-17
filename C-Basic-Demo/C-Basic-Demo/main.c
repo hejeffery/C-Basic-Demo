@@ -28,6 +28,7 @@
 #include "LinkedStack.h"
 #include "LinkedQueue.h"
 #include "PriorityLinkedQueue.h"
+#include "DoubleLinkedList.h"
 
 
 // 函数指针的接口功能
@@ -665,6 +666,27 @@ void priorityLinkedQueueImpl() {
     }
 }
 
+// 双链表
+void doubleLinkedListImpl() {
+    
+    DoubleLinkedList *list = createDoubleLinkedList();
+    
+    appendDoubleLinkedList(list, 1);
+    appendDoubleLinkedList(list, 2);
+    appendDoubleLinkedList(list, 3);
+    appendDoubleLinkedList(list, 4);
+    showDoubleLinkedList(list);
+    
+    printf("\n");
+    int length = lengthDoubleLinkedList(list);
+    printf("双链表的长度是 = %d\n", length);
+    
+    printf("\n");
+    insertDoubleLinkedList(list, 2, 77);
+    showDoubleLinkedList(list);
+    
+}
+
 // 部分标准库实现测试
 void standardLibImplTest() {
     
@@ -1043,6 +1065,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 链式优先队列
 //    priorityLinkedQueueImpl();
+    
+    // 双链表
+    doubleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
