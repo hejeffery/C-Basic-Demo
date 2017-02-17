@@ -117,7 +117,7 @@ bool deleteCircleListWithPosition(CircleLinkedList *list, int position, int *val
         return false;
     }
     
-    
+    // 双指针
     int i = 0;
     CircleLinkedList *pnode1 = list->next;
     CircleLinkedList *pnode2 = list;

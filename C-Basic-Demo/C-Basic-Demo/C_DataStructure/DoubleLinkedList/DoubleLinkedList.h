@@ -21,7 +21,7 @@
 typedef struct DLNode DoubleLinkedList;
 
 struct DLNode {
-    int date;
+    int data;
     DoubleLinkedList *prior;
     DoubleLinkedList *next;
 };
@@ -51,6 +51,45 @@ bool appendDoubleLinkedList(DoubleLinkedList *list, int value);
  *  @return 添加成功返回true，反之返回false
  */
 bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value);
+
+/**
+ *  删除双链表中某个位置的元素
+ *
+ *  @param list DoubleLinkedList的地址
+ *  @param position 删除的位置
+ *  @param value 删除的元素的值
+ *  @return 删除成功返回true，反之返回false
+ */
+bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *value);
+
+/**
+ *  删除双链表中某个位置的元素(双指针来实现)
+ *
+ *  @param list DoubleLinkedList的地址
+ *  @param item 删除的元素的值
+ *  @param position 删除的位置
+ *  @return 删除成功返回true，反之返回false
+ */
+bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position);
+
+/**
+ *  找出双链表中的某个元素
+ *
+ *  @param list DoubleLinkedList的地址
+ *  @param item 需要查找的元素
+ *  @param position 找到的位置
+ *  @return 找到成功返回true，反之返回false
+ */
+bool findDoubleListItem(DoubleLinkedList *list, int item, int *position);
+
+/**
+ *  根据某个元素，找出双链表中的该元素的结点
+ *
+ *  @param list DoubleLinkedList的地址
+ *  @param item 需要查找的元素
+ *  @return 找到返回该元素的结点
+ */
+DoubleLinkedList *findDoubleListNodeWithItem(DoubleLinkedList *list, int item);
 
 /**
  *  返回链表的长度

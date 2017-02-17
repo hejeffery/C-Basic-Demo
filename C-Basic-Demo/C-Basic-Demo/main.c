@@ -685,6 +685,46 @@ void doubleLinkedListImpl() {
     insertDoubleLinkedList(list, 2, 77);
     showDoubleLinkedList(list);
     
+    printf("\n");
+    int deleteItem = 0;
+    bool deletePositionSuccess = deleteDoubleListWithPosition(list, 3, &deleteItem);
+    if (deletePositionSuccess) {
+        printf("删除成功(deleteDoubleListWithPosition)，删除的值是 = %d\n", deleteItem);
+
+    } else {
+        printf("删除失败\n");
+    }
+    showDoubleLinkedList(list);
+    
+    printf("\n");
+    int deletePosition = -1;
+    bool deleteItemSuccess = deleteDoubleListWithItem(list, 77, &deletePosition);
+    if (deleteItemSuccess) {
+        printf("删除成功(deleteDoubleListWithItem)，删除的值的位置是 = %d\n", deletePosition);
+
+    } else {
+        printf("删除失败\n");
+    }
+    showDoubleLinkedList(list);
+    
+    printf("\n");
+    int findItemPosition = -1;
+    bool findItemSuccess = findDoubleListItem(list, 2, &findItemPosition);
+    if (findItemSuccess) {
+        printf("找到了，该item的位置是 = %d\n", findItemPosition);
+
+    } else {
+        printf("没有找到\n");
+    }
+    
+    printf("\n");
+    DoubleLinkedList *findedNode = findDoubleListNodeWithItem(list, 2);
+    if (findedNode) {
+        printf("找到了，结点的地址是 = %p，值是 = %d\n", findedNode, findedNode->data);
+    } else {
+        printf("没有找到\n");
+    }
+    
 }
 
 // 部分标准库实现测试
@@ -1066,8 +1106,8 @@ int main(int argc, const char * argv[]) {
 //    // 链式优先队列
 //    priorityLinkedQueueImpl();
     
-    // 双链表
-    doubleLinkedListImpl();
+//    // 双链表
+//    doubleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
