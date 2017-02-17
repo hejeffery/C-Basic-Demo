@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4703DD101E56FE7100843437 /* DoubleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 4703DD0E1E56FE7100843437 /* DoubleLinkedList.c */; };
 		4723810F1E359D2100F6F2BC /* ArrayQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380FD1E359D2100F6F2BC /* ArrayQueue.c */; };
 		472381101E359D2100F6F2BC /* ArrayStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381001E359D2100F6F2BC /* ArrayStack.c */; };
 		472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381031E359D2100F6F2BC /* DynamicQueue.c */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4703DD0E1E56FE7100843437 /* DoubleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DoubleLinkedList.c; sourceTree = "<group>"; };
+		4703DD0F1E56FE7100843437 /* DoubleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedList.h; sourceTree = "<group>"; };
 		472380FD1E359D2100F6F2BC /* ArrayQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayQueue.c; sourceTree = "<group>"; };
 		472380FE1E359D2100F6F2BC /* ArrayQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayQueue.h; sourceTree = "<group>"; };
 		472381001E359D2100F6F2BC /* ArrayStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayStack.c; sourceTree = "<group>"; };
@@ -86,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4703DD0D1E56FE4900843437 /* DoubleLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				4703DD0F1E56FE7100843437 /* DoubleLinkedList.h */,
+				4703DD0E1E56FE7100843437 /* DoubleLinkedList.c */,
+			);
+			path = DoubleLinkedList;
+			sourceTree = "<group>";
+		};
 		472380FA1E359D2100F6F2BC /* C_Algorithm */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 				47E1701F1E5452C600BADC86 /* LinkedStack */,
 				47E170271E556C5500BADC86 /* PriorityLinkedQueue */,
 				47E16FF81E517EE200BADC86 /* CircleLinkedList */,
+				4703DD0D1E56FE4900843437 /* DoubleLinkedList */,
 				4723810B1E359D2100F6F2BC /* SequenceArrayList */,
 				47C879861E487C3500C868FB /* DynamicSequenceArrayList */,
 			);
@@ -345,6 +358,7 @@
 				472381141E359D2100F6F2BC /* SequenceArrayList.c in Sources */,
 				472381171E359DBE00F6F2BC /* Algorithm.c in Sources */,
 				472381101E359D2100F6F2BC /* ArrayStack.c in Sources */,
+				4703DD101E56FE7100843437 /* DoubleLinkedList.c in Sources */,
 				472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */,
 				47E170261E54B7F500BADC86 /* LinkedQueue.c in Sources */,
 				47E16FFB1E517EEF00BADC86 /* CircleLinkedList.c in Sources */,
