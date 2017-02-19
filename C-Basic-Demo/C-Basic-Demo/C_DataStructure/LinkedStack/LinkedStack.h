@@ -22,7 +22,7 @@ typedef struct LSNode LinkedStack;
 
 struct LSNode {
     int data;
-    LinkedStack *next;
+    struct LSNode *next;
 };
 
 ////////////////////////////////////////////////////////////////////////////////////

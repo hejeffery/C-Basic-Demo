@@ -22,7 +22,7 @@ typedef struct CNode CircleLinkedList;
 
 struct CNode {
     int data;
-    CircleLinkedList *next;
+    struct CNode *next;
 };
 
 /**

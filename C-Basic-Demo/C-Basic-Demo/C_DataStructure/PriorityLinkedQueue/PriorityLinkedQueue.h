@@ -29,7 +29,7 @@ typedef struct PLQNode PriorityLinkedQueue;
 
 struct PLQNode {
     int data;
-    PriorityLinkedQueue *next;
+    struct PLQNode *next;
     Priority priority;
 };
 

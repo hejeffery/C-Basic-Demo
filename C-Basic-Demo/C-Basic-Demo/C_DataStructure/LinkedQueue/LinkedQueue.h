@@ -22,7 +22,7 @@ typedef struct LQNode LinkedQueue;
 
 struct LQNode {
     int data;
-    LinkedQueue *next;
+    struct LQNode *next;
 };
 
 /**

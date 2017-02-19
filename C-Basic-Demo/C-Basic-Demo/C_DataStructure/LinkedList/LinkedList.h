@@ -22,7 +22,7 @@ typedef struct Node LinkedList;
 
 struct Node {
     int data;
-    LinkedList *next;
+    struct Node *next;
 };
 
 /**

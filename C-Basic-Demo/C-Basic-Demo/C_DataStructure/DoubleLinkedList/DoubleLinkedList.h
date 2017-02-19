@@ -22,8 +22,8 @@ typedef struct DLNode DoubleLinkedList;
 
 struct DLNode {
     int data;
-    DoubleLinkedList *prior;
-    DoubleLinkedList *next;
+    struct DLNode *prior;
+    struct DLNode *next;
 };
 
 /**
