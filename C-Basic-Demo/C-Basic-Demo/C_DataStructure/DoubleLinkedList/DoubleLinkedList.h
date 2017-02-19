@@ -23,13 +23,13 @@ typedef struct DLNode DLNode;
 
 struct DLNode {
     int data;
-    struct DLNode *prior;
-    struct DLNode *next;
+    struct DLNode *prior;// 前驱结点
+    struct DLNode *next;// 后继结点
 };
 
 struct DoubleLinkedList {
-    struct DLNode *phead;
-    struct DLNode *ptail;
+    struct DLNode *phead;// 头结点
+    struct DLNode *ptail;// 尾结点
 };
 
 /**
