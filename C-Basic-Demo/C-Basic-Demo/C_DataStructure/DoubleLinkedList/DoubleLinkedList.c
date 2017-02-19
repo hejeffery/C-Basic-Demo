@@ -18,8 +18,24 @@ DoubleLinkedList *createDoubleLinkedList() {
         return NULL;
     }
     
-    list->prior = NULL;
-    list->next = NULL;
+    DLNode *phead = (DLNode *)malloc(sizeof(DLNode));
+    if (phead == NULL) {
+        return NULL;
+    }
+    
+    DLNode *ptail = (DLNode *)malloc(sizeof(DLNode));
+    if (ptail == NULL) {
+        return NULL;
+    }
+    
+    phead->next = ptail;
+    phead->prior = NULL;
+
+    ptail->prior = phead;
+    ptail->next = NULL;
+    
+    list->phead = phead;
+    list->ptail = ptail;
     
     return list;
 }
@@ -31,21 +47,19 @@ bool appendDoubleLinkedList(DoubleLinkedList *list, int value) {
         return false;
     }
     
-    DoubleLinkedList *pnode = list;
-    while (pnode->next != NULL) {
-        pnode = pnode->next;
-    }
-    
-    DoubleLinkedList *pnew = (DoubleLinkedList *)malloc(sizeof(DoubleLinkedList));
+    DLNode *pnew = (DLNode *)malloc(sizeof(DLNode));
     if (pnew == NULL) {
         return false;
     }
     
-    pnew->data = value;
-    pnew->next = NULL;
-    pnew->prior = pnode;
+    DLNode *plast = list->ptail->prior;
     
-    pnode->next = pnew;
+    pnew->data = value;
+    pnew->next = list->ptail;
+    pnew->prior = plast;
+    
+    list->ptail->prior->next = pnew;
+    list->ptail->prior = pnew;
     
     return true;
 }
@@ -62,14 +76,13 @@ bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value) {
     }
 
     int i = 0;
-    DoubleLinkedList *pnode = list->next;
-    while (pnode != NULL && i < position) {
-        
+    DLNode *pnode = list->phead->next;
+    while (pnode != NULL && pnode != list->ptail && i < position) {
         i++;
         pnode = pnode->next;
     }
     
-    DoubleLinkedList *pnew = (DoubleLinkedList *)malloc(sizeof(DoubleLinkedList));
+    DLNode *pnew = (DLNode *)malloc(sizeof(DLNode));
     if (pnew == NULL) {
         return false;
     }
@@ -96,13 +109,13 @@ bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *val
     }
 
     int i = 0;
-    DoubleLinkedList *pnode = list->next;
+    DLNode *pnode = list->phead->next;
     while (pnode != NULL && i < position) {
         i++;
         pnode = pnode->next;
     }
     
-    DoubleLinkedList *deleteNode = pnode;
+    DLNode *deleteNode = pnode;
     *value = deleteNode->data;
     pnode->prior->next = pnode->next;
     pnode->next->prior = pnode->prior;
@@ -114,11 +127,11 @@ bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *val
 
 bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
     
-    if (list == NULL || list->next == NULL) {
+    if (list == NULL || list->phead == NULL) {
         return false;
     }
 
-    DoubleLinkedList *pnode = list->next;
+    DLNode *pnode = list->phead->next;
     
     int i = 0;
     while (pnode != NULL) {
@@ -133,7 +146,7 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
         }
     }
     
-    if (pnode != list) {
+    if (pnode != list->phead) {
 
         pnode->prior->next = pnode->next;
         pnode->next->prior = pnode->prior;
@@ -154,7 +167,7 @@ bool findDoubleListItem(DoubleLinkedList *list, int item, int *position) {
     }
     
     int i = 0;
-    DoubleLinkedList *pnode = list->next;
+    DLNode *pnode = list->phead->next;
     while (pnode != NULL) {
         
         if (pnode->data == item) {
@@ -169,13 +182,13 @@ bool findDoubleListItem(DoubleLinkedList *list, int item, int *position) {
     return false;
 }
 
-DoubleLinkedList *findDoubleListNodeWithItem(DoubleLinkedList *list, int item) {
+DLNode *findDoubleListNodeWithItem(DoubleLinkedList *list, int item) {
     
     if (list == NULL) {
         return false;
     }
     
-    DoubleLinkedList *pnode = list->next;
+    DLNode *pnode = list->phead->next;
     while (pnode != NULL) {
         
         if (pnode->data == item) {
@@ -195,8 +208,8 @@ int lengthDoubleLinkedList(DoubleLinkedList *list) {
     }
     
     int length = 0;
-    DoubleLinkedList *pnode = list->next;
-    while (pnode != NULL) {
+    DLNode *pnode = list->phead->next;
+    while (pnode != NULL && pnode != list->ptail) {
         length++;
         pnode = pnode->next;
     }
@@ -204,16 +217,40 @@ int lengthDoubleLinkedList(DoubleLinkedList *list) {
     return length;
 }
 
+bool isEmptyDoubleLinkedList(DoubleLinkedList *list) {
+    
+    if (list == NULL || (list->phead->next == list->ptail)) {
+        return true;
+    }
+    
+    return false;
+}
+
 void showDoubleLinkedList(DoubleLinkedList *list) {
 
-    if (list == NULL) {
+    if (list == NULL || list->phead == NULL) {
         return;
     }
     
-    DoubleLinkedList *pnode = list->next;
-    while (pnode != NULL) {
+    DLNode *pnode = list->phead->next;
+    while (pnode != NULL && pnode != list->ptail) {
         printf("%4d", pnode->data);
         pnode = pnode->next;
+    }
+
+    printf("\n");
+}
+
+void showRevDoubleLinkedList(DoubleLinkedList *list) {
+    
+    if (list == NULL || list->ptail == NULL) {
+        return;
+    }
+    
+    DLNode *pnode = list->ptail->prior;
+    while (pnode != NULL && pnode != list->phead) {
+        printf("%4d", pnode->data);
+        pnode = pnode->prior;
     }
     
     printf("\n");

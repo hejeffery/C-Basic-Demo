@@ -670,7 +670,6 @@ void priorityLinkedQueueImpl() {
 void doubleLinkedListImpl() {
     
     DoubleLinkedList *list = createDoubleLinkedList();
-    
     appendDoubleLinkedList(list, 1);
     appendDoubleLinkedList(list, 2);
     appendDoubleLinkedList(list, 3);
@@ -682,9 +681,19 @@ void doubleLinkedListImpl() {
     printf("双链表的长度是 = %d\n", length);
     
     printf("\n");
-    insertDoubleLinkedList(list, 2, 77);
-    showDoubleLinkedList(list);
+    printf("逆序输出\n");
+    showRevDoubleLinkedList(list);
     
+    printf("\n");
+    bool insertSuccess = insertDoubleLinkedList(list, 0, 77);
+    if (insertSuccess) {
+        printf("插入数据成功\n");
+
+    } else {
+        printf("插入数据失败\n");
+    }
+    showDoubleLinkedList(list);
+
     printf("\n");
     int deleteItem = 0;
     bool deletePositionSuccess = deleteDoubleListWithPosition(list, 3, &deleteItem);
@@ -698,7 +707,7 @@ void doubleLinkedListImpl() {
     
     printf("\n");
     int deletePosition = -1;
-    bool deleteItemSuccess = deleteDoubleListWithItem(list, 77, &deletePosition);
+    bool deleteItemSuccess = deleteDoubleListWithItem(list, 4, &deletePosition);
     if (deleteItemSuccess) {
         printf("删除成功(deleteDoubleListWithItem)，删除的值的位置是 = %d\n", deletePosition);
 
@@ -709,7 +718,7 @@ void doubleLinkedListImpl() {
     
     printf("\n");
     int findItemPosition = -1;
-    bool findItemSuccess = findDoubleListItem(list, 2, &findItemPosition);
+    bool findItemSuccess = findDoubleListItem(list, 3, &findItemPosition);
     if (findItemSuccess) {
         printf("找到了，该item的位置是 = %d\n", findItemPosition);
 
@@ -718,11 +727,21 @@ void doubleLinkedListImpl() {
     }
     
     printf("\n");
-    DoubleLinkedList *findedNode = findDoubleListNodeWithItem(list, 2);
+    DLNode *findedNode = findDoubleListNodeWithItem(list, 2);
     if (findedNode) {
         printf("找到了，结点的地址是 = %p，值是 = %d\n", findedNode, findedNode->data);
+
     } else {
         printf("没有找到\n");
+    }
+    
+    printf("\n");
+    bool isEmpty = isEmptyDoubleLinkedList(list);
+    if (isEmpty) {
+        printf("是双空链表\n");
+        
+    } else {
+        printf("非空双链表\n");
     }
     
 }

@@ -18,12 +18,18 @@
 //                                                                                //
 ////////////////////////////////////////////////////////////////////////////////////
 
-typedef struct DLNode DoubleLinkedList;
+typedef struct DoubleLinkedList DoubleLinkedList;
+typedef struct DLNode DLNode;
 
 struct DLNode {
     int data;
     struct DLNode *prior;
     struct DLNode *next;
+};
+
+struct DoubleLinkedList {
+    struct DLNode *phead;
+    struct DLNode *ptail;
 };
 
 /**
@@ -89,7 +95,7 @@ bool findDoubleListItem(DoubleLinkedList *list, int item, int *position);
  *  @param item 需要查找的元素
  *  @return 找到返回该元素的结点
  */
-DoubleLinkedList *findDoubleListNodeWithItem(DoubleLinkedList *list, int item);
+DLNode *findDoubleListNodeWithItem(DoubleLinkedList *list, int item);
 
 /**
  *  返回链表的长度
@@ -100,10 +106,25 @@ DoubleLinkedList *findDoubleListNodeWithItem(DoubleLinkedList *list, int item);
 int lengthDoubleLinkedList(DoubleLinkedList *list);
 
 /**
- *  打印双链表的数据
+ *  判断是否是空的双链表
+ *
+ *  @param list DoubleLinkedList的地址
+ *  @return 空双链表返回true，反之返回false
+ */
+bool isEmptyDoubleLinkedList(DoubleLinkedList *list);
+
+/**
+ *  顺序打印双链表的数据
  *
  *  @param list DoubleLinkedList的地址
  */
 void showDoubleLinkedList(DoubleLinkedList *list);
+
+/**
+ *  逆序打印双链表的数据
+ *
+ *  @param list DoubleLinkedList的地址
+ */
+void showRevDoubleLinkedList(DoubleLinkedList *list);
 
 #endif /* DoubleLinkedList_h */
