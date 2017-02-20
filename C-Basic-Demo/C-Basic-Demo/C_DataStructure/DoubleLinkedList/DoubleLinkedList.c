@@ -58,6 +58,7 @@ bool appendDoubleLinkedList(DoubleLinkedList *list, int value) {
     pnew->next = list->ptail;
     pnew->prior = plast;
     
+    // 下面的顺序不能颠倒
     list->ptail->prior->next = pnew;
     list->ptail->prior = pnew;
     
@@ -99,7 +100,7 @@ bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value) {
 
 bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *value) {
     
-    if (list == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return false;
     }
     
@@ -127,7 +128,7 @@ bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *val
 
 bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
     
-    if (list == NULL || list->phead == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return false;
     }
 
@@ -146,7 +147,7 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
         }
     }
     
-    if (pnode != list->phead) {
+    if (pnode != NULL) {// 找到的情况
 
         pnode->prior->next = pnode->next;
         pnode->next->prior = pnode->prior;
@@ -154,7 +155,7 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
         free(pnode);
         return true;
         
-    } else {
+    } else {// 找不到的情况
         *position = -1;
         return false;
     }
@@ -162,7 +163,7 @@ bool deleteDoubleListWithItem(DoubleLinkedList *list, int item, int *position) {
 
 bool findDoubleListItem(DoubleLinkedList *list, int item, int *position) {
     
-    if (list == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return false;
     }
     
@@ -184,7 +185,7 @@ bool findDoubleListItem(DoubleLinkedList *list, int item, int *position) {
 
 DLNode *findDoubleListNodeWithItem(DoubleLinkedList *list, int item) {
     
-    if (list == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return false;
     }
     
@@ -203,7 +204,7 @@ DLNode *findDoubleListNodeWithItem(DoubleLinkedList *list, int item) {
 
 int lengthDoubleLinkedList(DoubleLinkedList *list) {
     
-    if (list == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return 0;
     }
     
@@ -228,7 +229,7 @@ bool isEmptyDoubleLinkedList(DoubleLinkedList *list) {
 
 void showDoubleLinkedList(DoubleLinkedList *list) {
 
-    if (list == NULL || list->phead == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return;
     }
     
@@ -243,7 +244,7 @@ void showDoubleLinkedList(DoubleLinkedList *list) {
 
 void showRevDoubleLinkedList(DoubleLinkedList *list) {
     
-    if (list == NULL || list->ptail == NULL) {
+    if (isEmptyDoubleLinkedList(list)) {
         return;
     }
     
@@ -255,4 +256,3 @@ void showRevDoubleLinkedList(DoubleLinkedList *list) {
     
     printf("\n");
 }
-

@@ -69,7 +69,7 @@ bool insertDoubleLinkedList(DoubleLinkedList *list, int position, int value);
 bool deleteDoubleListWithPosition(DoubleLinkedList *list, int position, int *value);
 
 /**
- *  删除双链表中某个位置的元素(双指针来实现)
+ *  删除双链表中某个位置的元素
  *
  *  @param list DoubleLinkedList的地址
  *  @param item 删除的元素的值
