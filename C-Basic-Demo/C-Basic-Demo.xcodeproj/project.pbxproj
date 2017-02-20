@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4703DD101E56FE7100843437 /* DoubleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 4703DD0E1E56FE7100843437 /* DoubleLinkedList.c */; };
+		4703DD141E597E0000843437 /* CircleDoubleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 4703DD121E597E0000843437 /* CircleDoubleLinkedList.c */; };
 		4723810F1E359D2100F6F2BC /* ArrayQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 472380FD1E359D2100F6F2BC /* ArrayQueue.c */; };
 		472381101E359D2100F6F2BC /* ArrayStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381001E359D2100F6F2BC /* ArrayStack.c */; };
 		472381111E359D2100F6F2BC /* DynamicQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381031E359D2100F6F2BC /* DynamicQueue.c */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		4703DD0E1E56FE7100843437 /* DoubleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DoubleLinkedList.c; sourceTree = "<group>"; };
 		4703DD0F1E56FE7100843437 /* DoubleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedList.h; sourceTree = "<group>"; };
+		4703DD121E597E0000843437 /* CircleDoubleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CircleDoubleLinkedList.c; sourceTree = "<group>"; };
+		4703DD131E597E0000843437 /* CircleDoubleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleDoubleLinkedList.h; sourceTree = "<group>"; };
 		472380FD1E359D2100F6F2BC /* ArrayQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayQueue.c; sourceTree = "<group>"; };
 		472380FE1E359D2100F6F2BC /* ArrayQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayQueue.h; sourceTree = "<group>"; };
 		472381001E359D2100F6F2BC /* ArrayStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArrayStack.c; sourceTree = "<group>"; };
@@ -98,6 +101,15 @@
 			path = DoubleLinkedList;
 			sourceTree = "<group>";
 		};
+		4703DD111E597DF300843437 /* CircleDoubleLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				4703DD131E597E0000843437 /* CircleDoubleLinkedList.h */,
+				4703DD121E597E0000843437 /* CircleDoubleLinkedList.c */,
+			);
+			path = CircleDoubleLinkedList;
+			sourceTree = "<group>";
+		};
 		472380FA1E359D2100F6F2BC /* C_Algorithm */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 				47E170271E556C5500BADC86 /* PriorityLinkedQueue */,
 				47E16FF81E517EE200BADC86 /* CircleLinkedList */,
 				4703DD0D1E56FE4900843437 /* DoubleLinkedList */,
+				4703DD111E597DF300843437 /* CircleDoubleLinkedList */,
 				4723810B1E359D2100F6F2BC /* SequenceArrayList */,
 				47C879861E487C3500C868FB /* DynamicSequenceArrayList */,
 			);
@@ -355,6 +368,7 @@
 				47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */,
 				472381121E359D2100F6F2BC /* DynamicStack.c in Sources */,
 				4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */,
+				4703DD141E597E0000843437 /* CircleDoubleLinkedList.c in Sources */,
 				472381141E359D2100F6F2BC /* SequenceArrayList.c in Sources */,
 				472381171E359DBE00F6F2BC /* Algorithm.c in Sources */,
 				472381101E359D2100F6F2BC /* ArrayStack.c in Sources */,

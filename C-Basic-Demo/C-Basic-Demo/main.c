@@ -29,6 +29,7 @@
 #include "LinkedQueue.h"
 #include "PriorityLinkedQueue.h"
 #include "DoubleLinkedList.h"
+#include "CircleDoubleLinkedList.h"
 
 
 // 函数指针的接口功能
@@ -707,7 +708,7 @@ void doubleLinkedListImpl() {
     
     printf("\n");
     int deletePosition = -1;
-    bool deleteItemSuccess = deleteDoubleListWithItem(list, 4, &deletePosition);
+    bool deleteItemSuccess = deleteDoubleListWithItem(list, 999, &deletePosition);
     if (deleteItemSuccess) {
         printf("删除成功(deleteDoubleListWithItem)，删除的值的位置是 = %d\n", deletePosition);
 
@@ -744,6 +745,78 @@ void doubleLinkedListImpl() {
         printf("非空双链表\n");
     }
     
+}
+
+// 环形双链表
+void circleDoubleLinkedListImpl() {
+
+    CircleDoubleLinkedList *list = createCircleDoubleLinkedList();
+    appendCircleDoubleLinkedList(list, 1);
+    appendCircleDoubleLinkedList(list, 2);
+    appendCircleDoubleLinkedList(list, 3);
+    appendCircleDoubleLinkedList(list, 4);
+
+    printf("顺序打印:");
+    showCircleDoubleLinkedList(list);
+    
+    printf("\n逆序打印");
+    showRevCircleDoubleLinkedList(list);
+    
+    printf("\n");
+    int length = lengthCircleDoubleLinkedList(list);
+    printf("环形双链表的长度是 = %d\n", length);
+    
+    printf("\n");
+    CDLNode *findNode = findCircleDoubleListNodeWithItem(list, 2);
+    if (findNode) {
+        printf("找到了，结点的地址是 = %p，值是 = %d\n", findNode, findNode->data);
+
+    } else {
+        printf("没有找到\n");
+    }
+    
+    printf("\n");
+    bool insertSuccess = insertCircleDoubleLinkedList(list, 2, 88);
+    if (insertSuccess) {
+        printf("插入数据成功\n");
+        
+    } else {
+        printf("插入数据失败\n");
+    }
+    showCircleDoubleLinkedList(list);
+    
+    printf("\n");
+    int findItemPosition = -1;
+    bool isFindSuccess = findCircleDoubleListItem(list, 4, &findItemPosition);
+    if (isFindSuccess) {
+        printf("找到了，该item的位置是 = %d\n", findItemPosition);
+
+    } else {
+        printf("没有找到\n");
+    }
+    
+    printf("\n");
+    int deleteItem = 0;
+    bool deletePositionSuccess = deleteCircleDoubleListWithPosition(list, 3, &deleteItem);
+    if (deletePositionSuccess) {
+        printf("删除成功(deleteCircleDoubleListWithPosition)，删除的值是 = %d\n", deleteItem);
+        
+    } else {
+        printf("删除失败\n");
+    }
+    showCircleDoubleLinkedList(list);
+    
+    printf("\n");
+    int deletePosition = -1;
+    bool deleteItemSuccess = deleteCircleDoubleListWithItem(list, 1, &deletePosition);
+    if (deleteItemSuccess) {
+        printf("删除成功(deleteCircleDoubleListWithItem)，删除的值的位置是 = %d\n", deletePosition);
+        
+    } else {
+        printf("删除失败\n");
+    }
+    showCircleDoubleLinkedList(list);
+
 }
 
 // 部分标准库实现测试
@@ -1127,6 +1200,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 双链表
 //    doubleLinkedListImpl();
+    
+    // 环形双链表
+    circleDoubleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
