@@ -11,13 +11,13 @@ OS X 10.7+
 
 ##项目结构
 
-####C_Algorithm
+###C_Algorithm
  * Algorithm.c 一些常见的算法实现，包含冒泡排序，选择排序，快速排序等等，详情请查看头文件和实现文件。
 
-####C_Basic
+###C_Basic
  * CBasic.c 一些C常见的知识点，详情请查看头文件和实现文件
 
-####C_DataStructure
+###C_DataStructure
  * 包含了常见的数据结构
  
  线性结构 | 链式结构
@@ -30,13 +30,13 @@ SequenceArrayList：数组的顺序存储，静态数组(线性结构) | CircleL
 DynamicSquenceArrayList：数组的顺序存储，动态数组(线性结构) | DoubleLinkedList：双向链式数组(链式结构)
 NULL | CircleDoubleLinkedList：链式环形双向数组(链式结构)
 
-####C_Practice
+###C_Practice
 * CPractice.c c的部分练习
 
-####C_Standard_Lib
+###C_Standard_Lib
 * StandardLibImpl.c 部分C标准库的实现
 
-####C_String_Tool
+###C_String_Tool
 * StringTool.c c字符串处理工具
 
 #License
