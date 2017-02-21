@@ -22,13 +22,13 @@ OS X 10.7+
  
  线性结构 | 链式结构
 --------- | -------------
-ArrayQueue：静态数组队列(线性结构) | LinkedList：链式数组(链式结构)
-ArrayStack：静态数组栈(线性结构) | LinkedQueue：链式队列(链式结构)
-DynamicQueue：动态数组队列(线性结构) | LinkedStack：链式栈(链式结构)
-DynamicStack：动态数组栈(线性结构) | PriorityLinkedQueue：优先队列(链式结构)
-SequenceArrayList：数组的顺序存储，静态数组(线性结构) | CircleLinkedList：链式环形队列(链式结构)
-DynamicSquenceArrayList：数组的顺序存储，动态数组(线性结构) | DoubleLinkedList：双向链式数组(链式结构)
-NULL | CircleDoubleLinkedList：链式环形双向数组(链式结构)
+ArrayQueue：静态数组队列 | LinkedList：链式数组
+ArrayStack：静态数组栈 | LinkedQueue：链式队列
+DynamicQueue：动态数组队列 | LinkedStack：链式栈
+DynamicStack：动态数组栈 | PriorityLinkedQueue：优先队列
+SequenceArrayList：数组的顺序存储，静态数组 | CircleLinkedList：链式环形队列
+DynamicSquenceArrayList：数组的顺序存储，动态数组 | DoubleLinkedList：双向链式数组
+NULL | CircleDoubleLinkedList：链式环形双向数组
 
 ###C_Practice
 * CPractice.c c的部分练习
