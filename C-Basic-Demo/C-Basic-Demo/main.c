@@ -31,6 +31,8 @@
 #include "DoubleLinkedList.h"
 #include "CircleDoubleLinkedList.h"
 
+#include "CThread.h"
+
 
 // 函数指针的接口功能
 int add(int a, int b) {
@@ -1033,6 +1035,15 @@ void cpractice() {
     practiceOne();
 }
 
+// C Thread
+void cthread() {
+    
+    createThread1();
+    
+    printf("\n");
+    createThread2();
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -1201,8 +1212,8 @@ int main(int argc, const char * argv[]) {
 //    // 双链表
 //    doubleLinkedListImpl();
     
-    // 环形双链表
-    circleDoubleLinkedListImpl();
+//    // 环形双链表
+//    circleDoubleLinkedListImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
@@ -1230,6 +1241,9 @@ int main(int argc, const char * argv[]) {
     
 //    // C Practice
 //    cpractice();
+    
+    // C Thread
+    cthread();
 
     return 0;
 }
