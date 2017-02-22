@@ -1042,6 +1042,9 @@ void cthread() {
     
     printf("\n");
     createThread2();
+    
+    printf("\n");
+    createThread3();
 }
 
 int main(int argc, const char * argv[]) {
@@ -1242,8 +1245,8 @@ int main(int argc, const char * argv[]) {
 //    // C Practice
 //    cpractice();
     
-    // C Thread
-    cthread();
+//    // C Thread
+//    cthread();
 
     return 0;
 }

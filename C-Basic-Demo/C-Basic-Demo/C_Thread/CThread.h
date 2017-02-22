@@ -15,4 +15,6 @@ void createThread1();
 
 void createThread2();
 
+void createThread3();
+
 #endif /* CThread_h */

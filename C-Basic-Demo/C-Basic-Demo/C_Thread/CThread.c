@@ -38,6 +38,7 @@ void createThread1() {
 }
 
 // 多线程访问同一个变量，如果不用线程同步技术，会导致访问的变量出错
+// 互斥锁：pthread_mutex_t
 int globleNum = 0;
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -76,5 +77,31 @@ void createThread2() {
     
     printf("globleNumber = %d\n", globleNum);
 }
+
+// 子线程的退出
+// pthread_exit
+void threadMethod3() {
+    
+    int i = 0;
+    while (i < 8000) {
+        i++;
+        
+        printf("i = %d\n", i);
+        if (i == 2222) {
+            pthread_exit(NULL);
+        }
+    }
+}
+
+void createThread3() {
+    
+    pthread_t pthread;
+    pthread_create(&pthread, NULL, (void *)threadMethod3, NULL);
+    
+    // 睡五秒，否则主线程结束了，子线程就看不到了
+    sleep(5);
+}
+
+
 
 
