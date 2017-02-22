@@ -91,3 +91,21 @@ void dynamicPrintArray() {
         printf("\n");
     }
 }
+
+// 指针数组和数组指针
+void pointerArrayAndArrayPointer() {
+    
+    // 指针数组，数组里面装的是指针
+    int *pointerArray[10] = {0};
+    // sizeof(pointerArray)取出的是数组的总大小，在64位下，指针所占的大小是8个字节，所以是8 * 10 = 80
+    // sizeof(*pointerArray)， *pointerArray === *(pointerArray + 0) 取出的是数组第一个元素的大小，在64位下，指针所占的大小是8个字节
+    printf("sizeof(pointerArray) = %lu, sizeof(*pointerArray) = %lu\n", sizeof(pointerArray), sizeof(*pointerArray));
+    
+    // 指向数组的指针，数组指针。等同于一个二维数组。
+    // arrayPointer是指针，在64位下，占8个字节，
+    // *arrayPointer是行指针，sizeof(*arrayPointer)相当于是计算第0行的所有元素所占的大小，4 * 10 = 40
+    int (*arrayPointer)[10] = {0};
+    printf("sizeof(arrayPointer) = %lu, sizeof(*arrayPointer) = %lu\n", sizeof(arrayPointer), sizeof(*arrayPointer));
+    
+}
+

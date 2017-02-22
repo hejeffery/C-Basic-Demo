@@ -1042,7 +1042,7 @@ void cthread() {
     
     printf("\n");
     createThread2();
-    
+
     printf("\n");
     createThread3();
 }
@@ -1182,6 +1182,9 @@ int main(int argc, const char * argv[]) {
 //    // 二维数组和指针
 //    twoDimensionalArray();
     
+//    // 指针数组和数组指针
+//    pointerArrayAndArrayPointer();
+    
 //    // 函数指针的接口功能
 //    int resultAdd = calculation(add, 2, 2);
 //    int resultSub = calculation(sub, 9, 1);
@@ -1246,7 +1249,7 @@ int main(int argc, const char * argv[]) {
 //    cpractice();
     
 //    // C Thread
-//    cthread();
+//    cthread(); 
 
     return 0;
 }

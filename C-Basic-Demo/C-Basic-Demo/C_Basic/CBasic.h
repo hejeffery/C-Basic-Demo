@@ -40,4 +40,10 @@ void twoDimensionalArray();
  */
 void dynamicPrintArray();
 
+/**
+ *  指针数组和数组指针
+ *
+ */
+void pointerArrayAndArrayPointer();
+
 #endif /* CBasic_h */
