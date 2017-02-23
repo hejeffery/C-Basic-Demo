@@ -32,6 +32,7 @@
 #include "CircleDoubleLinkedList.h"
 
 #include "CThread.h"
+#include "CFile.h"
 
 
 // 函数指针的接口功能
@@ -1047,6 +1048,29 @@ void cthread() {
     createThread3();
 }
 
+// C File
+void cfile() {
+    
+//    // 文件的拷贝
+//    char *copySourcePath = "/Users/JefferyHe/Desktop/source.txt";
+//    char *copyTargetPath = "/Users/JefferyHe/Desktop/target.txt";
+//    copyFile(copySourcePath, copyTargetPath);
+    
+//    // 文件的简单加密
+//    char *encryptSourcePath = "/Users/JefferyHe/Desktop/source.txt";
+//    char *encryptTargetPath = "/Users/JefferyHe/Desktop/encrypt.txt";
+//    fileSimpleEncrypt(encryptSourcePath, encryptTargetPath);
+    
+//    // 文件的简单解密
+//    char *decryptSourcePath = "/Users/JefferyHe/Desktop/encrypt.txt";
+//    char *decryptTargetPath = "/Users/JefferyHe/Desktop/decrypt.txt";
+//    fileSimpleDecrypt(decryptSourcePath, decryptTargetPath);
+    
+    // 获取文件的大小
+    long filesize = fileSize("/Users/JefferyHe/Desktop/source.txt");
+    printf("filesize = %ld\n", filesize);
+}
+
 int main(int argc, const char * argv[]) {
     
 //    // 递归实现斐波拉契数列
@@ -1249,7 +1273,10 @@ int main(int argc, const char * argv[]) {
 //    cpractice();
     
 //    // C Thread
-//    cthread(); 
+//    cthread();
+    
+    // C File
+    cfile();
 
     return 0;
 }
