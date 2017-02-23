@@ -134,25 +134,38 @@ void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPa
         return;
     }
     
-    long fileLength = fileSize(sourcePath);
+    // 第一种方式：for
+//    long fileLength = fileSize(sourcePath);
+//    unsigned long passwordLength = strlen(password);
+//    
+//    long number = fileLength / passwordLength;
+//    
+//    for (long i = 0; i < number; i++) {
+//        
+//        for (int j = 0; j < passwordLength; j++) {
+//            int ch = fgetc(rfile);// 防止溢出，用int
+//            ch = ch ^ (*(password + j));
+//            fputc(ch, wfile);
+//        }
+//    }
+//    
+//    long molNumber = fileLength % passwordLength;
+//    for (long i = 0; i < molNumber; i++) {
+//        int ch = fgetc(rfile);// 防止溢出，用int
+//        ch = ch ^ (*(password + i));
+//        fputc(ch, wfile);
+//    }
+    
+    // 第二种方式：while
     unsigned long passwordLength = strlen(password);
     
-    long number = fileLength / passwordLength;
-    
-    for (long i = 0; i < number; i++) {
-        
-        for (int j = 0; j < passwordLength; j++) {
-            int ch = fgetc(rfile);// 防止溢出，用int
-            ch = ch ^ (*(password + j));
-            fputc(ch, wfile);
-        }
-    }
-    
-    long molNumber = fileLength % passwordLength;
-    for (long i = 0; i < molNumber; i++) {
-        int ch = fgetc(rfile);// 防止溢出，用int
-        ch = ch ^ (*(password + i));
+    int i = 0;
+    int ch;
+    while ((ch = fgetc(rfile)) != EOF) {
+
+        ch = ch ^ (password[i % passwordLength]);
         fputc(ch, wfile);
+        i++;
     }
     
     fclose(rfile);

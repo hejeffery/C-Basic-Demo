@@ -50,7 +50,7 @@ void fileSimpleDecrypt(const char *sourcePath, const char *targetPath);
 void fileSimpleEncryptDecrypt(const char *sourcePath, const char *targetPath);
 
 /**
- *  文件的加密解密(文本文件，非二进制文件)
+ *  文件的加密解密
  *
  *  @param sourcePath 源文件的路径
  *  @param targetPath 目标文件的路径
