@@ -18,7 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
- *  文件拷贝(非二进制文件)
+ *  文件拷贝(文本文件，非二进制文件)
  *
  *  @param sourcePath 源文件的路径
  *  @param targetPath 目标文件的路径
@@ -26,7 +26,7 @@
 void copyFile(const char *sourcePath, const char *targetPath);
 
 /**
- *  文件的简单加密(非二进制文件)
+ *  文件的简单加密(文本文件，非二进制文件)
  *
  *  @param sourcePath 源文件的路径
  *  @param targetPath 目标文件的路径
@@ -34,12 +34,29 @@ void copyFile(const char *sourcePath, const char *targetPath);
 void fileSimpleEncrypt(const char *sourcePath, const char *targetPath);
 
 /**
- *  文件的简单解密(非二进制文件)
+ *  文件的简单解密(文本文件，非二进制文件)
  *
  *  @param sourcePath 源文件的路径
  *  @param targetPath 目标文件的路径
  */
 void fileSimpleDecrypt(const char *sourcePath, const char *targetPath);
+
+/**
+ *  文件的加密解密(文本文件，非二进制文件)
+ *
+ *  @param sourcePath 源文件的路径
+ *  @param targetPath 目标文件的路径
+ */
+void fileSimpleEncryptDecrypt(const char *sourcePath, const char *targetPath);
+
+/**
+ *  文件的加密解密(文本文件，非二进制文件)
+ *
+ *  @param sourcePath 源文件的路径
+ *  @param targetPath 目标文件的路径
+ *  @param password 密码
+ */
+void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPath, const char *password);
 
 /**
  *  获取文件的大小

@@ -1066,9 +1066,17 @@ void cfile() {
 //    char *decryptTargetPath = "/Users/JefferyHe/Desktop/decrypt.txt";
 //    fileSimpleDecrypt(decryptSourcePath, decryptTargetPath);
     
-    // 获取文件的大小
-    long filesize = fileSize("/Users/JefferyHe/Desktop/source.txt");
-    printf("filesize = %ld\n", filesize);
+//    // 获取文件的大小
+//    long filesize = fileSize("/Users/JefferyHe/Desktop/source.txt");
+//    printf("filesize = %ld\n", filesize);
+    
+//    // 文件的加密和解密，异或
+//    fileSimpleEncryptDecrypt("/Users/JefferyHe/Desktop/source.txt", "/Users/JefferyHe/Desktop/encrypt.txt");// 加密
+//    fileSimpleEncryptDecrypt("/Users/JefferyHe/Desktop/encrypt.txt", "/Users/JefferyHe/Desktop/decrypt.txt");// 解密
+    
+//    // 带密码的文件加密和解密，异或
+//    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/source.txt", "/Users/JefferyHe/Desktop/encrypt.txt", "jefferyhe");// 加密
+//    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/encrypt.txt", "/Users/JefferyHe/Desktop/decrypt.txt", "jefferyhe");// 解密
 }
 
 int main(int argc, const char * argv[]) {
