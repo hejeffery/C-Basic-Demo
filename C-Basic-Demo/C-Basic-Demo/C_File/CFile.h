@@ -59,21 +59,21 @@ void fileSimpleEncryptDecrypt(const char *sourcePath, const char *targetPath);
 void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPath, const char *password);
 
 /**
- *  文件切割
+ *  二进制文件的切割
  *
  *  @param sourcePath 源文件的路径
  *  @param cutNumber 切割的数量
  */
-void fileCutting(const char *sourcePath, int cutNumber);
+void binaryFileCutting(const char *sourcePath, int cutNumber);
 
 /**
- *  文件合并
+ *  二进制文件的合并
  *
  *  @param sourcePath 文件的路径
  *  @param targetPath 目标路径
  *  @param mergeNumber 合并的数量
  */
-void fileMerge(const char *sourcePath, const char *targetPath, int mergeNumber);
+void binaryFMerge(const char *sourcePath, const char *targetPath, int mergeNumber);
 
 /**
  *  获取文件的大小

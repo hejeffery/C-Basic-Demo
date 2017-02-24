@@ -1078,11 +1078,11 @@ void cfile() {
 //    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/source.txt", "/Users/JefferyHe/Desktop/encrypt.txt", "jefferyhe");// 加密
 //    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/encrypt.txt", "/Users/JefferyHe/Desktop/decrypt.txt", "jefferyhe");// 解密
     
-//    // 文件切割
-//    fileCutting("/Users/JefferyHe/Desktop/test.png", 4);
+//    // 二进制文件的切割
+//    binaryFileCutting("/Users/JefferyHe/Desktop/test.png", 4);
     
-//    // 文件合并
-//    fileMerge("/Users/JefferyHe/Desktop/merge/test.png", "/Users/JefferyHe/Desktop/merge/merge.png", 4);
+//    // 二进制文件的合并
+//    binaryFileMerge("/Users/JefferyHe/Desktop/merge/test.png", "/Users/JefferyHe/Desktop/merge/merge.png", 4);
 }
 
 int main(int argc, const char * argv[]) {

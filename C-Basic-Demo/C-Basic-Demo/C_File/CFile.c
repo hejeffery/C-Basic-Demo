@@ -175,7 +175,7 @@ void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPa
     fclose(wfile);
 }
 
-void fileCutting(const char *sourcePath, int cutNumber) {
+void binaryFileCutting(const char *sourcePath, int cutNumber) {
     
     if (sourcePath == NULL || cutNumber == 0) {
         return;
@@ -245,7 +245,7 @@ void fileCutting(const char *sourcePath, int cutNumber) {
     free(targetPaths);
 }
 
-void fileMerge(const char *sourcePath, const char *targetPath, int mergeNumber) {
+void binaryFileMerge(const char *sourcePath, const char *targetPath, int mergeNumber) {
     
     if (sourcePath == NULL || mergeNumber == 0) {
         return;
