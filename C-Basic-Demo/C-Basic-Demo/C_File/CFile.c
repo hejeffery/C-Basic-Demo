@@ -245,6 +245,51 @@ void fileCutting(const char *sourcePath, int cutNumber) {
     free(targetPaths);
 }
 
+void fileMerge(const char *sourcePath, const char *targetPath, int mergeNumber) {
+    
+    if (sourcePath == NULL || mergeNumber == 0) {
+        return;
+    }
+    
+    char **targetPaths = (char **)malloc(sizeof(char *) * mergeNumber);
+    
+    for (int i = 0; i < mergeNumber; i++) {
+        // 处理路径
+        char *tempPath = (char *)malloc(sizeof(char) * strlen(sourcePath));
+        strcpy(tempPath, sourcePath);
+        
+        const char *suffix = strrchr(sourcePath, '.');
+        deleteStrInString(tempPath, suffix);
+        
+        sprintf(tempPath, "%s%i%s", tempPath, i + 1, suffix);
+        
+        targetPaths[i] = (char *)malloc(sizeof(char) * strlen(tempPath));
+        
+        strcpy(targetPaths[i], tempPath);
+        
+        free(tempPath);
+    }
+    
+    FILE *wfile = fopen(targetPath, "wb");
+
+    for (int i = 0; i < mergeNumber; i++) {
+        
+        long length = fileSize(targetPaths[i]);
+        if (length == -1) {
+            return;
+        }
+        
+        FILE *rfile = fopen(targetPaths[i], "rb");
+        for (int j = 0; j < length; j++) {
+            fputc(fgetc(rfile), wfile);
+        }
+        
+        fclose(rfile);
+    }
+
+    fclose(wfile);
+}
+
 long fileSize(const char *filePath) {
     
     if (filePath == NULL) {

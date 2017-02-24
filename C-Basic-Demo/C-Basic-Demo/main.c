@@ -1079,7 +1079,10 @@ void cfile() {
 //    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/encrypt.txt", "/Users/JefferyHe/Desktop/decrypt.txt", "jefferyhe");// 解密
     
 //    // 文件切割
-//    fileCutting("/Users/JefferyHe/Desktop/test.png", 1);
+//    fileCutting("/Users/JefferyHe/Desktop/test.png", 4);
+    
+//    // 文件合并
+//    fileMerge("/Users/JefferyHe/Desktop/merge/test.png", "/Users/JefferyHe/Desktop/merge/merge.png", 4);
 }
 
 int main(int argc, const char * argv[]) {
@@ -1287,7 +1290,7 @@ int main(int argc, const char * argv[]) {
 //    cthread();
     
 //    // C File
-//    cfile();
+    cfile();
 
     return 0;
 }

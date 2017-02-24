@@ -67,6 +67,15 @@ void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPa
 void fileCutting(const char *sourcePath, int cutNumber);
 
 /**
+ *  文件合并
+ *
+ *  @param sourcePath 文件的路径
+ *  @param targetPath 目标路径
+ *  @param mergeNumber 合并的数量
+ */
+void fileMerge(const char *sourcePath, const char *targetPath, int mergeNumber);
+
+/**
  *  获取文件的大小
  *
  *  @param filePath 文件的路径
