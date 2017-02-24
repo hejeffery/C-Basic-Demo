@@ -10,6 +10,9 @@
 
 #include <stdio.h>
 #include <strings.h>
+#include <stdlib.h>
+
+#include "StringTool.h"
 
 void copyFile(const char *sourcePath, const char *targetPath) {
     
@@ -170,6 +173,76 @@ void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPa
     
     fclose(rfile);
     fclose(wfile);
+}
+
+void fileCutting(const char *sourcePath, int cutNumber) {
+    
+    if (sourcePath == NULL || cutNumber == 0) {
+        return;
+    }
+    
+    char **targetPaths = (char **)malloc(sizeof(char *) * cutNumber);
+    
+    for (int i = 0; i < cutNumber; i++) {
+        // 处理路径
+        char *tempPath = (char *)malloc(sizeof(char) * strlen(sourcePath));
+        strcpy(tempPath, sourcePath);
+        
+        const char *suffix = strrchr(sourcePath, '.');
+        deleteStrInString(tempPath, suffix);
+        
+        sprintf(tempPath, "%s%i%s", tempPath, i + 1, suffix);
+        
+        targetPaths[i] = (char *)malloc(sizeof(char) * strlen(tempPath));
+        
+        strcpy(targetPaths[i], tempPath);
+        
+        free(tempPath);
+    }
+    
+    long filesize = fileSize(sourcePath);
+
+    int mod = filesize % cutNumber;
+    
+    FILE *rfile = fopen(sourcePath, "rb");
+    if (mod == 0) {// 能被整除
+
+        int perSize = (int)(filesize / cutNumber);
+        for (int i = 0; i < cutNumber; i++) {
+
+            FILE *wfile = fopen(targetPaths[i], "wb");
+
+            for (int j = 0; j < perSize; j++) {
+                fputc(fgetc(rfile), wfile);
+            }
+            
+            fclose(wfile);
+        }
+        
+    } else {// 不能被整除
+        
+        int perSize = (int)(filesize / (cutNumber - 1));
+        for (int i = 0; i < (cutNumber - 1); i++) {
+
+            FILE *wfile = fopen(targetPaths[i], "wb");
+
+            for (int j = 0; j < perSize; j++) {
+                fputc(fgetc(rfile), wfile);
+            }
+            
+            fclose(wfile);
+        }
+        
+        for (int k = 0; k < mod; k++) {
+            FILE *wfile = fopen(targetPaths[cutNumber - 1], "wb");
+            fputc(fgetc(rfile), wfile);
+            fclose(wfile);
+        }
+    }
+    
+    fclose(rfile);
+    
+    free(targetPaths);
 }
 
 long fileSize(const char *filePath) {

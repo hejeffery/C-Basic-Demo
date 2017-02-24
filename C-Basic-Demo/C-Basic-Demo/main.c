@@ -1077,6 +1077,9 @@ void cfile() {
 //    // 带密码的文件加密和解密，异或
 //    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/source.txt", "/Users/JefferyHe/Desktop/encrypt.txt", "jefferyhe");// 加密
 //    fileEncryptDecryptWithPassword("/Users/JefferyHe/Desktop/encrypt.txt", "/Users/JefferyHe/Desktop/decrypt.txt", "jefferyhe");// 解密
+    
+//    // 文件切割
+//    fileCutting("/Users/JefferyHe/Desktop/test.png", 1);
 }
 
 int main(int argc, const char * argv[]) {
@@ -1283,8 +1286,8 @@ int main(int argc, const char * argv[]) {
 //    // C Thread
 //    cthread();
     
-    // C File
-    cfile();
+//    // C File
+//    cfile();
 
     return 0;
 }

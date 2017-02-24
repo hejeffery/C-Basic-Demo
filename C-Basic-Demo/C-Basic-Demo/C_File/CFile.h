@@ -59,6 +59,14 @@ void fileSimpleEncryptDecrypt(const char *sourcePath, const char *targetPath);
 void fileEncryptDecryptWithPassword(const char *sourcePath, const char *targetPath, const char *password);
 
 /**
+ *  文件切割
+ *
+ *  @param sourcePath 源文件的路径
+ *  @param cutNumber 切割的数量
+ */
+void fileCutting(const char *sourcePath, int cutNumber);
+
+/**
  *  获取文件的大小
  *
  *  @param filePath 文件的路径
