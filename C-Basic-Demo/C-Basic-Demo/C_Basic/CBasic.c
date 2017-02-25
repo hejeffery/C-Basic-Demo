@@ -39,7 +39,8 @@ void someArrayConfusion() {
     printf("\n*********数组指针*********\n");
     int (*p)[10];
     // 可以判断这里的p的类型是数组
-    printf("p = %p, p + 1 = %p", p, p + 1);
+    printf("p = %p, p + 1 = %p\n", p, p + 1);
+    printf("sizeof(p) = %lu, sizof(*p) = %lu\n", sizeof(p), sizeof(*p));
 }
 
 // 二维数组和指针的总结
