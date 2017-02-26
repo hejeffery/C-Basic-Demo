@@ -20,6 +20,8 @@
 
 typedef struct Node LinkedList;
 
+typedef struct Node Node;
+
 struct Node {
     int data;
     struct Node *next;
@@ -88,7 +90,7 @@ bool findListItem(LinkedList *list, int item, int *position);
  *  @param item 需要查找的元素
  *  @return 找到返回该元素的结点
  */
-LinkedList *findNodeWithItem(LinkedList *list, int item);
+Node *findNodeWithItem(LinkedList *list, int item);
 
 /**
  *  找出链表中间位置的结点
@@ -96,7 +98,7 @@ LinkedList *findNodeWithItem(LinkedList *list, int item);
  *  @param list LinkedList的地址
  *  @return 返回链表中间位置的结点
  */
-LinkedList *findCenterNode(LinkedList *list);
+Node *findCenterNode(LinkedList *list);
 
 /**
  *  判断是不是空链表

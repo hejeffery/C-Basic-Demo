@@ -198,7 +198,7 @@ bool findListItem(LinkedList *list, int item, int *position) {
     return false;
 }
 
-LinkedList *findNodeWithItem(LinkedList *list, int item) {
+Node *findNodeWithItem(LinkedList *list, int item) {
     
     if (list == NULL) {
         return false;
@@ -217,7 +217,7 @@ LinkedList *findNodeWithItem(LinkedList *list, int item) {
     return NULL;
 }
 
-LinkedList *findCenterNode(LinkedList *list) {
+Node *findCenterNode(LinkedList *list) {
     
     if (list == NULL) {
         return NULL;

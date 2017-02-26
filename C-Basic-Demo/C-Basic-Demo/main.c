@@ -336,7 +336,7 @@ void linkedListImpl() {
     showLinkedList(list);
     
     printf("\n查找链表中间位置的结点\n");
-    LinkedList *centerNode = findCenterNode(list);
+    Node *centerNode = findCenterNode(list);
     if (centerNode != NULL) {
         printf("找到了中间位置的结点，该结点的值是 = %d\n", centerNode->data);
     } else {
@@ -375,7 +375,7 @@ void linkedListImpl() {
     showLinkedList(list);
 
     printf("\n");
-    LinkedList *findNode = findNodeWithItem(list, 3);
+    Node *findNode = findNodeWithItem(list, 3);
     if (findNode != NULL) {
         printf("找到结点了\n");
         
