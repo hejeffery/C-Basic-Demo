@@ -305,7 +305,12 @@ long fileSize(const char *filePath) {
     fseek(file, 0, SEEK_END);
     
     // ftell：获取文件指针当前位置相对文件首地的长度
-    return ftell(file);
+    long length = -1;
+    length = ftell(file);
+    
+    fclose(file);
+    
+    return length;
 }
 
 
