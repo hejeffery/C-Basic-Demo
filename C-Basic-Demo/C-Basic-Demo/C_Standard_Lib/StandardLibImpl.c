@@ -12,6 +12,8 @@
 
 unsigned long hjstrlen(const char *src) {
     
+    /* 计算字符串的长度 */
+
     if (src == NULL) {
         return 0;
     }
@@ -26,17 +28,23 @@ unsigned long hjstrlen(const char *src) {
 
 char *hjstrcpy(char *dst, const char *src) {
 
+    /* 拷贝字符串 */
+
     if (dst == NULL || src == NULL) {
         return NULL;
     }
-    while ((*dst++ = *src++) != '\0');
+    
+    char *dstTemp = dst;
+    while ((*dstTemp++ = *src++) != '\0');
 
-    // 添加'\0'
-    *dst = '\0';
+    // 末尾添加'\0'
+    *dstTemp = '\0';
     return dst;
 }
 
 char *hjstrncpy(char *dst, const char *src, size_t n) {
+
+    /* 拷贝字符串，n是需要拷贝的个数 */
 
     if (dst == NULL || src == NULL) {
         return NULL;
@@ -44,35 +52,40 @@ char *hjstrncpy(char *dst, const char *src, size_t n) {
     
     char *tempSrc = (char *)src;
     unsigned long srcLength = 0;
-    while (*tempSrc != '\0') {
+    while (*tempSrc++ != '\0') {
         srcLength++;
-        tempSrc++;
     }
     
     unsigned long num = n > srcLength ? srcLength : n;
+    
+    char *dstTemp = dst;
     while (num > 0) {
-        *dst = *src;
-        dst++;
+        *dstTemp = *src;
+        dstTemp++;
         src++;
         num--;
     }
 
     // 添加'\0'
-    *dst = '\0';
+    *dstTemp = '\0';
     return dst;
 }
 
 char *hjstrcat(char *dst, const char *src) {
+
+    /* 字符串的连接 */
 
     if (dst == NULL || src == NULL) {
         return NULL;
     }
     
     char *result = dst;
+    // dst先移动到尾部
     while (*dst != '\0') {
         dst++;
     }
 
+    // 再在dst的尾部添加src
     while (*src != '\0') {
         *dst = *src;
         dst++;
@@ -85,6 +98,8 @@ char *hjstrcat(char *dst, const char *src) {
 }
 
 char *hjstrncat(char *dst, const char *src, size_t n) {
+    
+    /* 字符串的连接，连接的个数是n */
 
     if (dst == NULL || src == NULL) {
         return NULL;
@@ -117,6 +132,8 @@ char *hjstrncat(char *dst, const char *src, size_t n) {
 }
 
 char *hjstrchr(const char *src, int chr) {
+    
+    /* 字符串中查找chr，找到了返回chr的地址 */
 
     if (src == NULL) {
         return NULL;
