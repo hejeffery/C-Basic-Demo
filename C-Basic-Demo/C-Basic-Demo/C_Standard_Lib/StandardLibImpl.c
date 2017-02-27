@@ -371,75 +371,75 @@ void *hjmemset(void *dst, int chr, size_t len) {
     return dst;
 }
 
-void *hjmemcpy(void *dst, const void *src, size_t len) {
+void *hjmemcpy(void *dst, const void *source, size_t len) {
     
-    if (dst == NULL || src == NULL) {
+    if (dst == NULL || source == NULL) {
         return NULL;
     }
     
     // 按照字节逐个拷贝
     int i = 0;
     char *pdst = (char *)dst;
-    char *psrc = (char *)src;
+    char *psource = (char *)source;
     
     while (i < len) {
-        *pdst = *psrc;
+        *pdst = *psource;
         pdst++;
-        psrc++;
+        psource++;
         i++;
     }
     return dst;
 }
 
-void *hjmemccpy(void *dst, const void *src, int chr, size_t len) {
+void *hjmemccpy(void *dst, const void *source, int chr, size_t len) {
     
-    if (dst == NULL || src == NULL || len == 0) {
+    if (dst == NULL || source == NULL || len == 0) {
         return NULL;
     }
     
     int i = 0;
     
     char *pdst = (char *)dst;
-    char *psrc = (char *)src;
+    char *psource = (char *)source;
     
-    while (*psrc != chr && i < len) {
-        *pdst = *psrc;
+    while (*psource != chr && i < len) {
+        *pdst = *psource;
         pdst++;
-        psrc++;
+        psource++;
         i++;
     }
     
     return dst;
 }
 
-void *hjmemmove(void *dst, const void *src, size_t len) {
+void *hjmemmove(void *dst, const void *source, size_t len) {
     
-    if (dst == NULL || src == NULL) {
+    if (dst == NULL || source == NULL) {
         return NULL;
     }
     
     // 整体拷贝
-    void *psrc = (void *)malloc(len);
-    hjmemcpy(psrc, src, len);// 整体拷贝到临时内存
-    hjmemcpy(dst, psrc, len);// 临时内存拷贝到dst
-    free(psrc);
+    void *psource = (void *)malloc(len);
+    hjmemcpy(psource, source, len);// 整体拷贝到临时内存
+    hjmemcpy(dst, psource, len);// 临时内存拷贝到dst
+    free(psource);
     
     return dst;
 }
 
-int hjmemcmp(const void *src1, const void *src2, size_t len) {
+int hjmemcmp(const void *source1, const void *source2, size_t len) {
     
-    if (src1 == NULL || src2 == NULL || len == 0) {
+    if (source1 == NULL || source2 == NULL || len == 0) {
         return 0;
     }
     
-    char *psrc1 = (char *)src1;
-    char *psrc2 = (char *)src2;
+    char *psource1 = (char *)source1;
+    char *psource2 = (char *)source2;
     
     int i = 0;
-    while ((*psrc1 == *psrc2) && i < len) {
-        psrc1++;
-        psrc2++;
+    while ((*psource1 == *psource2) && i < len) {
+        psource1++;
+        psource2++;
         i++;
     }
     
@@ -447,7 +447,7 @@ int hjmemcmp(const void *src1, const void *src2, size_t len) {
         return 0;
 
     } else {
-        if (*psrc1 > *psrc2) {
+        if (*psource1 > *psource2) {
             return 1;
 
         } else {
