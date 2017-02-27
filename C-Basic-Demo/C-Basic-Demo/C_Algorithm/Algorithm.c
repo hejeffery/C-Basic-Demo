@@ -17,6 +17,8 @@ void selectionSort(int *array, int count) {
     // 选择排序法的思想：每一趟都是找出最值(和找出一个数组中的最值算法类似)，然后交换。
     // 也就是第一个数和后面的数逐个扫描，第二个数和后面的数逐个扫描....
     for (int i = 0; i < count; i++) {
+        
+        // 这里和找出一个数组中的最值算法一样
         for (int j = i + 1; j < count; j++) {
             if (array[i] < array[j]) {
 
@@ -34,6 +36,7 @@ void selectionSort(int *array, int count) {
 
 void bubbleSort(int *array, int count) {
     // 冒泡排序的思想：数字上浮或者下沉
+    // 比较的相邻的两个数
     int loopNumber = count - 1;
     for (int i = 0; i < loopNumber; i++) {// 每循环一次就有一个数上浮或者下沉
         for (int j = 0; j < loopNumber - i; j++) {
