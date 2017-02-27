@@ -83,6 +83,7 @@ void quickSort(int *array, int beginIndex, int lastIndex) {
         int i = beginIndex;
         for (int j = beginIndex + 1; j <= lastIndex; j++) {
 
+            // array[beginIndex]此时就是一个参照
             if (array[j] < array[beginIndex]) {
 
                 // i往前移动1
