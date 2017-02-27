@@ -142,7 +142,7 @@ char *hjstrchr(const char *src, int chr) {
     char *result = NULL;
     while (*src != '\0') {
         if (*src == chr) {
-            result = src;
+            result = (char *)src;
             return result;
         }
         src++;
@@ -151,6 +151,8 @@ char *hjstrchr(const char *src, int chr) {
 }
 
 int hjstrcmp(const char *src1, const char *src2) {
+    
+    /* 比较两个字符串，相等返回0，src1 > src2返回1，src1 > src2返回-1 */
     
     if (src1 == NULL || src2 == NULL) {
         return 1;
@@ -177,6 +179,8 @@ int hjstrcmp(const char *src1, const char *src2) {
 }
 
 int hjstrncmp(const char *src1, const char *src2, size_t n) {
+    
+    /* 比较两个字符串，比较n个字符，相等返回0，src1 > src2返回1，src1 > src2返回-1 */
     
     if (src1 == NULL || src2 == NULL) {
         return 1;
@@ -205,6 +209,8 @@ int hjstrncmp(const char *src1, const char *src2, size_t n) {
 }
 
 char *hjstrstr(const char *bigstr, const char *littlestr) {
+    
+    /* 字符串搜索 */
     
     if (bigstr == NULL || littlestr == NULL) {
         return NULL;
@@ -235,6 +241,8 @@ char *hjstrstr(const char *bigstr, const char *littlestr) {
 
 char *hjstrdup(const char *src) {
 
+    /* 字符串拷贝，动态分配了内存，返回字符串需要使用free函数来释放内存 */
+    
     if (src == NULL) {
         return NULL;
     }
@@ -248,6 +256,8 @@ char *hjstrdup(const char *src) {
 }
 
 char *hjstrpbrk(const char *src, const char *charset) {
+    
+    /* 判断src中，是不是含有charset中的任意一个字符 */
     
     if (src == NULL || charset == NULL) {
         return NULL;
@@ -270,6 +280,8 @@ char *hjstrpbrk(const char *src, const char *charset) {
 
 char *hjstrrchr(const char *src, int chr) {
     
+    /* 反向查找src中是否含有chr字符 */
+    
     if (src == NULL) {
         return NULL;
     }
@@ -284,6 +296,8 @@ char *hjstrrchr(const char *src, int chr) {
 }
 
 char *hjstrrev(char *src) {
+    
+    /* 反转字符串 */
     
     if (src == NULL) {
         return NULL;
@@ -304,6 +318,8 @@ char *hjstrrev(char *src) {
 
 char *hjstrlwr(char *src) {
     
+    /* 字符串大写转小写 */
+    
     if (src == NULL) {
         return NULL;
     }
@@ -320,6 +336,8 @@ char *hjstrlwr(char *src) {
 }
 
 char *hjstrupr(char *src) {
+    
+    /* 字符串小写转大写 */
     
     if (src == NULL) {
         return NULL;
