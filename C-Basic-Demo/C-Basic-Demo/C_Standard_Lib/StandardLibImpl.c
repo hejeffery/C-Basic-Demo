@@ -361,7 +361,9 @@ void *hjmemset(void *dst, int chr, size_t len) {
         return NULL;
     }
     
+    // 转换为char *，逐个处理
     char *pchr = (char *)dst;
+
     int i = 0;
     while (i < len) {
         *pchr = (char)chr;
@@ -378,10 +380,10 @@ void *hjmemcpy(void *dst, const void *source, size_t len) {
     }
     
     // 按照字节逐个拷贝
-    int i = 0;
     char *pdst = (char *)dst;
     char *psource = (char *)source;
     
+    int i = 0;
     while (i < len) {
         *pdst = *psource;
         pdst++;
@@ -397,11 +399,11 @@ void *hjmemccpy(void *dst, const void *source, int chr, size_t len) {
         return NULL;
     }
     
-    int i = 0;
-    
+    // 按照字节逐个拷贝
     char *pdst = (char *)dst;
     char *psource = (char *)source;
     
+    int i = 0;
     while (*psource != chr && i < len) {
         *pdst = *psource;
         pdst++;
@@ -433,6 +435,7 @@ int hjmemcmp(const void *source1, const void *source2, size_t len) {
         return 0;
     }
     
+    // 按照字节逐个处理
     char *psource1 = (char *)source1;
     char *psource2 = (char *)source2;
     
