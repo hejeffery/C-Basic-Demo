@@ -242,6 +242,10 @@ void binaryFileCutting(const char *sourcePath, int cutNumber) {
     
     fclose(rfile);
     
+    // 释放内存
+    for (int i = 0; i < cutNumber; i++) {
+        free(targetPaths[i]);
+    }
     free(targetPaths);
 }
 
@@ -288,6 +292,12 @@ void binaryFileMerge(const char *sourcePath, const char *targetPath, int mergeNu
     }
 
     fclose(wfile);
+    
+    // 释放内存
+    for (int i = 0; i < mergeNumber; i++) {
+        free(targetPaths[i]);
+    }
+    free(targetPaths);
 }
 
 long fileSize(const char *filePath) {
