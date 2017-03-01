@@ -87,4 +87,6 @@ void practiceOne() {
         printf("QQ号码：%lld, 密码：%s\n", qqinfos.infos[i].qqnumber, qqinfos.infos[i].password);
     }
     
+    // 替换为'\0'的思路可以用在字符串分割上
+    
 }
