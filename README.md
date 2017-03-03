@@ -39,6 +39,12 @@ NULL | CircleDoubleLinkedList：链式环形双向数组
 ###C_String_Tool
 * StringTool.c c字符串处理工具
 
+###C_Thread
+* 线程示例代码
+
+###C_File
+* 文件操作示例代码
+
 #License
 C-Basic-Demo is available under the MIT license. See the LICENSE file for more info.
 
