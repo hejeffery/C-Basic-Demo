@@ -30,6 +30,7 @@
 #include "PriorityLinkedQueue.h"
 #include "DoubleLinkedList.h"
 #include "CircleDoubleLinkedList.h"
+#include "BinaryTree.h"
 
 #include "CThread.h"
 #include "CFile.h"
@@ -822,6 +823,54 @@ void circleDoubleLinkedListImpl() {
 
 }
 
+// 二叉树
+void binaryTreeImpl() {
+    
+    BinaryTree *binaryTree;
+    
+    bool isEmpty = isEmptyBinaryTree(binaryTree);
+    if (isEmpty) {
+        printf("空二叉树\n");
+
+    } else {
+        printf("非空二叉树\n");
+    }
+    
+    insertBinaryTree(&binaryTree, 10);
+    insertBinaryTree(&binaryTree, 5);
+    insertBinaryTree(&binaryTree, 16);
+    insertBinaryTree(&binaryTree, 4);
+    insertBinaryTree(&binaryTree, 7);
+    insertBinaryTree(&binaryTree, 13);
+    insertBinaryTree(&binaryTree, 18);
+    
+    isEmpty = isEmptyBinaryTree(binaryTree);
+    if (isEmpty) {
+        printf("空二叉树\n");
+        
+    } else {
+        printf("非空二叉树\n");
+    }
+    
+    printf("----------------------先序遍历----------------------\n");
+    preorderBinaryTree(binaryTree);
+    printf("\n\n");
+    
+    printf("----------------------中序遍历----------------------\n");
+    inorderBinaryTree(binaryTree);
+    printf("\n\n");
+    
+    printf("----------------------中序遍历----------------------\n");
+    postorderBinaryTree(binaryTree);
+    printf("\n\n");
+    
+    int deep = deepBinaryTree(binaryTree);
+    printf("二叉树的深度 = %d\n", deep);
+    
+    int leafCount = leafNodeCount(binaryTree);
+    printf("二叉树叶结点的个数 = %d\n", leafCount);
+}
+
 // 部分标准库实现测试
 void standardLibImplTest() {
     
@@ -1258,6 +1307,9 @@ int main(int argc, const char * argv[]) {
     
 //    // 环形双链表
 //    circleDoubleLinkedListImpl();
+    
+    // 二叉树
+    binaryTreeImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
