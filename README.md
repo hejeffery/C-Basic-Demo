@@ -29,6 +29,7 @@ DynamicStack：动态数组栈 | PriorityLinkedQueue：优先队列
 SequenceArrayList：数组的顺序存储，静态数组 | CircleLinkedList：链式环形队列
 DynamicSquenceArrayList：数组的顺序存储，动态数组 | DoubleLinkedList：双向链式数组
 NULL | CircleDoubleLinkedList：链式环形双向数组
+NULL | BinaryTree：二叉树
 
 ###C_Practice
 * CPractice.c c的部分练习
