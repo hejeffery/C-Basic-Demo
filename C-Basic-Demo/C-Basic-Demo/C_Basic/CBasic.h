@@ -46,4 +46,10 @@ void dynamicPrintArray();
  */
 void pointerArrayAndArrayPointer();
 
+/**
+ *  define的高级用法。在著名的iOS第三方框架ReactiveCocoa中有应用
+ *
+ */
+void advancedDefine();
+
 #endif /* CBasic_h */

@@ -110,3 +110,22 @@ void pointerArrayAndArrayPointer() {
     
 }
 
+void advancedDefine() {
+    // # ： 把后面的看成字符串。给一个标识符加上“”
+#define function(a) #a
+    int number = 9;
+    printf("%s\n", function(number));
+
+    
+    // ## ： 连接两个符号。
+#define func(a) func##a
+    int func10 = 90;
+    // func(10)此时等价于func10
+    printf("%d\n", func(10));
+    
+    // 注意：只能和常量连接，不能和变量连接
+//    int i = 10;
+//    func(i);// 编译报错
+    
+}
+

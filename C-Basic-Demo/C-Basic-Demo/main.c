@@ -1272,6 +1272,9 @@ int main(int argc, const char * argv[]) {
 //    // 指针数组和数组指针
 //    pointerArrayAndArrayPointer();
     
+//    // define的高级用法
+    advancedDefine();
+    
 //    // 函数指针的接口功能
 //    int resultAdd = calculation(add, 2, 2);
 //    int resultSub = calculation(sub, 9, 1);
@@ -1308,8 +1311,8 @@ int main(int argc, const char * argv[]) {
 //    // 环形双链表
 //    circleDoubleLinkedListImpl();
     
-    // 二叉树
-    binaryTreeImpl();
+//    // 二叉树
+//    binaryTreeImpl();
     
 //    // 动态数组队列
 //    dynamicQueueImpl();
