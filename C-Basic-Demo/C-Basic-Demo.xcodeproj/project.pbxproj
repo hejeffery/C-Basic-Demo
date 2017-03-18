@@ -20,7 +20,7 @@
 		472381171E359DBE00F6F2BC /* Algorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381151E359DBE00F6F2BC /* Algorithm.c */; };
 		4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */ = {isa = PBXBuildFile; fileRef = 472381181E359E0B00F6F2BC /* StandardLibImpl.c */; };
 		4758AED81E23D37C00FA7884 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4758AED71E23D37C00FA7884 /* main.c */; };
-		47AD646B1E399378008726BB /* StringTool.c in Sources */ = {isa = PBXBuildFile; fileRef = 47AD64691E399378008726BB /* StringTool.c */; };
+		47606DF31E7D7CF00017A4D4 /* StringTool.c in Sources */ = {isa = PBXBuildFile; fileRef = 47606DF11E7D7CF00017A4D4 /* StringTool.c */; };
 		47C879811E404A9700C868FB /* CBasic.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C8797F1E404A9700C868FB /* CBasic.c */; };
 		47C879851E483D3B00C868FB /* CPractice.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879831E483D3B00C868FB /* CPractice.c */; };
 		47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 47C879871E487C4300C868FB /* DynamicSequenceArrayList.c */; };
@@ -70,8 +70,8 @@
 		472381191E359E0B00F6F2BC /* StandardLibImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardLibImpl.h; sourceTree = "<group>"; };
 		4758AED41E23D37C00FA7884 /* C-Basic-Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C-Basic-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4758AED71E23D37C00FA7884 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		47AD64691E399378008726BB /* StringTool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StringTool.c; sourceTree = "<group>"; };
-		47AD646A1E399378008726BB /* StringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTool.h; sourceTree = "<group>"; };
+		47606DF11E7D7CF00017A4D4 /* StringTool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StringTool.c; sourceTree = "<group>"; };
+		47606DF21E7D7CF00017A4D4 /* StringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTool.h; sourceTree = "<group>"; };
 		47C8797F1E404A9700C868FB /* CBasic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CBasic.c; sourceTree = "<group>"; };
 		47C879801E404A9700C868FB /* CBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBasic.h; sourceTree = "<group>"; };
 		47C879831E483D3B00C868FB /* CPractice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CPractice.c; sourceTree = "<group>"; };
@@ -257,18 +257,18 @@
 				47C879821E483D2B00C868FB /* C_Practice */,
 				4723810E1E359D2100F6F2BC /* C_Standard_Lib */,
 				4703DD151E5AEB6B00843437 /* C_Thread */,
-				47AD64681E399364008726BB /* C_String_Tool */,
+				47606DF01E7D7CF00017A4D4 /* C_StringTool */,
 			);
 			path = "C-Basic-Demo";
 			sourceTree = "<group>";
 		};
-		47AD64681E399364008726BB /* C_String_Tool */ = {
+		47606DF01E7D7CF00017A4D4 /* C_StringTool */ = {
 			isa = PBXGroup;
 			children = (
-				47AD646A1E399378008726BB /* StringTool.h */,
-				47AD64691E399378008726BB /* StringTool.c */,
+				47606DF11E7D7CF00017A4D4 /* StringTool.c */,
+				47606DF21E7D7CF00017A4D4 /* StringTool.h */,
 			);
-			path = C_String_Tool;
+			path = C_StringTool;
 			sourceTree = "<group>";
 		};
 		47C8797E1E404A8300C868FB /* C_Basic */ = {
@@ -401,7 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47AD646B1E399378008726BB /* StringTool.c in Sources */,
 				47C879911E4B723E00C868FB /* LinkedList.c in Sources */,
 				47C879851E483D3B00C868FB /* CPractice.c in Sources */,
 				47C879891E487C4300C868FB /* DynamicSequenceArrayList.c in Sources */,
@@ -410,6 +409,7 @@
 				4723811A1E359E0B00F6F2BC /* StandardLibImpl.c in Sources */,
 				4703DD141E597E0000843437 /* CircleDoubleLinkedList.c in Sources */,
 				472381141E359D2100F6F2BC /* SequenceArrayList.c in Sources */,
+				47606DF31E7D7CF00017A4D4 /* StringTool.c in Sources */,
 				472381171E359DBE00F6F2BC /* Algorithm.c in Sources */,
 				472381101E359D2100F6F2BC /* ArrayStack.c in Sources */,
 				4703DD101E56FE7100843437 /* DoubleLinkedList.c in Sources */,

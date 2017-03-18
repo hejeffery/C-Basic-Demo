@@ -1273,7 +1273,7 @@ int main(int argc, const char * argv[]) {
 //    pointerArrayAndArrayPointer();
     
 //    // define的高级用法
-    advancedDefine();
+//    advancedDefine();
     
 //    // 函数指针的接口功能
 //    int resultAdd = calculation(add, 2, 2);
