@@ -265,8 +265,8 @@
 		47606DF01E7D7CF00017A4D4 /* C_StringTool */ = {
 			isa = PBXGroup;
 			children = (
-				47606DF11E7D7CF00017A4D4 /* StringTool.c */,
 				47606DF21E7D7CF00017A4D4 /* StringTool.h */,
+				47606DF11E7D7CF00017A4D4 /* StringTool.c */,
 			);
 			path = C_StringTool;
 			sourceTree = "<group>";
