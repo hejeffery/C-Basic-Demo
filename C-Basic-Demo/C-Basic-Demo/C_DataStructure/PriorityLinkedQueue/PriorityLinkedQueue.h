@@ -20,9 +20,10 @@
 
 // 优先级
 typedef enum Priority {
-    PriorityLow = -1,// low
-    PriorityDefault,// default
-    PriorityHigh// high
+    PriorityLow = -1,    // low
+    PriorityDefault,     // default
+    PriorityHigh         // high
+
 } Priority;
 
 typedef struct PLQNode PriorityLinkedQueue;
