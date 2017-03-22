@@ -19,7 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
- *  选择排序
+ *  选择排序(效率最低的排序)
+ *  不稳定，时间复杂度O(n²)，空间复杂度O(1)
  *
  *  @param array 需要排序的数组
  *  @param count 数组的个数
@@ -27,7 +28,8 @@
 void selectionSort(int *array, int count);
 
 /**
- *  冒泡排序
+ *  冒泡排序(适用于数据已经近似有序的场景)
+ *  稳定，时间复杂度O(n²)，空间复杂度O(1)
  *
  *  @param array 需要排序的数组
  *  @param count 数组的个数
@@ -35,7 +37,8 @@ void selectionSort(int *array, int count);
 void bubbleSort(int *array, int count);
 
 /**
- *  插入排序
+ *  插入排序(适用于边处理数据边排序的场景)
+ *  稳定，时间复杂度O(n²)，空间复杂度O(1)
  *
  *  @param array 需要排序的数组
  *  @param count 数组的个数
@@ -44,6 +47,7 @@ void insertSort(int *array, int count);
 
 /**
  *  快速排序(双指针)
+ *  不稳定，时间复杂度O(nlog2n)，空间复杂度O(nlog2n)
  *
  *  @param array 需要排序的数组
  *  @param beginIndex 数组开始的索引
