@@ -107,6 +107,35 @@ void quickSort(int *array, int beginIndex, int lastIndex) {
     }
 }
 
+void shellSort(int *array, int count) {
+    
+    // 思想：用增量分治处理子序列
+    int delta = count / 2;
+
+    while (delta >= 1) {
+
+        for (int i = delta; delta < count && i < count; i++) {
+            // 子序列的插入排序
+            int temp = array[i];
+            int index = i - delta;
+            
+            // 左边子序列的值 > 右边子序列的值，交换
+            while (index >= 0 && array[index] > temp) {
+                array[index + delta] = array[index];
+                index -= delta;
+            }
+            
+            array[index + delta] = temp;
+        }
+
+        delta /= 2;
+    }
+    
+    for (int i = 0; i < count; i++) {
+        printf("%d  \n", array[i]);
+    }
+}
+
 int binarySearch(int *array, int count, int searchNumber) {
     int headIndex = 0;
     int tailIndex = count - 1;

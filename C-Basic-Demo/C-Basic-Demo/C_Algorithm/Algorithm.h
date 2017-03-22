@@ -56,6 +56,15 @@ void insertSort(int *array, int count);
 void quickSort(int *array, int beginIndex, int lastIndex);
 
 /**
+ *  希尔排序
+ *  不稳定，时间复杂度O(n²)，空间复杂度O(1)。可用多线程对排序进行加速
+ *
+ *  @param array 需要排序的数组
+ *  @param count 数组的个数
+ */
+void shellSort(int *array, int count);
+
+/**
  *  二分查找(折半查找)
  *
  *  @param array 需要查找的数组
