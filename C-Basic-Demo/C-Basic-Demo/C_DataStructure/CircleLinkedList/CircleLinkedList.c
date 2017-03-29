@@ -32,6 +32,7 @@ bool appendCircleList(CircleLinkedList *list, int value) {
     // 找到“最后一个结点”
     CircleLinkedList *pnode = list;
     while (pnode->next != NULL && pnode->next != list) {
+
         pnode = pnode->next;
     }
     
@@ -88,6 +89,7 @@ bool insertCircleList(CircleLinkedList *list, int position, int value) {
     CircleLinkedList *pnode2 = list;
     int i = 0;
     while (pnode1 != list && i < position) {
+
         pnode2 = pnode1;
         pnode1 = pnode1->next;
         i++;
@@ -196,6 +198,7 @@ int circleListLength(CircleLinkedList *list) {
     int length = 0;
     CircleLinkedList *pnode = list->next;
     while (pnode != list) {
+
         length++;
         pnode = pnode->next;
     }
@@ -286,6 +289,7 @@ void showCircleList(CircleLinkedList *list) {
     
     CircleLinkedList *pnode = list->next;
     while (pnode != list) {
+
         printf("%4d", pnode->data);
         pnode = pnode->next;
     }
