@@ -250,6 +250,7 @@ char *hjstrdup(const char *src) {
     char *pstr = (char *)malloc(sizeof(char) * hjstrlen(src) + 1);
     char *presult = pstr;
     while ((*pstr++ = *src++) != '\0');
+
     *pstr = '\0';
 
     return presult;
