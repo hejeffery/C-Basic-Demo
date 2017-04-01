@@ -346,7 +346,6 @@ char *hjstrupr(char *src) {
     
     char *psrc = src;
     while (*psrc != '\0') {
-        
         if (*psrc >= 'a' && *psrc <= 'z') {
             *psrc -= 32;
         }
