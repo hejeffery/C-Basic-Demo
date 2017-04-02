@@ -29,7 +29,6 @@ void insertBinaryTree(BinaryTree **binaryTree, int value) {
         return;
 
     } else {
-        
         // 左子树
         if (value < (*binaryTree)->data) {
             insertBinaryTree(&((*binaryTree)->leftChild), value);
