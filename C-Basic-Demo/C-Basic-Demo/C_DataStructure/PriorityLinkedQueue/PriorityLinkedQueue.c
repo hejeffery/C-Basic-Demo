@@ -31,6 +31,7 @@ bool isEmptyPriorityLinkedQueue(PriorityLinkedQueue *queue) {
 
 bool enqueuePriorityLinked(PriorityLinkedQueue *queue, int value, Priority priority) {
     
+    // 思路：根据优先级插入队列。插入的思路类似插入排序的思路
     if (queue == NULL) {
         return false;
     }
@@ -51,7 +52,7 @@ bool enqueuePriorityLinked(PriorityLinkedQueue *queue, int value, Priority prior
 
     } else {// 插入的不是第一个结点。在中间插入和最后插入，都是根据优先级来进行插入位置的判断
         
-        // 双指针
+        // 双指针处理
         PriorityLinkedQueue *pnode1 = queue->next;
         PriorityLinkedQueue *pnode2 = queue;
         while (pnode1 != NULL) {
@@ -89,6 +90,7 @@ bool dequeuePriorityLinked(PriorityLinkedQueue *queue, PriorityLinkedQueue *dequ
     if (pnode != NULL) {
         queue->next = pnode->next;
     }
+
     (*dequeueNode).data = pnode->data;
     (*dequeueNode).priority = pnode->priority;
     free(pnode);
