@@ -11,6 +11,7 @@
 #include <memory.h>
 
 bool createArrayList(ArrayList *arrayList, int length) {
+
     arrayList->list = (int *)calloc(length, sizeof(int));
     if (arrayList->list == NULL) {
         return false;
@@ -21,6 +22,7 @@ bool createArrayList(ArrayList *arrayList, int length) {
 }
 
 bool createArrayListWithData(ArrayList *arrayList, int data, int length) {
+
     arrayList->list = (int *)malloc(sizeof(int) * length);
     if (arrayList->list == NULL) {
         return false;
@@ -52,6 +54,7 @@ bool createArrayListWithArray(ArrayList *arrayList, int *array, int length) {
 }
 
 bool isFullArrayList(ArrayList *arrayList) {
+
     if (arrayList->currentIndex == (arrayList->length - 1)) {
         return true;
     }
@@ -59,6 +62,7 @@ bool isFullArrayList(ArrayList *arrayList) {
 }
 
 bool isEmptyArrayList(ArrayList *arrayList) {
+
     if (arrayList->currentIndex == -1) {
         return true;
     }
@@ -66,6 +70,7 @@ bool isEmptyArrayList(ArrayList *arrayList) {
 }
 
 bool append(ArrayList *arrayList, int value) {
+
     // 满的list，直接返回false
     if (isFullArrayList(arrayList)) {
         return false;
@@ -76,6 +81,7 @@ bool append(ArrayList *arrayList, int value) {
 }
 
 bool insert(ArrayList *arrayList, int index, int value) {
+
     // 满的list，直接返回false
     if (isFullArrayList(arrayList)) {
         return false;
@@ -98,6 +104,7 @@ bool insert(ArrayList *arrayList, int index, int value) {
 }
 
 bool deleteValue(ArrayList *arrayList, int index, int *value) {
+
     // 空的list，直接返回false
     if (isEmptyArrayList(arrayList)) {
         return false;
@@ -120,6 +127,7 @@ bool deleteValue(ArrayList *arrayList, int index, int *value) {
 }
 
 bool indexOfItem(ArrayList *arrayList, int index, int *item) {
+
     // 空的list，直接返回false
     if (isEmptyArrayList(arrayList)) {
         return false;
@@ -134,6 +142,7 @@ bool indexOfItem(ArrayList *arrayList, int index, int *item) {
 }
 
 void clearAll(ArrayList *arrayList) {
+
     if (isEmptyArrayList(arrayList)) {
         return;
     }
@@ -144,6 +153,7 @@ void clearAll(ArrayList *arrayList) {
 }
 
 void showArrayList(ArrayList *arrayList) {
+
     if (isEmptyArrayList(arrayList)) {
         return;
     }
