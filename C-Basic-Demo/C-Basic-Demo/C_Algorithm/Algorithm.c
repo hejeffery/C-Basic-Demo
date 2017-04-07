@@ -66,6 +66,7 @@ void insertSort(int *array, int count) {
             array[index] = array[index - 1];// 往后移
             index--;
         }
+
         array[index] = element;
     }
     
@@ -152,6 +153,7 @@ int binarySearch(int *array, int count, int searchNumber) {
             
         }
     }
+
     return -1;// 没有找到返回-1
 }
 
@@ -173,6 +175,7 @@ int lagrangeSearch(int *array, int count, int searchNumber) {
             
         }
     }
+
     return -1;// 没有找到返回-1
 }
 
@@ -223,6 +226,7 @@ int fibonacciArrayFor(int number) {
             array[i] = array[i - 1] + array[i - 2];
         }
     }
+
     return array[number - 1];
 }
 
@@ -245,6 +249,7 @@ int fibonacciArrayWhile(int number) {
         }
         index++;
     }
+
     return array[index - 1];
 }
 
@@ -252,6 +257,7 @@ int recursionPlus(int number) {
     if (number < 0) {
         return 0;
     }
+
     return recursionPlus(number - 1) + number;
 }
 
@@ -294,6 +300,7 @@ int reverseNumber(int number) {
 //            result = result * 10 + temp;
 //        }
 //    }
+
     return result;
 }
 
