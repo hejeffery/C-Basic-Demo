@@ -295,6 +295,3 @@ void showCircleList(CircleLinkedList *list) {
     }
     printf("\n");
 }
-
-
-
